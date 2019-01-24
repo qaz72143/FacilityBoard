@@ -267,8 +267,8 @@ function dispData()	//從data取值給data_All
 {
 	var cnt = 0;
 	var temp = data[cnt++].split(" ");
-	disp_Time += temp[4] + '/';		//年份
-	
+	//disp_Time += temp[4] + '/';		//年份
+	disp_Time += '2019/';	
 	switch(temp[1])					//月份
 	{
 		case 'Jan': disp_Time += '01/'; break; 

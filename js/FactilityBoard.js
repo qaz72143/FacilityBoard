@@ -2,7 +2,7 @@ var table = document.querySelector('table'),
     table_meta_container = table.querySelector('thead'); 
     //table_data_container = table.querySelector('tbody'),
 
-var time = document.getElementById("updateTime");
+var getTime = document.getElementById("updateTime");
 var data;
 var data_All = new Array(99), data_Connect;
 var disp_Time;
@@ -268,9 +268,9 @@ function dispData()	//從data取值給data_All
 	var cnt = 0;
 	var temp = data[cnt++].split(" ");
 	disp_Time = temp[4] + '/';		//年份
+	getTime.innerHTML = disp_Time;
 	
-	disp_Time += 'AAAAAAAAAAA';
-	time.innerHTML = disp_Time;
+	
 	
 	switch(temp[1])					//月份
 	{
@@ -514,5 +514,5 @@ setTimeout(myRefresh,300000);	//五分鐘自動刷新頁面
 
 function debug(temp)
 {
-	time.innerHTML = temp;
+	getTime.innerHTML = temp;
 }

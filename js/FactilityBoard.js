@@ -2,7 +2,7 @@ var table = document.querySelector('table'),
     table_meta_container = table.querySelector('thead'); 
     //table_data_container = table.querySelector('tbody'),
 
-var getTime = document.getElementById("updateTime");
+var time = document.getElementById("updateTime");
 var data;
 var data_All = new Array(99), data_Connect;
 var disp_Time = "";
@@ -267,8 +267,8 @@ function dispData()	//從data取值給data_All
 {
 	var cnt = 0;
 	var temp = data[cnt++].split(" ");
-	//disp_Time += temp[4] + '/';		//年份
-	disp_Time += '2019/';	
+	//disp_Time = temp[4] + '/';		//年份
+	disp_Time += '2019/';
 	switch(temp[1])					//月份
 	{
 		case 'Jan': disp_Time += '01/'; break; 
@@ -285,7 +285,6 @@ function dispData()	//從data取值給data_All
 		case 'Dec': disp_Time += '12/'; break;
 		default: break;
 	}
-		
 	disp_Time += temp[2] + ' ';		//日期
 	switch(temp[0])					//星期
 	{
@@ -300,8 +299,7 @@ function dispData()	//從data取值給data_All
 	}
 	
 	disp_Time += temp[3];			//時間	
-	
-	getTime.innerHTML = '更新 : ' + disp_Time;
+	time.innerHTML = '更新 : ' + disp_Time;
 	
 	for(var i=0; i<data_All.length; i++)	// 0 ~ 98 
 	{
@@ -501,15 +499,27 @@ function check_Update()
 	//	myRefresh();	//若發現時間不同，則刷新頁面
 }
 */
-setTimeout(dispData,1000);	//由於讀取txt檔需要時間，所以延遲後再創建table
+//showData();
+
+var checkData = setInterval(showData ,1000);	//每秒檢查是否正確讀取到txt檔的資料
 
 setTimeout(myRefresh,300000);	//五分鐘自動刷新頁面
 
 //window.addEventListener("load", createTable(data_All), false);
 //createTable(data_All);
 
+function showData()	
+{
+	if(data[694] == null)
+	{}
+	else
+	{
+		dispData();
+		clearInterval(checkData);	//如果讀取到txt檔資料後就停止檢查
+	}
+}
 
 function debug(temp)
 {
-	getTime.innerHTML = temp;
+	time.innerHTML = temp;
 }

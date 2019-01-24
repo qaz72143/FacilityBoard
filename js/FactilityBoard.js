@@ -508,8 +508,10 @@ setTimeout(myRefresh,300000);	//五分鐘自動刷新頁面
 //window.addEventListener("load", createTable(data_All), false);
 //createTable(data_All);
 
+var checkCnt = 1;
 function showData()	
 {
+	debug(checkCnt++);
 	if(data[694] == null)
 	{}
 	else

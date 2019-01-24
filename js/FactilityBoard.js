@@ -284,6 +284,7 @@ function dispData()	//從data取值給data_All
 		case 'Dec': disp_Time += '12/'; break;
 		default: break;
 	}
+	time.innerHTML = temp[2]
 	disp_Time += temp[2] + ' ';		//日期
 	switch(temp[0])					//星期
 	{
@@ -298,7 +299,8 @@ function dispData()	//從data取值給data_All
 	}
 	
 	disp_Time += temp[3];			//時間	
-	time.innerHTML = '更新 : ' + disp_Time;
+	
+//time.innerHTML = '更新 : ' + disp_Time;
 	
 	for(var i=0; i<data_All.length; i++)	// 0 ~ 98 
 	{
@@ -498,7 +500,7 @@ function check_Update()
 	//	myRefresh();	//若發現時間不同，則刷新頁面
 }
 */
-setTimeout(dispData,5000);	//由於讀取txt檔需要時間，所以延遲後再創建table
+setTimeout(dispData,1000);	//由於讀取txt檔需要時間，所以延遲後再創建table
 
 setTimeout(myRefresh,300000);	//五分鐘自動刷新頁面
 

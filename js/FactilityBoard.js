@@ -5,7 +5,7 @@ var table = document.querySelector('table'),
 var getTime = document.getElementById("updateTime");
 var data;
 var data_All = new Array(99), data_Connect;
-var disp_Time;
+var disp_Time = "";
 var curr_num, curr_type;	//目前頁面的數量	//目前頁面的類型
 var data_0X = new Array(9), data_1X = new Array(10), data_2X = new Array(10),
  data_3X = new Array(10), data_4X = new Array(10), data_5X = new Array(10),

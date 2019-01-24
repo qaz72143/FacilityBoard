@@ -268,7 +268,7 @@ function dispData()	//從data取值給data_All
 	var cnt = 0;
 	var temp = data[cnt++].split(" ");
 	disp_Time = temp[4] + '/';		//年份
-	getTime.innerHTML = disp_Time;
+	//getTime.innerHTML = disp_Time;
 	
 	
 	

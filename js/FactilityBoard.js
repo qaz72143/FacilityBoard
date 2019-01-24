@@ -284,7 +284,7 @@ function dispData()	//從data取值給data_All
 		case 'Dec': disp_Time += '12/'; break;
 		default: break;
 	}
-	time.innerHTML = temp[2]
+		time.innerHTML = disp_Time;
 	disp_Time += temp[2] + ' ';		//日期
 	switch(temp[0])					//星期
 	{

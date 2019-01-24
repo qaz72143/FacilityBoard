@@ -268,6 +268,10 @@ function dispData()	//從data取值給data_All
 	var cnt = 0;
 	var temp = data[cnt++].split(" ");
 	disp_Time = temp[4] + '/';		//年份
+	
+	disp_Time += 'AAAAAAAAAAA';
+	time.innerHTML = disp_Time;
+	
 	switch(temp[1])					//月份
 	{
 		case 'Jan': disp_Time += '01/'; break; 
@@ -284,7 +288,7 @@ function dispData()	//從data取值給data_All
 		case 'Dec': disp_Time += '12/'; break;
 		default: break;
 	}
-		time.innerHTML = disp_Time;
+		
 	disp_Time += temp[2] + ' ';		//日期
 	switch(temp[0])					//星期
 	{

@@ -298,7 +298,7 @@ function dispData()	//從data取值給data_All
 	}
 	
 	disp_Time += temp[3];			//時間	
-	time.innerHTML = '更新 : ';// + disp_Time;
+	time.innerHTML = '更新 : ' + temp;
 	
 	for(var i=0; i<data_All.length; i++)	// 0 ~ 98 
 	{

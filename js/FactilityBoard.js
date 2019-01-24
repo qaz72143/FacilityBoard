@@ -503,7 +503,7 @@ function check_Update()
 
 var checkData = setInterval(showData ,1000);	//每秒檢查是否正確讀取到txt檔的資料
 
-setTimeout(myRefresh,300000);	//五分鐘自動刷新頁面
+//setTimeout(myRefresh,300000);	//五分鐘自動刷新頁面
 
 //window.addEventListener("load", createTable(data_All), false);
 //createTable(data_All);

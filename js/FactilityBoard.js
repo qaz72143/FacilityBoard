@@ -267,10 +267,7 @@ function dispData()	//從data取值給data_All
 {
 	var cnt = 0;
 	var temp = data[cnt++].split(" ");
-	disp_Time = temp[4] + '/';		//年份
-	//getTime.innerHTML = disp_Time;
-	
-	
+	//disp_Time = temp[4] + '/';		//年份
 	
 	switch(temp[1])					//月份
 	{
@@ -304,7 +301,7 @@ function dispData()	//從data取值給data_All
 	
 	disp_Time += temp[3];			//時間	
 	
-//time.innerHTML = '更新 : ' + disp_Time;
+	time.innerHTML = '更新 : ' + disp_Time;
 	
 	for(var i=0; i<data_All.length; i++)	// 0 ~ 98 
 	{

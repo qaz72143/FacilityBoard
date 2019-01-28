@@ -269,6 +269,7 @@ function Init_data()	//初始化陣列內容型態
 	        dataType: 'text',
 	        success: function(data_t) {
 	            //alert(data_t);
+			console.log(data_t);
 	        	data = data_t.split("\r\n");
 	        }
 	    });

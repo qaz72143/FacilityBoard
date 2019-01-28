@@ -3,6 +3,7 @@ var table = document.querySelector('table'),
     //table_data_container = table.querySelector('tbody'),
 
 var time = document.getElementById("updateTime");
+var refresh_time = document.getElementById("time_refresh");
 var data;
 var data_All = new Array(99), data_Connect;
 var disp_Time = "";
@@ -514,8 +515,7 @@ function check_Update()
 */
 
 var checkData = setInterval(showData ,1000);	//每秒檢查是否正確讀取到txt檔的資料
-
-setTimeout(myRefresh,300000);	//五分鐘自動刷新頁面
+var myAutoRefresh = setInterval(autoRefresh, 1000);	//五分鐘自動刷新頁面
 
 //window.addEventListener("load", createTable(data_All), false);
 //createTable(data_All);
@@ -536,6 +536,24 @@ function showData()
 		dispData();
 		clearInterval(checkData);	//如果讀取到txt檔資料後就停止檢查
 	}
+}
+
+var autoMin = 5, autoSec = 0;
+function autoRefresh()
+{
+	if(autoSec == 0)
+	{
+		if(autoMin == 0)
+			myRefresh();
+		else
+		{
+			autoSec = 59;
+			autoMin--;
+		}
+	}
+	else
+		autoSec--;
+	refresh_time.innerHTML = autoMin + "分" + autoSec + "秒後刷新";
 }
 
 function debug(temp)

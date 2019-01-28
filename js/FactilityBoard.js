@@ -269,7 +269,7 @@ function Init_data()	//初始化陣列內容型態
 	        dataType: 'text',
 	        success: function(data_t) {
 	            //alert(data_t);
-			console.log(data_t);
+	        	console.log(data);
 	        	data = data_t.split("\n");
 	        }
 	    });
@@ -515,7 +515,7 @@ function check_Update()
 
 var checkData = setInterval(showData ,1000);	//每秒檢查是否正確讀取到txt檔的資料
 
-//setTimeout(myRefresh,300000);	//五分鐘自動刷新頁面
+setTimeout(myRefresh,300000);	//五分鐘自動刷新頁面
 
 //window.addEventListener("load", createTable(data_All), false);
 //createTable(data_All);
@@ -528,9 +528,8 @@ function showData()
 	if(checkMin == 60){
 		checkMin = 0; chkHour++;
 	}
-	debug(9999);
 	time.innerHTML = "讀取資料中 ...　" + (chkHour)+"時"+(checkMin)+"分"+(checkSec++)+"秒"; 
-	if(data[694] == null)
+	if(data[data.length-1] == null)
 	{}
 	else
 	{

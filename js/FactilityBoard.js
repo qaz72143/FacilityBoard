@@ -5,11 +5,11 @@ var table = document.querySelector('table'),
 var time = document.getElementById("updateTime");
 var data;
 var data_All = new Array(99), data_Connect;
-var disp_Time;
+var disp_Time = "";
 var curr_num, curr_type;	//目前頁面的數量	//目前頁面的類型
 var data_0X = new Array(9), data_1X = new Array(10), data_2X = new Array(10),
- data_3X = new Array(10), data_4X = new Array(10), data_5X = new Array(10),
- data_6X = new Array(10), data_7X = new Array(10), data_8X = new Array(10), data_9X = new Array(10);
+ 	data_3X = new Array(10), data_4X = new Array(10), data_5X = new Array(10),
+ 	data_6X = new Array(10), data_7X = new Array(10), data_8X = new Array(10), data_9X = new Array(10);
 Init_data();
 
 var createTable = function(src) {	//根據傳遞進來的陣列創建Table
@@ -253,14 +253,27 @@ function Init_data()	//初始化陣列內容型態
 	}	
 	
 	//讀取txt檔內容，放到data陣列
-	var text;
+	/*var text;
 	var client = new XMLHttpRequest();
-	client.open('GET', "./MachineData.txt");
+	client.open('GET', "./MachineData.txt", false);
 	client.onreadystatechange = function() {
 		text = client.responseText;
 		data = text.split("\r\n");
+		debug(client.readyState);
 	}	
 	client.send();
+	*/
+	$(function(){
+	    $.ajax({
+	        url: './MachineData.txt',
+	        dataType: 'text',
+	        success: function(data_t) {
+	            //alert(data_t);
+	        	console.log(data_t);
+	        	data = data_t.split("\n");
+	        }
+	    });
+	});
 }
 
 function dispData()	//從data取值給data_All
@@ -268,6 +281,7 @@ function dispData()	//從data取值給data_All
 	var cnt = 0;
 	var temp = data[cnt++].split(" ");
 	disp_Time = temp[4] + '/';		//年份
+	//disp_Time += '2019/';
 	switch(temp[1])					//月份
 	{
 		case 'Jan': disp_Time += '01/'; break; 
@@ -298,8 +312,7 @@ function dispData()	//從data取值給data_All
 	}
 	
 	disp_Time += temp[3];			//時間	
-	time.innerHTML = '更新 : ';// + disp_Time;
-	
+	time.innerHTML = '更新 : ' + disp_Time;
 	for(var i=0; i<data_All.length; i++)	// 0 ~ 98 
 	{
 		data_All[i]['No'] = data[cnt++];	
@@ -477,34 +490,54 @@ function myRefresh()	//重新刷新頁面
 {
 	window.location.reload();
 }
-/*
-function check_Update()
-{
-	//讀取txt檔內容
-	var text, tempData;
-	var client = new XMLHttpRequest();
-	client.open('GET', "./MachineData.txt");
-	client.onreadystatechange = function() {
-		text = client.responseText;
-		tempData = text.split("\r\n");
-	}	
-	client.send();
-	debug(text);
-	//if(tempData[0] == data[0])
-	//{ 
-		// do nothing 
-	//}
-	//else
-	//	myRefresh();	//若發現時間不同，則刷新頁面
-}
-*/
-setTimeout(dispData,100);	//由於讀取txt檔需要時間，所以延遲後再創建table
 
-setTimeout(myRefresh,300000);	//五分鐘自動刷新頁面
+function check_Update()
+{	
+	var time_old = data[0].split(" ");	//舊時間陣列
+	var check_data_t, time_new;
+	//讀取txt檔內容
+	$(function(){
+	    $.ajax({
+	        url: './MachineData.txt',
+	        dataType: 'text',
+	        success: function(data_t2) {
+	            //alert(data_t);
+	        	//console.log(data_t);
+	        	check_data_t = data_t2.split("\n");
+	        	time_new = check_data_t[0].split(" ");	//新時間陣列
+	        	if((time_old[0]==time_new[0]) && (time_old[1]==time_new[1]) && (time_old[2]==time_new[2]) && (time_old[3]==time_new[3]) && (time_old[4]==time_new[4]))
+	        	{ /*不刷新*/ }
+	        	else	//若發現時間不同，則刷新頁面
+	        		myRefresh();	
+	        }
+	    });
+	});
+}
+
+
+var checkData = setInterval(showData ,1000);		//每秒檢查是否正確讀取到txt檔的資料
+var checkUpdate = setInterval(check_Update ,1000);	//檢查資料是否更新，刷新頁面
 
 //window.addEventListener("load", createTable(data_All), false);
 //createTable(data_All);
-
+var checkSec=0, checkMin=0, chkHour=0;
+function showData()	
+{	
+	if(checkSec == 60){
+		checkSec = 0; checkMin++;
+	}
+	if(checkMin == 60){
+		checkMin = 0; chkHour++;
+	}
+	time.innerHTML = "讀取資料中 ...　" + (chkHour)+"時"+(checkMin)+"分"+(checkSec++)+"秒"; 
+	if(data[data.length-1] == null)
+	{}
+	else
+	{
+		dispData();
+		clearInterval(checkData);	//如果讀取到txt檔資料後就停止檢查
+	}
+}
 
 function debug(temp)
 {

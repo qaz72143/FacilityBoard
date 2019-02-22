@@ -1,4 +1,4 @@
-﻿Mon Feb 18 21:10:56 777
+﻿Fri Feb 22 16:31:12 2019
 01
 Disconnect
 #
@@ -7,12 +7,12 @@ Disconnect
 #
 #
 02
-Disconnect
-#
-#
-#
-#
-#
+Producing(Lock)
+    5218
+   29443
+   15464
+   30928
+18 %
 03
 Disconnect
 #
@@ -21,12 +21,12 @@ Disconnect
 #
 #
 04
-Disconnect
-#
-#
-#
-#
-#
+ServerError
+   21661
+   22616
+    3787
+    7575
+88 %
 05
 Disconnect
 #
@@ -35,47 +35,47 @@ Disconnect
 #
 #
 06
-Disconnect
-#
-#
-#
-#
-#
+Stop(Lock)
+    6413
+   16718
+    5676
+   27396
+38 %
 07
-Disconnect
-#
-#
-#
-#
-#
+ServerError(Lock)
+    7627
+   15255
+    4750
+    9501
+37 %
 08
-Disconnect
-#
-#
-#
-#
-#
+Stop(Lock)
+    6586
+   13173
+   21019
+   30953
+52 %
 09
-Disconnect
-#
-#
-#
-#
-#
+PowerOff
+   12029
+   21165
+   11552
+   23104
+77 %
 10
-Disconnect
-#
-#
-#
-#
-#
+Stop(Lock)
+    6089
+   12178
+    8412
+   30481
+96 %
 11
-Disconnect
-#
-#
-#
-#
-#
+PowerOff
+   14108
+   31805
+   13228
+   22809
+22 %
 12
 Disconnect
 #
@@ -84,40 +84,40 @@ Disconnect
 #
 #
 13
-Disconnect
-#
-#
-#
-#
-#
+ServerError(Lock)
+    3141
+    6282
+    3228
+    6457
+95 %
 14
-Disconnect
-#
-#
-#
-#
-#
+Stop
+   18387
+   31901
+    4433
+    8867
+47 %
 15
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty(Lock)
+   28723
+   28723
+    3573
+    7146
+99 %
 16
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty
+    8452
+    8452
+     176
+     645
+51 %
 17
-Disconnect
-#
-#
-#
-#
-#
+ServerError(Lock)
+    5485
+   10971
+    3888
+    7776
+86 %
 18
 Disconnect
 #
@@ -126,40 +126,40 @@ Disconnect
 #
 #
 19
-Disconnect
-#
-#
-#
-#
-#
+Stop
+     870
+    1741
+    1675
+   12407
+71 %
 20
-Disconnect
-#
-#
-#
-#
-#
+Producing(Lock)
+    3143
+    6286
+    4887
+    9775
+8 %
 21
-Disconnect
-#
-#
-#
-#
-#
+Producing
+     668
+    1337
+   22255
+   27251
+76 %
 22
-Disconnect
-#
-#
-#
-#
-#
+ServerError
+   16605
+   20588
+   20171
+   27752
+33 %
 23
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty
+   22069
+   22069
+    7576
+   15683
+61 %
 24
 Disconnect
 #
@@ -168,19 +168,19 @@ Disconnect
 #
 #
 25
-Disconnect
-#
-#
-#
-#
-#
+Stop(Lock)
+   18698
+   32131
+    9593
+   18393
+85 %
 26
-Disconnect
-#
-#
-#
-#
-#
+PowerOff
+   20010
+   32594
+   11171
+   20298
+96 %
 27
 Disconnect
 #
@@ -196,12 +196,12 @@ Disconnect
 #
 #
 29
-Disconnect
-#
-#
-#
-#
-#
+Producing(Lock)
+    2247
+    4495
+   17178
+   17604
+61 %
 30
 Disconnect
 #
@@ -210,180 +210,180 @@ Disconnect
 #
 #
 31
-Disconnect
-#
-#
-#
-#
-#
+Stop
+   10074
+   24677
+    8809
+   10148
+98 %
 32
-Disconnect
-#
-#
-#
-#
-#
+Stop(Lock)
+   13747
+   25978
+   24616
+   30908
+87 %
 33
-Disconnect
-#
-#
-#
-#
-#
+Stop(Lock)
+   12384
+   20825
+    1351
+    2703
+58 %
 34
-Disconnect
-#
-#
-#
-#
-#
+ServerError(Lock)
+    2479
+    4959
+     612
+    1224
+98 %
 35
-Disconnect
-#
-#
-#
-#
-#
+Stop(Lock)
+   11184
+   22369
+    6624
+   18952
+42 %
 36
-Disconnect
-#
-#
-#
-#
-#
+Producing(Lock)
+     295
+    7201
+    2756
+    5512
+0 %
 37
-Disconnect
-#
-#
-#
-#
-#
+PowerOff
+    1862
+    3724
+   12189
+   15431
+27 %
 38
-Disconnect
-#
-#
-#
-#
-#
+Stop
+    3620
+    7241
+    3493
+    6987
+49 %
 39
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty
+   20249
+   20249
+    7100
+   14200
+48 %
 40
-Disconnect
-#
-#
-#
-#
-#
+PowerOff
+     201
+     402
+    3877
+    7755
+39 %
 41
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty
+   27760
+   27760
+     354
+     709
+96 %
 42
-Disconnect
-#
-#
-#
-#
-#
+Stop(Lock)
+   17353
+   31741
+    3028
+   10618
+72 %
 43
-Disconnect
-#
-#
-#
-#
-#
+Stop
+   17346
+   22497
+   11768
+   23536
+50 %
 44
-Disconnect
-#
-#
-#
-#
-#
+Producing(Lock)
+    6599
+   13198
+    4537
+   26578
+64 %
 45
-Disconnect
-#
-#
-#
-#
-#
+Producing
+    6154
+    9597
+    2828
+    5476
+33 %
 46
-Disconnect
-#
-#
-#
-#
-#
+Stop(Lock)
+    4394
+   18383
+   10222
+   26627
+55 %
 47
-Disconnect
-#
-#
-#
-#
-#
+ServerError(Lock)
+   12734
+   25469
+   23990
+   28968
+64 %
 48
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty(Lock)
+   18317
+   18317
+    3290
+    6580
+72 %
 49
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty
+   14607
+   14607
+     713
+   32541
+37 %
 50
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty
+   17009
+   17009
+    6235
+   12471
+68 %
 51
-Disconnect
-#
-#
-#
-#
-#
+PowerOff
+    6333
+   26512
+   24212
+   31081
+82 %
 52
-Disconnect
-#
-#
-#
-#
-#
+PowerOff
+    4527
+    9055
+    3234
+   32216
+89 %
 53
-Disconnect
-#
-#
-#
-#
-#
+Stop
+    4280
+    8561
+   16320
+   28670
+9 %
 54
-Disconnect
-#
-#
-#
-#
-#
+Stop
+   29727
+   31164
+   16778
+   18995
+47 %
 55
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty(Lock)
+   17495
+   17495
+    3663
+    7327
+7 %
 56
 Disconnect
 #
@@ -392,40 +392,40 @@ Disconnect
 #
 #
 57
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty(Lock)
+   10551
+   10551
+   16256
+   18038
+94 %
 58
-Disconnect
-#
-#
-#
-#
-#
+ServerError(Lock)
+     363
+     727
+   21440
+   29758
+92 %
 59
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty
+   22207
+   22207
+    8638
+   11552
+77 %
 60
-Disconnect
-#
-#
-#
-#
-#
+Producing(Lock)
+    6194
+    7088
+     872
+    1744
+65 %
 61
-Disconnect
-#
-#
-#
-#
-#
+Stop
+   12529
+   25059
+    1505
+    3011
+57 %
 62
 Disconnect
 #
@@ -434,68 +434,68 @@ Disconnect
 #
 #
 63
-Disconnect
-#
-#
-#
-#
-#
+Producing
+   18654
+   27101
+   16850
+   19451
+96 %
 64
-Disconnect
-#
-#
-#
-#
-#
+ServerError
+    7407
+    8113
+     631
+    1262
+93 %
 65
-Disconnect
-#
-#
-#
-#
-#
+Producing(Lock)
+    9319
+   18639
+   16606
+   21590
+5 %
 66
-Disconnect
-#
-#
-#
-#
-#
+Producing(Lock)
+    7764
+   15529
+   10030
+   20061
+55 %
 67
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty
+    9854
+    9854
+    4422
+    8844
+100 %
 68
-Disconnect
-#
-#
-#
-#
-#
+PowerOff
+   12268
+   24537
+   21407
+   28206
+88 %
 69
-Disconnect
-#
-#
-#
-#
-#
+Producing
+   26933
+   31287
+     731
+    1462
+78 %
 70
-Disconnect
-#
-#
-#
-#
-#
+ServerError(Lock)
+   19892
+   22226
+   21949
+   22230
+39 %
 71
-Disconnect
-#
-#
-#
-#
-#
+Producing
+    8304
+   16609
+     937
+    1874
+98 %
 72
 Disconnect
 #
@@ -504,19 +504,19 @@ Disconnect
 #
 #
 73
-Disconnect
-#
-#
-#
-#
-#
+ServerError
+   18688
+   18767
+    6139
+   12278
+78 %
 74
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty
+   19458
+   19458
+    9312
+   18625
+29 %
 75
 Disconnect
 #
@@ -525,131 +525,131 @@ Disconnect
 #
 #
 76
-Disconnect
-#
-#
-#
-#
-#
+ServerError
+    1863
+    3727
+   22498
+   31538
+46 %
 77
-Disconnect
-#
-#
-#
-#
-#
+PowerOff
+    1998
+    3996
+    3920
+    7840
+44 %
 78
-Disconnect
-#
-#
-#
-#
-#
+Stop
+    1544
+    3088
+   20912
+   22080
+100 %
 79
-Disconnect
-#
-#
-#
-#
-#
+ServerError
+   10033
+   13023
+     760
+    3233
+31 %
 80
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty(Lock)
+    6386
+    6386
+    1114
+    2229
+11 %
 81
-Disconnect
-#
-#
-#
-#
-#
+PowerOff
+    8213
+   19004
+    2280
+    4560
+94 %
 82
-Disconnect
-#
-#
-#
-#
-#
+Stop(Lock)
+    8023
+   13012
+   14013
+   28027
+86 %
 83
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty
+    3755
+    3755
+    5188
+   10376
+7 %
 84
-Disconnect
-#
-#
-#
-#
-#
+ServerError(Lock)
+    2043
+    6471
+   12710
+   29747
+82 %
 85
-Disconnect
-#
-#
-#
-#
-#
+Producing
+     265
+     530
+    6034
+   26048
+99 %
 86
-Disconnect
-#
-#
-#
-#
-#
+Stop
+    1017
+    1233
+    6458
+   12916
+55 %
 87
-Disconnect
-#
-#
-#
-#
-#
+PowerOff
+   15611
+   16439
+    1442
+    2885
+58 %
 88
-Disconnect
-#
-#
-#
-#
-#
+ServerError
+   10267
+   21015
+   21382
+   23307
+11 %
 89
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty
+    9029
+    9029
+    3076
+    6153
+79 %
 90
-Disconnect
-#
-#
-#
-#
-#
+Producing(Lock)
+    4393
+    8786
+   10342
+   11036
+57 %
 91
-Disconnect
-#
-#
-#
-#
-#
+Producing(Lock)
+   10835
+   14437
+    4958
+    9917
+23 %
 92
-Disconnect
-#
-#
-#
-#
-#
+Producing(Lock)
+   30555
+   31614
+   22707
+   23629
+50 %
 93
-Disconnect
-#
-#
-#
-#
-#
+ServerError
+   12958
+   25917
+   25443
+   27972
+79 %
 94
 Disconnect
 #
@@ -665,26 +665,26 @@ Disconnect
 #
 #
 96
-Disconnect
-#
-#
-#
-#
-#
+Stop(Lock)
+    3725
+    7451
+    1217
+    2434
+65 %
 97
-Disconnect
-#
-#
-#
-#
-#
+ServerError
+    3293
+   30827
+     879
+    1759
+52 %
 98
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty(Lock)
+    2630
+    2630
+    5369
+   10739
+17 %
 99
 Disconnect
 #

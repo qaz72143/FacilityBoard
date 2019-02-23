@@ -4,7 +4,9 @@ var table = document.querySelector('table'),
 
 var time = document.getElementById("updateTime");
 var data;
-var data_All = new Array(99), data_Connect;
+var MachineQty = 99;
+var file = './MachineData.txt';
+var data_All = new Array(MachineQty), data_Connect;
 var disp_Time = "";
 var curr_num, curr_type;	//目前頁面的數量	//目前頁面的類型
 var data_0X = new Array(9), data_1X = new Array(10), data_2X = new Array(10),
@@ -104,132 +106,9 @@ table_meta_container.addEventListener('click', function(e) {	//點選th時做排
   }
 }, false);
 
-//先刪除目前table後再創建指定的table
-var button1 = document.getElementById("btn_all");
-button1.addEventListener("click", function(e) {
-	
-	if(curr_type != 1)
-	{
-		curr_type = 1;
-		deleteTable();
-		createTable(data_All);
-	}
-}, false);
-
-var button2 = document.getElementById("btn_connected");
-button2.addEventListener("click", function(e) {
-	if(curr_type != 2)
-	{
-		curr_type = 2;
-		deleteTable();
-		createTable(data_Connect);
-	}
-}, false);
-
-var button3 = document.getElementById("btn_0X");
-button3.addEventListener("click", function(e) {
-	if(curr_type != 3)
-	{
-		curr_type = 3;
-		deleteTable();
-		createTable(data_0X);
-	}
-}, false);
-
-var button4 = document.getElementById("btn_1X");
-button4.addEventListener("click", function(e) {
-	if(curr_type != 4)
-	{
-		curr_type = 4;
-		deleteTable();
-		createTable(data_1X);
-	}
-}, false);
-
-var button5 = document.getElementById("btn_2X");
-button5.addEventListener("click", function(e) {
-	if(curr_type != 5)
-	{
-		curr_type = 5;
-		deleteTable();
-		createTable(data_2X);
-	}
-}, false);
-
-var button6 = document.getElementById("btn_3X");
-button6.addEventListener("click", function(e) {
-	if(curr_type != 6)
-	{
-		curr_type = 6;
-		deleteTable();
-		createTable(data_3X);
-	}
-}, false);
-
-var button7 = document.getElementById("btn_4X");
-button7.addEventListener("click", function(e) {
-	if(curr_type != 7)
-	{
-		curr_type = 7;
-		deleteTable();
-		createTable(data_4X);
-	}
-}, false);
-
-var button8 = document.getElementById("btn_5X");
-button8.addEventListener("click", function(e) {
-	if(curr_type != 8)
-	{
-		curr_type = 8;
-		deleteTable();
-		createTable(data_5X);
-	}
-}, false);
-
-var button9 = document.getElementById("btn_6X");
-button9.addEventListener("click", function(e) {
-	if(curr_type != 9)
-	{
-		curr_type = 9;
-		deleteTable();
-		createTable(data_6X);
-	}
-}, false);
-
-var button10 = document.getElementById("btn_7X");
-button10.addEventListener("click", function(e) {
-	if(curr_type != 10)
-	{
-		curr_type = 10;
-		deleteTable();
-		createTable(data_7X);
-	}
-}, false);
-
-var button11 = document.getElementById("btn_8X");
-button11.addEventListener("click", function(e) {
-	if(curr_type != 11)
-	{
-		curr_type = 11;
-		deleteTable();
-		createTable(data_8X);
-	}
-}, false);
-
-var button12 = document.getElementById("btn_9X");
-button12.addEventListener("click", function(e) {
-	if(curr_type != 12)
-	{
-		curr_type = 12;
-		deleteTable();
-		createTable(data_9X);
-	}
-}, false);
-
-
 function Init_data()	//初始化陣列內容型態
 {
-	for (var i=0; i<99; i++)
+	for (var i=0; i<MachineQty; i++)
 		data_All[i] = {'No':'','Status':'','CurQty':'','SetQty':'','CurMiss':'5','SetMiss':'','Speed':''}; 
 	for (var i=0; i<=8; i++)
 		data_0X[i] = {'No':'','Status':'','CurQty':'','SetQty':'','CurMiss':'5','SetMiss':'','Speed':''}; 
@@ -259,7 +138,7 @@ function Init_data()	//初始化陣列內容型態
 	*/
 	$(function(){
 	    $.ajax({
-	        url: './MachineData.txt',
+	        url: file,
 	        dataType: 'text',
 	        success: function(data_t) {
 	            //alert(data_t);
@@ -325,37 +204,35 @@ function dispData()	//從data取值給data_All
 function dispData_after()	//從data取值給剩餘陣列
 {
 	//由於data_Connect的大小屬於浮動的，所以須特別處理
-	var cnt = 1, data_Connect_length = 0;
+	var data_Connect_length = 0, disCnt = 0;
 	//先算出data_Connect的大小需要多少
-	for(var i=0; i<99; i++)
+	for(var i=0; i<data.length; i++)
 	{
-		if(data[cnt+1] == "Disconnect")
-			cnt = cnt + 7;
-		else
-		{
-			cnt = cnt + 7;
-			data_Connect_length++;
-		}		
+		if(data[i] == 'Disconnect')
+			disCnt++;
 	}
+	data_Connect_length = MachineQty - disCnt;	//全部 - 未連接
 	var temp = new Array(data_Connect_length);
 	data_Connect = temp;	//決定data_Connect的大小
 	for (var i=0; i<data_Connect_length; i++)	//初始化
-		data_Connect[i] = {'No':'','Status':'','CurQty':'','SetQty':'','CurMiss':'5','SetMiss':'','Speed':''};
+		data_Connect[i] = {'No':'','Status':'','CurQty':'','SetQty':'','CurMiss':'','SetMiss':'','Speed':''};
 	
-	cnt = 1;
-	for(var i=0; i<99; i++)
+	var cnt = 1;
+	for(var i=0, j=0; i<MachineQty; i++)
 	{
-		if(data[cnt+1] == "Disconnect")
-			cnt = cnt + 7;
+		if(data[cnt+1] == 'Disconnect')
+		{
+			cnt = cnt + 7;		
+		}
 		else
 		{
-			data_Connect[i]['No'] = data[cnt++];
-			data_Connect[i]['Status'] = transfer_Status(data[cnt++]);
-			data_Connect[i]['CurQty'] = data[cnt++];
-			data_Connect[i]['SetQty'] = data[cnt++];
-			data_Connect[i]['CurMiss'] = data[cnt++];
-			data_Connect[i]['SetMiss'] = data[cnt++];
-			data_Connect[i]['Speed'] = data[cnt++];	
+			data_Connect[j]['No'] = data[cnt++];
+			data_Connect[j]['Status'] = transfer_Status(data[cnt++]);
+			data_Connect[j]['CurQty'] = data[cnt++];
+			data_Connect[j]['SetQty'] = data[cnt++];
+			data_Connect[j]['CurMiss'] = data[cnt++];
+			data_Connect[j]['SetMiss'] = data[cnt++];
+			data_Connect[j++]['Speed'] = data[cnt++];	
 		}		
 	}
 	
@@ -488,7 +365,7 @@ function check_Update()
 	//讀取txt檔內容
 	$(function(){
 	    $.ajax({
-	        url: './MachineData.txt',
+	        url: file,
 	        dataType: 'text',
 	        success: function(data_t2) {
 	            //alert(data_t);
@@ -511,6 +388,7 @@ var checkUpdate = setInterval(check_Update ,30000);	//每30秒檢查資料是否
 //window.addEventListener("load", createTable(data_All), false);
 //createTable(data_All);
 var checkSec=0, checkMin=0, chkHour=0;
+
 function showData()	
 {	
 	if(checkSec == 60){
@@ -528,6 +406,128 @@ function showData()
 		clearInterval(checkData);	//如果讀取到txt檔資料後就停止檢查
 	}
 }
+
+//先刪除目前table後再創建指定的table
+var button1 = document.getElementById("btn_all");
+button1.addEventListener("click", function(e) {
+	
+	if(curr_type != 1)
+	{
+		curr_type = 1;
+		deleteTable();
+		createTable(data_All);
+	}
+}, false);
+
+var button2 = document.getElementById("btn_connected");
+button2.addEventListener("click", function(e) {
+	if(curr_type != 2)
+	{
+		curr_type = 2;
+		deleteTable();
+		createTable(data_Connect);
+	}
+}, false);
+
+var button3 = document.getElementById("btn_0X");
+button3.addEventListener("click", function(e) {
+	if(curr_type != 3)
+	{
+		curr_type = 3;
+		deleteTable();
+		createTable(data_0X);
+	}
+}, false);
+
+var button4 = document.getElementById("btn_1X");
+button4.addEventListener("click", function(e) {
+	if(curr_type != 4)
+	{
+		curr_type = 4;
+		deleteTable();
+		createTable(data_1X);
+	}
+}, false);
+
+var button5 = document.getElementById("btn_2X");
+button5.addEventListener("click", function(e) {
+	if(curr_type != 5)
+	{
+		curr_type = 5;
+		deleteTable();
+		createTable(data_2X);
+	}
+}, false);
+
+var button6 = document.getElementById("btn_3X");
+button6.addEventListener("click", function(e) {
+	if(curr_type != 6)
+	{
+		curr_type = 6;
+		deleteTable();
+		createTable(data_3X);
+	}
+}, false);
+
+var button7 = document.getElementById("btn_4X");
+button7.addEventListener("click", function(e) {
+	if(curr_type != 7)
+	{
+		curr_type = 7;
+		deleteTable();
+		createTable(data_4X);
+	}
+}, false);
+
+var button8 = document.getElementById("btn_5X");
+button8.addEventListener("click", function(e) {
+	if(curr_type != 8)
+	{
+		curr_type = 8;
+		deleteTable();
+		createTable(data_5X);
+	}
+}, false);
+
+var button9 = document.getElementById("btn_6X");
+button9.addEventListener("click", function(e) {
+	if(curr_type != 9)
+	{
+		curr_type = 9;
+		deleteTable();
+		createTable(data_6X);
+	}
+}, false);
+
+var button10 = document.getElementById("btn_7X");
+button10.addEventListener("click", function(e) {
+	if(curr_type != 10)
+	{
+		curr_type = 10;
+		deleteTable();
+		createTable(data_7X);
+	}
+}, false);
+
+var button11 = document.getElementById("btn_8X");
+button11.addEventListener("click", function(e) {
+	if(curr_type != 11)
+	{
+		curr_type = 11;
+		deleteTable();
+		createTable(data_8X);
+	}
+}, false);
+
+var button12 = document.getElementById("btn_9X");
+button12.addEventListener("click", function(e) {
+	if(curr_type != 12)
+	{
+		curr_type = 12;
+		deleteTable();
+		createTable(data_9X);
+	}
+}, false);
 
 function debug(temp)
 {

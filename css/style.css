@@ -1,6 +1,6 @@
 @charset "UTF-8";
 [data-sort-by='No'] [data-prop-name='No'], [data-sort-by='Status'] [data-prop-name='Status'], [data-sort-by='CurQty'] [data-prop-name='CurQty'], [data-sort-by='SetQty'] [data-prop-name='SetQty'], [data-sort-by='CurMiss'] [data-prop-name='CurMiss'], [data-sort-by='SetMiss'] [data-prop-name='SetMiss'], [data-sort-by='Speed'] [data-prop-name='Speed']{
-  background: rgba(0, 0, 0, 0.1);/*	<!-- 選取時背景色, 0.15為陰影程度-->*/
+  background: rgba(0, 0, 0, 0.03);/*	<!-- 選取時背景色, 最後一項為陰影程度-->*/
   text-shadow: 0 1px #eee;
 }
 [data-sort-by='No'] [data-prop-name='No']:before, [data-sort-by='Status'] [data-prop-name='Status']:before, [data-sort-by='CurQty'] [data-prop-name='CurQty']:before, [data-sort-by='SetQty'] [data-prop-name='SetQty']:before, [data-sort-by='CurMiss'] [data-prop-name='CurMiss']:before, [data-sort-by='SetMiss'] [data-prop-name='SetMiss']:before, [data-sort-by='Speed'] [data-prop-name='Speed']:before {
@@ -86,8 +86,9 @@ tbody {		/*Table 內容*/
   font-size: 1.3vw;
 }
 tbody tr:hover {
-  background: linear-gradient(#ffffff 2px, #ffffff 2px, #ffffff calc(100% - 2px), #999999 calc(100% - 2px));
+  background: linear-gradient(#00ffff 0px, #00ffff 0px, #00ffff calc(100% - 1px), #999999 calc(100% - 1px));
   font-size: 1.8vw; 
+  color: black;
 }
 
 tr {
@@ -103,6 +104,11 @@ tr {
 
 .even {
   background: linear-gradient(#eeeeee 1px, #aaaaaa 1px, #aaaaaa calc(100% - 1px), #999999 calc(100% - 1px));
+}
+
+.error {
+  	color: white;
+  	background: linear-gradient(red 1px, #ff0000 1px, #ff0000 calc(100% - 1px), #999999 calc(100% - 1px));
 }
 
 [class*='prop__'] {

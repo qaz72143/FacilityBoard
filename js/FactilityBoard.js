@@ -5,7 +5,7 @@ var table = document.querySelector('table'),
 var time = document.getElementById("updateTime");
 var data;
 var MachineQty = 99;
-var file = './MachineData4.txt';
+var file = './MachineData.txt';
 var data_All = new Array(MachineQty), data_Connect;
 var disp_Time = "";
 var curr_num, curr_type;	//目前頁面的數量	//目前頁面的類型
@@ -21,7 +21,10 @@ var createTable = function(src) {	//根據傳遞進來的陣列創建Table
   for(var i = 0; i < src.length; i++) {
     curr_item = document.createElement('tr');
 	curr_item.setAttribute("id", "tableTr");	//創建tr時 賦予id值
-    curr_item.classList.add(((i%2 === 0)?'odd':'even'));
+	if((src[i]['Status']=="伺服錯誤(鎖)") || (src[i]['Status']=="伺服錯誤"))
+		curr_item.classList.add('error');
+	else
+		curr_item.classList.add(((i%2 === 0)?'odd':'even'));
     src[i].el = curr_item;
     
     for(var p in src[i]) {
@@ -63,8 +66,9 @@ var sortTable = function(entries, type, dir) {	//排序
   for(var i = 0; i < entries.length; i++) {
     entries[i].el.style.order = i + 1;
     
-    if((i%2 === 0 && entries[i].el.classList.contains('even')) || 
-       (i%2 !== 0 && entries[i].el.classList.contains('odd'))) {
+    if( (i%2 === 0 && entries[i].el.classList.contains('even')) || 
+        (i%2 !== 0 && entries[i].el.classList.contains('odd')) ) 
+    {
       entries[i].el.classList.toggle('odd');
       entries[i].el.classList.toggle('even');
     }
@@ -126,24 +130,14 @@ function Init_data()	//初始化陣列內容型態
 	}	
 	
 	//讀取txt檔內容，放到data陣列
-	/*var text;
-	var client = new XMLHttpRequest();
-	client.open('GET', "./MachineData.txt", false);
-	client.onreadystatechange = function() {
-		text = client.responseText;
-		data = text.split("\r\n");
-		debug(client.readyState);
-	}	
-	client.send();
-	*/
 	$(function(){
 	    $.ajax({
 	        url: file,
 	        dataType: 'text',
 	        success: function(data_t) {
 	            //alert(data_t);
-	        	console.log(data_t);
-	        	data = data_t.split("\r\n");	//Github page上不用加"\r"，不然顯示不出來
+	        	//console.log(data_t);
+	        	data = data_t.split("\n");	//Github page上不用加"\r"，不然顯示不出來
 	        }
 	    });
 	});
@@ -342,15 +336,15 @@ function dispData_after()	//從data取值給剩餘陣列
 function transfer_Status(temp)	//狀態的字串 英文轉中文
 {
 	if(temp == "Disconnect")			return "#未連接";
-	else if(temp == "Stop")				return "　　停機中";
+	else if(temp == "Stop")				return "停機中";
 	else if(temp == "Stop(Lock)")		return " 停機中(鎖)";
-	else if(temp == "Producing")		return "　　生產中";
+	else if(temp == "Producing")		return "生產中";
 	else if(temp == "Producing(Lock)")	return " 生產中(鎖)";
 	else if(temp == "AchieveQty")		return "達到生產量";
 	else if(temp == "AchieveQty(Lock)")	return "達到生產量(鎖)";
-	else if(temp == "PowerOff")			return "　　關機中";
-	else if(temp == "ServerError")		return "　伺服錯誤";
-	else if(temp == "ServerError(Lock)")return "    伺服錯誤(鎖)";
+	else if(temp == "PowerOff")			return "關機中";
+	else if(temp == "ServerError")		return "伺服錯誤";
+	else if(temp == "ServerError(Lock)")return "伺服錯誤(鎖)";
 }
 
 function myRefresh()	//重新刷新頁面
@@ -370,7 +364,7 @@ function check_Update()
 	        success: function(data_t2) {
 	            //alert(data_t);
 	        	//console.log(data_t);
-	        	check_data_t = data_t2.split("\r\n");	//Github page上不用加"\r"，不然顯示不出來
+	        	check_data_t = data_t2.split("\n");	//Github page上不用加"\r"，不然顯示不出來
 	        	time_new = check_data_t[0].split(" ");	//新時間陣列
 	        	if((time_old[0]==time_new[0]) && (time_old[1]==time_new[1]) && (time_old[2]==time_new[2]) && (time_old[3]==time_new[3]) && (time_old[4]==time_new[4]))
 	        	{ /*不刷新*/ }
@@ -381,14 +375,12 @@ function check_Update()
 	});
 }
 
-
 var checkData = setInterval(showData ,1000);		//每秒檢查是否正確讀取到txt檔的資料
 var checkUpdate = setInterval(check_Update ,30000);	//每30秒檢查資料是否更新，刷新頁面
 
 //window.addEventListener("load", createTable(data_All), false);
 //createTable(data_All);
 var checkSec=0, checkMin=0, chkHour=0;
-
 function showData()	
 {	
 	if(checkSec == 60){

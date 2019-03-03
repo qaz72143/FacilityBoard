@@ -137,16 +137,24 @@ function Init_data()	//初始化陣列內容型態
 	        success: function(data_t) {
 	            //alert(data_t);
 	        	//console.log(data_t);
-	        	data = data_t.split("\n");	//Github page上不用加"\r"，不然顯示不出來
+	        	data = data_t.split("\r\n");	//Github page上不用加"\r"，不然顯示不出來
 	        }
 	    });
 	});
 }
 
 function dispData()	//從data取值給data_All
-{
+{	//Sun Mar  3 18:03:10 2019
 	var cnt = 0;
 	var temp = data[cnt++].split(" ");
+	if(temp.length == 6)	//若日的數字小於10，則需特別處理
+	{
+		temp[2] = "0" + temp[3];
+		temp[3] = temp[4];
+		temp[4] = temp[5];
+	}
+
+	
 	disp_Time = temp[4] + '/';		//年份
 	//disp_Time += '2019/';
 	switch(temp[1])					//月份
@@ -364,7 +372,7 @@ function check_Update()
 	        success: function(data_t2) {
 	            //alert(data_t);
 	        	//console.log(data_t);
-	        	check_data_t = data_t2.split("\n");	//Github page上不用加"\r"，不然顯示不出來
+	        	check_data_t = data_t2.split("\r\n");	//Github page上不用加"\r"，不然顯示不出來
 	        	time_new = check_data_t[0].split(" ");	//新時間陣列
 	        	if((time_old[0]==time_new[0]) && (time_old[1]==time_new[1]) && (time_old[2]==time_new[2]) && (time_old[3]==time_new[3]) && (time_old[4]==time_new[4]))
 	        	{ /*不刷新*/ }

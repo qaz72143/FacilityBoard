@@ -6,6 +6,7 @@ var time = document.getElementById("updateTime");
 var data;
 var MachineQty = 99;
 var file = './MachineData.txt';
+var fileSplit = "\n";		//Github page上不用加"\r"，不然顯示不出來
 var data_All = new Array(MachineQty), data_Connect;
 var disp_Time = "";
 var curr_num, curr_type;	//目前頁面的數量	//目前頁面的類型
@@ -137,7 +138,7 @@ function Init_data()	//初始化陣列內容型態
 	        success: function(data_t) {
 	            //alert(data_t);
 	        	//console.log(data_t);
-	        	data = data_t.split("\n");	//Github page上不用加"\r"，不然顯示不出來
+	        	data = data_t.split(fileSplit);	//Github page上不用加"\r"，不然顯示不出來
 	        }
 	    });
 	});
@@ -192,11 +193,32 @@ function dispData()	//從data取值給data_All
 	{
 		data_All[i]['No'] = data[cnt++];	
 		data_All[i]['Status'] = transfer_Status(data[cnt++]);
-		data_All[i]['CurQty'] = data[cnt++];
-		data_All[i]['SetQty'] = data[cnt++];
-		data_All[i]['CurMiss'] = data[cnt++];
-		data_All[i]['SetMiss'] = data[cnt++];
-		data_All[i]['Speed'] = data[cnt++];		
+		if(data[cnt] == 'IO')
+			data_All[i]['CurQty'] = '通用型(無)';
+		else
+			data_All[i]['CurQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_All[i]['SetQty'] = '(無)';
+		else
+			data_All[i]['SetQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_All[i]['CurMiss'] = '(無)';
+		else
+			data_All[i]['CurMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_All[i]['SetMiss'] = '(無)';
+		else
+			data_All[i]['SetMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_All[i]['Speed'] = '(無)';
+		else
+			data_All[i]['Speed'] = data[cnt];
+		cnt++;
+		//data_All[i]['CurQty'] = data[cnt++];
+		//data_All[i]['SetQty'] = data[cnt++];
+		//data_All[i]['CurMiss'] = data[cnt++];
+		//data_All[i]['SetMiss'] = data[cnt++];
+		//data_All[i]['Speed'] = data[cnt++];
 	}
 	createTable(data_All);	//一開始先創建data_All的table
 	curr_type = 1;			
@@ -230,11 +252,32 @@ function dispData_after()	//從data取值給剩餘陣列
 		{
 			data_Connect[j]['No'] = data[cnt++];
 			data_Connect[j]['Status'] = transfer_Status(data[cnt++]);
-			data_Connect[j]['CurQty'] = data[cnt++];
+			if(data[cnt] == 'IO')
+				data_Connect[j]['CurQty'] = '通用型(無)';
+			else
+				data_Connect[j]['CurQty'] = data[cnt];
+			if(data[++cnt] == 'IO')
+				data_Connect[j]['SetQty'] = '(無)';
+			else
+				data_Connect[j]['SetQty'] = data[cnt];
+			if(data[++cnt] == 'IO')
+				data_Connect[j]['CurMiss'] = '(無)';
+			else
+				data_Connect[j]['CurMiss'] = data[cnt];
+			if(data[++cnt] == 'IO')
+				data_Connect[j]['SetMiss'] = '(無)';
+			else
+				data_Connect[j]['SetMiss'] = data[cnt];
+			if(data[++cnt] == 'IO')
+				data_Connect[j++]['Speed'] = '(無)';
+			else
+				data_Connect[j++]['Speed'] = data[cnt];
+			cnt++;
+			/*data_Connect[j]['CurQty'] = data[cnt++];
 			data_Connect[j]['SetQty'] = data[cnt++];
 			data_Connect[j]['CurMiss'] = data[cnt++];
 			data_Connect[j]['SetMiss'] = data[cnt++];
-			data_Connect[j++]['Speed'] = data[cnt++];	
+			data_Connect[j++]['Speed'] = data[cnt++];*/	
 		}		
 	}
 	
@@ -243,101 +286,311 @@ function dispData_after()	//從data取值給剩餘陣列
 	{
 		data_0X[i]['No'] = data[cnt++];
 		data_0X[i]['Status'] = transfer_Status(data[cnt++]);
-		data_0X[i]['CurQty'] = data[cnt++];
+		if(data[cnt] == 'IO')
+			data_0X[i]['CurQty'] = '通用型(無)';
+		else
+			data_0X[i]['CurQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_0X[i]['SetQty'] = '(無)';
+		else
+			data_0X[i]['SetQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_0X[i]['CurMiss'] = '(無)';
+		else
+			data_0X[i]['CurMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_0X[i]['SetMiss'] = '(無)';
+		else
+			data_0X[i]['SetMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_0X[i]['Speed'] = '(無)';
+		else
+			data_0X[i]['Speed'] = data[cnt];
+		cnt++;
+		/*data_0X[i]['CurQty'] = data[cnt++];
 		data_0X[i]['SetQty'] = data[cnt++];
 		data_0X[i]['CurMiss'] = data[cnt++];
 		data_0X[i]['SetMiss'] = data[cnt++];
-		data_0X[i]['Speed'] = data[cnt++];
+		data_0X[i]['Speed'] = data[cnt++];*/
 	}
 	for(var i=0; i<10; i++)
 	{
 		data_1X[i]['No'] = data[cnt++];
 		data_1X[i]['Status'] = transfer_Status(data[cnt++]);
-		data_1X[i]['CurQty'] = data[cnt++];
+		if(data[cnt] == 'IO')
+			data_1X[i]['CurQty'] = '通用型(無)';
+		else
+			data_1X[i]['CurQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_1X[i]['SetQty'] = '(無)';
+		else
+			data_1X[i]['SetQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_1X[i]['CurMiss'] = '(無)';
+		else
+			data_1X[i]['CurMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_1X[i]['SetMiss'] = '(無)';
+		else
+			data_1X[i]['SetMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_1X[i]['Speed'] = '(無)';
+		else
+			data_1X[i]['Speed'] = data[cnt];
+		cnt++;
+		/*data_1X[i]['CurQty'] = data[cnt++];
 		data_1X[i]['SetQty'] = data[cnt++];
 		data_1X[i]['CurMiss'] = data[cnt++];
 		data_1X[i]['SetMiss'] = data[cnt++];
-		data_1X[i]['Speed'] = data[cnt++];
+		data_1X[i]['Speed'] = data[cnt++];*/
 	}
 	for(var i=0; i<10; i++)
 	{
 		data_2X[i]['No'] = data[cnt++];
 		data_2X[i]['Status'] = transfer_Status(data[cnt++]);
-		data_2X[i]['CurQty'] = data[cnt++];
+		if(data[cnt] == 'IO')
+			data_2X[i]['CurQty'] = '通用型(無)';
+		else
+			data_2X[i]['CurQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_2X[i]['SetQty'] = '(無)';
+		else
+			data_2X[i]['SetQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_2X[i]['CurMiss'] = '(無)';
+		else
+			data_2X[i]['CurMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_2X[i]['SetMiss'] = '(無)';
+		else
+			data_2X[i]['SetMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_2X[i]['Speed'] = '(無)';
+		else
+			data_2X[i]['Speed'] = data[cnt];
+		cnt++;
+		/*data_2X[i]['CurQty'] = data[cnt++];
 		data_2X[i]['SetQty'] = data[cnt++];
 		data_2X[i]['CurMiss'] = data[cnt++];
 		data_2X[i]['SetMiss'] = data[cnt++];
-		data_2X[i]['Speed'] = data[cnt++];
+		data_2X[i]['Speed'] = data[cnt++];*/
 	}
 	for(var i=0; i<10; i++)
 	{
 		data_3X[i]['No'] = data[cnt++];
 		data_3X[i]['Status'] = transfer_Status(data[cnt++]);
-		data_3X[i]['CurQty'] = data[cnt++];
+		if(data[cnt] == 'IO')
+			data_3X[i]['CurQty'] = '通用型(無)';
+		else
+			data_3X[i]['CurQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_3X[i]['SetQty'] = '(無)';
+		else
+			data_3X[i]['SetQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_3X[i]['CurMiss'] = '(無)';
+		else
+			data_3X[i]['CurMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_3X[i]['SetMiss'] = '(無)';
+		else
+			data_3X[i]['SetMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_3X[i]['Speed'] = '(無)';
+		else
+			data_3X[i]['Speed'] = data[cnt];
+		cnt++;
+		/*data_3X[i]['CurQty'] = data[cnt++];
 		data_3X[i]['SetQty'] = data[cnt++];
 		data_3X[i]['CurMiss'] = data[cnt++];
 		data_3X[i]['SetMiss'] = data[cnt++];
-		data_3X[i]['Speed'] = data[cnt++];
+		data_3X[i]['Speed'] = data[cnt++];*/
 	}
 	for(var i=0; i<10; i++)
 	{
 		data_4X[i]['No'] = data[cnt++];
 		data_4X[i]['Status'] = transfer_Status(data[cnt++]);
-		data_4X[i]['CurQty'] = data[cnt++];
+		if(data[cnt] == 'IO')
+			data_4X[i]['CurQty'] = '通用型(無)';
+		else
+			data_4X[i]['CurQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_4X[i]['SetQty'] = '(無)';
+		else
+			data_4X[i]['SetQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_4X[i]['CurMiss'] = '(無)';
+		else
+			data_4X[i]['CurMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_4X[i]['SetMiss'] = '(無)';
+		else
+			data_4X[i]['SetMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_4X[i]['Speed'] = '(無)';
+		else
+			data_4X[i]['Speed'] = data[cnt];
+		cnt++;
+		/*data_4X[i]['CurQty'] = data[cnt++];
 		data_4X[i]['SetQty'] = data[cnt++];
 		data_4X[i]['CurMiss'] = data[cnt++];
 		data_4X[i]['SetMiss'] = data[cnt++];
-		data_4X[i]['Speed'] = data[cnt++];
+		data_4X[i]['Speed'] = data[cnt++];*/
 	}
 	for(var i=0; i<10; i++)
 	{
 		data_5X[i]['No'] = data[cnt++];
 		data_5X[i]['Status'] = transfer_Status(data[cnt++]);
-		data_5X[i]['CurQty'] = data[cnt++];
+		if(data[cnt] == 'IO')
+			data_5X[i]['CurQty'] = '通用型(無)';
+		else
+			data_5X[i]['CurQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_5X[i]['SetQty'] = '(無)';
+		else
+			data_5X[i]['SetQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_5X[i]['CurMiss'] = '(無)';
+		else
+			data_5X[i]['CurMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_5X[i]['SetMiss'] = '(無)';
+		else
+			data_5X[i]['SetMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_5X[i]['Speed'] = '(無)';
+		else
+			data_5X[i]['Speed'] = data[cnt];
+		cnt++;
+		/*data_5X[i]['CurQty'] = data[cnt++];
 		data_5X[i]['SetQty'] = data[cnt++];
 		data_5X[i]['CurMiss'] = data[cnt++];
 		data_5X[i]['SetMiss'] = data[cnt++];
-		data_5X[i]['Speed'] = data[cnt++];
+		data_5X[i]['Speed'] = data[cnt++];*/
 	}
 	for(var i=0; i<10; i++)
 	{
 		data_6X[i]['No'] = data[cnt++];
 		data_6X[i]['Status'] = transfer_Status(data[cnt++]);
-		data_6X[i]['CurQty'] = data[cnt++];
+		if(data[cnt] == 'IO')
+			data_6X[i]['CurQty'] = '通用型(無)';
+		else
+			data_6X[i]['CurQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_6X[i]['SetQty'] = '(無)';
+		else
+			data_6X[i]['SetQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_6X[i]['CurMiss'] = '(無)';
+		else
+			data_6X[i]['CurMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_6X[i]['SetMiss'] = '(無)';
+		else
+			data_6X[i]['SetMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_6X[i]['Speed'] = '(無)';
+		else
+			data_6X[i]['Speed'] = data[cnt];
+		cnt++;
+		/*data_6X[i]['CurQty'] = data[cnt++];
 		data_6X[i]['SetQty'] = data[cnt++];
 		data_6X[i]['CurMiss'] = data[cnt++];
 		data_6X[i]['SetMiss'] = data[cnt++];
-		data_6X[i]['Speed'] = data[cnt++];
+		data_6X[i]['Speed'] = data[cnt++];*/
 	}
 	for(var i=0; i<10; i++)
 	{
 		data_7X[i]['No'] = data[cnt++];
 		data_7X[i]['Status'] = transfer_Status(data[cnt++]);
-		data_7X[i]['CurQty'] = data[cnt++];
+		if(data[cnt] == 'IO')
+			data_7X[i]['CurQty'] = '通用型(無)';
+		else
+			data_7X[i]['CurQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_7X[i]['SetQty'] = '(無)';
+		else
+			data_7X[i]['SetQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_7X[i]['CurMiss'] = '(無)';
+		else
+			data_7X[i]['CurMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_7X[i]['SetMiss'] = '(無)';
+		else
+			data_7X[i]['SetMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_7X[i]['Speed'] = '(無)';
+		else
+			data_7X[i]['Speed'] = data[cnt];
+		cnt++;
+		/*data_7X[i]['CurQty'] = data[cnt++];
 		data_7X[i]['SetQty'] = data[cnt++];
 		data_7X[i]['CurMiss'] = data[cnt++];
 		data_7X[i]['SetMiss'] = data[cnt++];
-		data_7X[i]['Speed'] = data[cnt++];
+		data_7X[i]['Speed'] = data[cnt++];*/
 	}
 	for(var i=0; i<10; i++)
 	{
 		data_8X[i]['No'] = data[cnt++];
 		data_8X[i]['Status'] = transfer_Status(data[cnt++]);
-		data_8X[i]['CurQty'] = data[cnt++];
+		if(data[cnt] == 'IO')
+			data_8X[i]['CurQty'] = '通用型(無)';
+		else
+			data_8X[i]['CurQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_8X[i]['SetQty'] = '(無)';
+		else
+			data_8X[i]['SetQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_8X[i]['CurMiss'] = '(無)';
+		else
+			data_8X[i]['CurMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_8X[i]['SetMiss'] = '(無)';
+		else
+			data_8X[i]['SetMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_8X[i]['Speed'] = '(無)';
+		else
+			data_8X[i]['Speed'] = data[cnt];
+		cnt++;
+		/*data_8X[i]['CurQty'] = data[cnt++];
 		data_8X[i]['SetQty'] = data[cnt++];
 		data_8X[i]['CurMiss'] = data[cnt++];
 		data_8X[i]['SetMiss'] = data[cnt++];
-		data_8X[i]['Speed'] = data[cnt++];
+		data_8X[i]['Speed'] = data[cnt++];*/
 	}
 	for(var i=0; i<10; i++)
 	{
 		data_9X[i]['No'] = data[cnt++];
 		data_9X[i]['Status'] = transfer_Status(data[cnt++]);
-		data_9X[i]['CurQty'] = data[cnt++];
+		if(data[cnt] == 'IO')
+			data_9X[i]['CurQty'] = '通用型(無)';
+		else
+			data_9X[i]['CurQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_9X[i]['SetQty'] = '(無)';
+		else
+			data_9X[i]['SetQty'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_9X[i]['CurMiss'] = '(無)';
+		else
+			data_9X[i]['CurMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_9X[i]['SetMiss'] = '(無)';
+		else
+			data_9X[i]['SetMiss'] = data[cnt];
+		if(data[++cnt] == 'IO')
+			data_9X[i]['Speed'] = '(無)';
+		else
+			data_9X[i]['Speed'] = data[cnt];
+		cnt++;
+		/*data_9X[i]['CurQty'] = data[cnt++];
 		data_9X[i]['SetQty'] = data[cnt++];
 		data_9X[i]['CurMiss'] = data[cnt++];
 		data_9X[i]['SetMiss'] = data[cnt++];
-		data_9X[i]['Speed'] = data[cnt++];
+		data_9X[i]['Speed'] = data[cnt++];*/
 	}
 }
 
@@ -372,7 +625,7 @@ function check_Update()
 	        success: function(data_t2) {
 	            //alert(data_t);
 	        	//console.log(data_t);
-	        	check_data_t = data_t2.split("\n");	//Github page上不用加"\r"，不然顯示不出來
+	        	check_data_t = data_t2.split(fileSplit);	//Github page上不用加"\r"，不然顯示不出來
 	        	time_new = check_data_t[0].split(" ");	//新時間陣列
 	        	if((time_old[0]==time_new[0]) && (time_old[1]==time_new[1]) && (time_old[2]==time_new[2]) && (time_old[3]==time_new[3]) && (time_old[4]==time_new[4]))
 	        	{ /*不刷新*/ }

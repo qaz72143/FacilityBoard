@@ -1,74 +1,74 @@
-﻿Thu Mar  7 00:30:53 2019
+﻿Thu Mar  7 00:45:53 2019
 01
-Producing(Lock)
-    7837
-    8332
-     332
-     664
-54 %
-02
-AchieveQty(Lock)
-    5447
-    5447
-    5243
-   10486
-67 %
-03
-AchieveQty(Lock)
-   19999
-   19999
-    2564
-    5128
-50 %
-04
 Disconnect
 #
 #
 #
 #
 #
-05
+02
+Producing
+IO
+IO
+IO
+IO
+IO
+03
 Stop
-    9246
-   18492
-    1805
-    3611
-06 %
-06
-AchieveQty(Lock)
-     836
-     836
-    7565
-   15131
+    8265
+   27211
+    4926
+    9852
 70 %
+04
+PowerOff
+     718
+    1436
+    9298
+   18596
+62 %
+05
+ServerError
+    1933
+    3866
+    7641
+   16696
+82 %
+06
+ServerError
+     439
+   26846
+   14165
+   22558
+40 %
 07
 PowerOff
-    1227
-    2455
-    8954
-   15277
-90 %
+    5475
+   10950
+    6858
+   30946
+41 %
 08
-Disconnect
-#
-#
-#
-#
-#
+AchieveQty
+    8182
+    8182
+    3988
+   17459
+44 %
 09
-ServerError
-IO
-IO
-IO
-IO
-IO
+AchieveQty
+   21587
+   21587
+    6322
+   12645
+87 %
 10
-Stop(Lock)
-   16029
-   32073
-    3071
-    6142
-70 %
+Stop
+    6404
+   12808
+    2311
+   16367
+21 %
 11
 Disconnect
 #
@@ -77,117 +77,117 @@ Disconnect
 #
 #
 12
-PowerOff
-     852
-   27122
-    2510
-    5020
-23 %
+Stop(Lock)
+    7286
+   14573
+      30
+      60
+55 %
 13
-Stop(Lock)
-   23624
-   25176
-   27055
-   29876
-12 %
-14
-Producing(Lock)
-    9622
-   19244
-   12846
-   25692
-46 %
-15
-AchieveQty(Lock)
-IO
-IO
-IO
-IO
-IO
-16
-Stop(Lock)
-    8464
-   16929
-     219
-     439
-84 %
-17
-ServerError
-    1383
-   28879
-    2487
-    8400
-76 %
-18
-PowerOff
-    1538
-    3076
-    2595
-    5191
-76 %
-19
 Disconnect
 #
 #
 #
 #
 #
+14
+AchieveQty(Lock)
+IO
+IO
+IO
+IO
+IO
+15
+AchieveQty
+   21978
+   21978
+    6219
+   12438
+73 %
+16
+Producing
+    7259
+   12647
+    7109
+   26192
+04 %
+17
+PowerOff
+    6566
+   20956
+    3759
+    7518
+06 %
+18
+Stop
+   24489
+   29230
+   13594
+   17841
+64 %
+19
+PowerOff
+    2922
+    5845
+    5200
+   10400
+08 %
 20
-Stop(Lock)
-    7140
-   14281
-    1872
-   17828
-66 %
+AchieveQty(Lock)
+   13134
+   13134
+    2753
+   25186
+90 %
 21
 AchieveQty
-   21224
-   21224
-    1246
-    2492
-63 %
+   24473
+   24473
+     792
+   27543
+16 %
 22
 Producing
-     332
-     665
-   15527
-   31055
-72 %
+IO
+IO
+IO
+IO
+IO
 23
-Stop
-    6490
-   12980
-     132
-     265
-22 %
+ServerError
+IO
+IO
+IO
+IO
+IO
 24
-Stop
-    5052
-   10105
-    3951
-    7902
-77 %
+ServerError
+IO
+IO
+IO
+IO
+IO
 25
-Stop(Lock)
-IO
-IO
-IO
-IO
-IO
+Stop
+     133
+     266
+    1640
+    3280
+01 %
 26
-Producing
-IO
-IO
-IO
-IO
-IO
+ServerError
+    2289
+   25472
+   10128
+   20257
+38 %
 27
-Stop(Lock)
-     190
-     380
-     364
-   14064
-75 %
+Disconnect
+#
+#
+#
+#
+#
 28
 Disconnect
 #
@@ -196,103 +196,103 @@ Disconnect
 #
 #
 29
-Stop
-   13797
-   23159
-    6525
-   13051
-22 %
+Producing
+    8274
+   16549
+   14846
+   17644
+51 %
 30
-Producing(Lock)
-   15658
-   21841
-    8135
-   16270
-73 %
+Stop
+    3331
+   16231
+   11330
+   11371
+81 %
 31
-Stop
-    5352
-    6279
-   11641
-   18262
-50 %
+AchieveQty(Lock)
+   17383
+   17383
+    3290
+    6580
+51 %
 32
-Stop(Lock)
-    1023
-    5353
-   11175
-   22350
-59 %
-33
-ServerError
-    4613
-   30856
-    5622
-   27542
-87 %
-34
-ServerError
-   20161
-   31804
-    1380
-   20721
-65 %
-35
-Stop
-IO
-IO
-IO
-IO
-IO
-36
 ServerError(Lock)
-    6536
-   15883
-    1809
-    3619
-31 %
+IO
+IO
+IO
+IO
+IO
+33
+AchieveQty
+   25409
+   25409
+   23968
+   26705
+61 %
+34
+ServerError(Lock)
+    3704
+   11475
+    1806
+   19416
+23 %
+35
+ServerError
+    8779
+   17558
+    9798
+   19597
+18 %
+36
+PowerOff
+IO
+IO
+IO
+IO
+IO
 37
 ServerError
-    7828
-   15657
-   11313
-   24628
-69 %
+     260
+     521
+    7206
+   29812
+46 %
 38
-ServerError
-   21418
-   26972
-    2564
-   10958
-55 %
+ServerError(Lock)
+IO
+IO
+IO
+IO
+IO
 39
-AchieveQty(Lock)
-   27598
-   27598
-     302
-   13416
-82 %
-40
-Producing
-    3255
-    6511
-    2119
-   11549
-66 %
-41
-Producing
-IO
-IO
-IO
-IO
-IO
-42
 PowerOff
-    4836
-    9673
-    6845
-   13691
-80 %
+IO
+IO
+IO
+IO
+IO
+40
+Producing(Lock)
+IO
+IO
+IO
+IO
+IO
+41
+Disconnect
+#
+#
+#
+#
+#
+42
+Producing
+    8535
+   17071
+   19747
+   24110
+23 %
 43
 Disconnect
 #
@@ -301,82 +301,82 @@ Disconnect
 #
 #
 44
-PowerOff
-IO
-IO
-IO
-IO
-IO
+Producing(Lock)
+    8523
+   12222
+    1405
+   13460
+07 %
 45
-Stop(Lock)
-    5450
-   11924
-    1212
-    2425
+PowerOff
+    7266
+   14532
+    2067
+   13032
 05 %
 46
-AchieveQty(Lock)
-   24281
-   24281
-    2566
-    5133
-46 %
-47
-PowerOff
-   24585
-   32082
-   10799
-   21598
-62 %
-48
-Producing
-     971
-    1942
-    5784
-   19689
-44 %
-49
-Producing
-   12208
-   12512
-    8790
-   17581
-75 %
-50
-PowerOff
-    6600
-   13200
-    1624
-    3248
-73 %
-51
-AchieveQty
-IO
-IO
-IO
-IO
-IO
-52
 Disconnect
 #
 #
 #
 #
 #
+47
+Disconnect
+#
+#
+#
+#
+#
+48
+ServerError
+      61
+     123
+   10284
+   20569
+62 %
+49
+Stop(Lock)
+IO
+IO
+IO
+IO
+IO
+50
+Producing(Lock)
+IO
+IO
+IO
+IO
+IO
+51
+ServerError(Lock)
+    7663
+   21176
+    8088
+    8318
+33 %
+52
+PowerOff
+IO
+IO
+IO
+IO
+IO
 53
-Stop(Lock)
-    2635
-    5270
-   23240
-   28875
-69 %
+Disconnect
+#
+#
+#
+#
+#
 54
-Stop(Lock)
-   14541
-   31254
-    1047
-    6343
-05 %
+Producing
+    8453
+   16907
+    1121
+    2243
+42 %
 55
 Disconnect
 #
@@ -386,34 +386,34 @@ Disconnect
 #
 56
 Producing(Lock)
-    8294
-   16588
-    1770
-    3540
-19 %
+IO
+IO
+IO
+IO
+IO
 57
-Stop(Lock)
-    9511
-   19023
-    3483
-   29063
-78 %
+Producing
+IO
+IO
+IO
+IO
+IO
 58
-AchieveQty(Lock)
-    5545
-    5545
-    7611
-   22383
-99 %
-59
-Producing(Lock)
-    1483
-    2967
-    7934
-   15869
+ServerError
+    7117
+   30711
+    3469
+    5826
 60 %
+59
+PowerOff
+    3170
+    6341
+      32
+      64
+57 %
 60
-ServerError(Lock)
+AchieveQty(Lock)
 IO
 IO
 IO
@@ -427,33 +427,33 @@ Disconnect
 #
 #
 62
-ServerError
-    4969
-   11818
-    3077
-   18900
-76 %
-63
 PowerOff
-     577
-    1155
-    1049
-    2099
-69 %
+IO
+IO
+IO
+IO
+IO
+63
+Disconnect
+#
+#
+#
+#
+#
 64
 PowerOff
-   16766
-   24563
-    7604
-   15208
-94 %
+   15274
+   26201
+    4791
+   30788
+40 %
 65
-Producing
-   20232
-   20418
-    8773
-   25383
-55 %
+Disconnect
+#
+#
+#
+#
+#
 66
 Disconnect
 #
@@ -462,233 +462,233 @@ Disconnect
 #
 #
 67
-PowerOff
-     127
-    2887
-    2194
-    4389
-29 %
+AchieveQty(Lock)
+   28976
+   28976
+    8874
+   20369
+12 %
 68
-Disconnect
-#
-#
-#
-#
-#
+Stop(Lock)
+IO
+IO
+IO
+IO
+IO
 69
-PowerOff
-    4029
-    8059
-    3687
-   17824
-59 %
-70
-Stop(Lock)
-    5178
-   10357
-     438
-   23302
-`100 %
-71
-ServerError(Lock)
-    8302
-   16604
-   11266
-   23010
-10 %
-72
 ServerError
-      48
-    6780
-   11551
-   23103
-61 %
-73
-Producing
-    8643
-   31141
-    1317
-   20104
-61 %
-74
-Stop
-   14889
-   15021
-   10391
-   23824
-71 %
-75
-Producing(Lock)
-   11878
-   26474
-     830
-   18828
-68 %
-76
+IO
+IO
+IO
+IO
+IO
+70
+PowerOff
+    4976
+   21949
+    8197
+   16395
+38 %
+71
 Disconnect
 #
 #
 #
 #
 #
-77
-Producing
-   13305
-   28309
-     131
-     263
-74 %
-78
-AchieveQty(Lock)
-   18216
-   18216
-   11022
-   19842
-23 %
-79
-AchieveQty(Lock)
-    2088
-    2088
-    3504
-    7008
-40 %
-80
-Stop(Lock)
-    9452
-   18905
-   10797
-   21595
-22 %
-81
+72
 PowerOff
-    8370
-   16741
-    2552
-    5105
-84 %
-82
-ServerError(Lock)
-    1324
-    2649
-    4723
-    9446
-84 %
-83
-AchieveQty
-      38
-      38
-    1887
-    3775
-30 %
-84
-ServerError
-    5073
-   10146
-   10517
-   13127
-45 %
-85
+    3961
+    7922
+    4534
+    9068
+53 %
+73
+AchieveQty(Lock)
+    9688
+    9688
+    2833
+    5666
+95 %
+74
 Stop(Lock)
+    9876
+   19752
+   15397
+   26514
+08 %
+75
+AchieveQty(Lock)
+   27565
+   27565
+     478
+     957
+25 %
+76
+ServerError(Lock)
+    2060
+    4121
+   19096
+   19307
+29 %
+77
+AchieveQty(Lock)
+   27267
+   27267
+    6355
+   12710
+34 %
+78
+Disconnect
+#
+#
+#
+#
+#
+79
+ServerError(Lock)
+   12770
+   26940
+   17078
+   17082
+08 %
+80
+PowerOff
+    4384
+    8768
+    5217
+   10435
+68 %
+81
+Disconnect
+#
+#
+#
+#
+#
+82
+ServerError
+    5447
+   10894
+   29153
+   32232
+45 %
+83
+ServerError
+    9970
+   18693
+    5951
+   11902
+77 %
+84
+AchieveQty(Lock)
 IO
 IO
 IO
 IO
 IO
+85
+AchieveQty(Lock)
+     834
+     834
+    1671
+   12997
+00 %
 86
 PowerOff
-   11128
-   22257
-    1809
-    6114
-78 %
+IO
+IO
+IO
+IO
+IO
 87
-Producing(Lock)
-    3626
-   19682
-    9262
-   18525
-09 %
+PowerOff
+    7600
+   21127
+    2108
+    4217
+29 %
 88
 ServerError(Lock)
-IO
-IO
-IO
-IO
-IO
+    8422
+   16845
+   10770
+   21541
+80 %
 89
 Stop(Lock)
-IO
-IO
-IO
-IO
-IO
+     557
+   13341
+   11206
+   22413
+07 %
 90
-Stop
-   10191
-   20425
-    3398
-    6797
-00 %
+PowerOff
+   16130
+   25436
+    9612
+   19224
+51 %
 91
-ServerError(Lock)
-IO
-IO
-IO
-IO
-IO
+Stop
+   11208
+   22417
+   19264
+   30771
+55 %
 92
-AchieveQty
-    8969
-    8969
-   10066
-   20132
-58 %
+Disconnect
+#
+#
+#
+#
+#
 93
-AchieveQty(Lock)
-   32545
-   32545
-    5301
-   23609
-16 %
+Stop
+    7015
+   14031
+    5104
+   20852
+51 %
 94
-ServerError
-IO
-IO
-IO
-IO
-IO
+Disconnect
+#
+#
+#
+#
+#
 95
-Producing(Lock)
-   15354
-   30709
-    4952
-    9904
-04 %
+Disconnect
+#
+#
+#
+#
+#
 96
-Stop(Lock)
-   10027
-   20055
-   20192
-   31556
-44 %
-97
-Producing
-    1829
-    3658
-   16416
-   18041
-35 %
-98
 PowerOff
 IO
 IO
 IO
 IO
 IO
+97
+Stop
+IO
+IO
+IO
+IO
+IO
+98
+AchieveQty(Lock)
+    6263
+    6263
+    3434
+    6868
+88 %
 99
 Stop
-    6139
-   23035
-     203
-     406
-24 %
+   22209
+   24792
+    1314
+    2629
+05 %

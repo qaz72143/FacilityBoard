@@ -140,7 +140,7 @@ a {
 .periodic-element .periodic-element-inner-achieveQty,
 .periodic-element .periodic-element-inner-error{
   background: #202e38;	/*格子內的顏色*/
-  padding: 10px 15px;
+  padding: 10px 12px;
   width: calc(100% - 30px);
   height: calc(100% - 20px);
   transition: inherit;

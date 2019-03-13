@@ -67,12 +67,13 @@ function chkData()
 function showData()
 {
 	dispTime();
-	var MData, MStatus, MBar;
+	var MData, EInner, MStatus, MBar;
 	var CurQty, SetQty, CurMiss, SetMiss, SpeedRate;
 	var QtyRate, MissRate;
 	for(var i=1, index=2; i<=MachineQty; i++)
 	{
 		MData = document.getElementById('MachineData-' + i);
+		EInner = document.getElementById('element-inner-' + i);
 		MStatus = document.getElementById('MachineStatus-' + i);
 		MBar = document.getElementById('MachineBar-' + i);
 		switch(data[index++])
@@ -83,46 +84,55 @@ function showData()
 				break;
 			case 'Stop':
 				MData.className = "periodic-element stop";
+				EInner.className = "periodic-element-inner-stop";
 				MStatus.className = "status status-stop";
 				MStatus.innerHTML = "停機";			
 				break;
 			case 'Stop(Lock)':
 				MData.className = "periodic-element stop";
+				EInner.className = "periodic-element-inner-stop";
 				MStatus.className = "status status-stop";
 				MStatus.innerHTML = "停機(鎖)";	
 				break;
 			case 'Producing':
 				MData.className = "periodic-element producing";
+				EInner.className = "periodic-element-inner-producing";
 				MStatus.className = "status status-producing";
 				MStatus.innerHTML = "生產";	
 				break;
 			case 'Producing(Lock)':
 				MData.className = "periodic-element producing";
+				EInner.className = "periodic-element-inner-producing";
 				MStatus.className = "status status-producing";
 				MStatus.innerHTML = "生產(鎖)";	
 				break;
 			case 'AchieveQty':
 				MData.className = "periodic-element achieveQty";
+				EInner.className = "periodic-element-inner-achieveQty";
 				MStatus.className = "status status-achieveQty";
 				MStatus.innerHTML = "達生產";	
 				break;
 			case 'AchieveQty(Lock)':
 				MData.className = "periodic-element achieveQty";
+				EInner.className = "periodic-element-inner-achieveQty";
 				MStatus.className = "status status-achieveQty";
 				MStatus.innerHTML = "達生產(鎖)";	
 				break;
 			case 'PowerOff':
 				MData.className = "periodic-element powerOff";
+				EInner.className = "periodic-element-inner-powerOff";
 				MStatus.className = "status status-powerOff";
 				MStatus.innerHTML = "關機";	
 				break;
 			case 'ServerError':
 				MData.className = "periodic-element error";
+				EInner.className = "periodic-element-inner-error";
 				MStatus.className = "status status-error";
 				MStatus.innerHTML = "異常";	
 				break;
 			case 'ServerError(Lock)':
 				MData.className = "periodic-element error";
+				EInner.className = "periodic-element-inner-error";
 				MStatus.className = "status status-error";
 				MStatus.innerHTML = "異常(鎖)";	
 				break;			

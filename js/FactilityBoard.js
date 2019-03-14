@@ -8,6 +8,7 @@ var checkData = setInterval(chkData ,1000);		//每秒檢查是否正確讀取到
 var checkUpdate = setInterval(check_Update ,30000);	//每30秒檢查資料是否更新，刷新頁面
 window.addEventListener("load", readData, false);
 
+
 function readData()
 {
 	//讀取txt檔內容，放到data陣列
@@ -67,7 +68,7 @@ function chkData()
 function showData()
 {
 	dispTime();
-	var MData, EInner, MStatus, MBar;
+	var MData, EInner, MStatus, MBar, ProgrssBar;
 	var CurQty, SetQty, CurMiss, SetMiss, SpeedRate;
 	var QtyRate, MissRate;
 	for(var i=1, index=2; i<=MachineQty; i++)
@@ -76,10 +77,12 @@ function showData()
 		EInner = document.getElementById('element-inner-' + i);
 		MStatus = document.getElementById('MachineStatus-' + i);
 		MBar = document.getElementById('MachineBar-' + i);
+		ProgrssBar = document.getElementById('Progress-bar-' + i);
 		switch(data[index++])
 		{
 			case 'Disconnect':
 				index += 6;	
+				ProgrssBar.parentNode.removeChild(ProgrssBar);
 				continue;
 				break;
 			case 'Stop':

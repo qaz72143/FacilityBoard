@@ -22,7 +22,7 @@ function readData()
 	        	//console.log(data_t);
 	        	data = data_t.split(fileSplit);	//Github page上不用加"\r"，不然顯示不出來
 				
-				setTimeout(function(){ checkData = setInterval(chkData ,1000); }, 3000);	//每秒檢查是否正確讀取到txt檔的資料
+				setTimeout(function(){ checkData = setInterval(chkData ,1000); }, 500);	//0.5秒後每秒檢查是否正確讀取到txt檔的資料
 	        }
 	    });
 	});

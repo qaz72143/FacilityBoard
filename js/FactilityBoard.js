@@ -4,11 +4,12 @@ var file = './MachineData.txt';
 var fileSplit = "\n";		//Github page上不用加"\r"，不然顯示不出來
 
 var time = document.getElementById("updateTime");
-var checkData = setInterval(chkData ,1000);		//每秒檢查是否正確讀取到txt檔的資料
+var checkData;
 var checkUpdate = setInterval(check_Update ,30000);	//每30秒檢查資料是否更新，刷新頁面
 window.addEventListener("load", readData, false);
 
 
+				
 function readData()
 {
 	//讀取txt檔內容，放到data陣列
@@ -20,6 +21,8 @@ function readData()
 	            //alert(data_t);
 	        	//console.log(data_t);
 	        	data = data_t.split(fileSplit);	//Github page上不用加"\r"，不然顯示不出來
+				
+				setTimeout(function(){ checkData = setInterval(chkData ,1000); }, 3000);	//每秒檢查是否正確讀取到txt檔的資料
 	        }
 	    });
 	});

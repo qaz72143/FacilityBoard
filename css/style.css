@@ -7,20 +7,22 @@
 }
 
 :root {
+	--body-background: #444;
+	--title-color: #F5F5F5;	
 	--progress-bar-color: #f9e1e3;
-	--progress-color: #e46a70; 
-	
-	--producing-color-1: #cbc634; 
-	--producing-color-2: #f3f9a6;
-	--error-color-1: #CD0000; 
+	--progress-color: #FA8072; 	
+	--inner-background: #202e38;
+	--producing-color-1: #FFFF00; 
+	--producing-color-2: #CDCD00;
+	--error-color-1: #EE0000; 
 	--error-color-2: #FF4040;
-	--stop-color-1: #5a88e5; 
+	--stop-color-1: #00EEEE; 
 	--stop-color-2: #37cfdc;
-	--achieveQty-color-1: #58ac30; 
+	--achieveQty-color-1: #8BF98F; 
 	--achieveQty-color-2: #a7df62;
-	--powerOff-color-1: #8968CD; 
+	--powerOff-color-1: #8B8B70; 
 	--powerOff-color-2: #CDB5CD;
-	--original-color-1: #8B795E; 
+	--original-color-1: #8B898F; 
 	--original-color-2: #CDB38B;
 }
 @media screen and (min-width: 1800px){
@@ -92,7 +94,7 @@
 
 
 body {
-  background: #333;
+  background: var(--body-background);
   font-family: NotoSansCJKtc-Medium;
 }
 
@@ -100,7 +102,7 @@ h1 {
   margin: 0.6em auto 0;
   font: 700 3em NotoSansCJKtc-Medium;
   font-size: var(--h1Size);
-  color: #f1f5f6;
+  color: var(--title-color);
   text-align: center;
 }
 
@@ -108,7 +110,7 @@ h5 {
   margin: 0 auto 2em;
   font: 400 1.3em NotoSansCJKtc-Medium;
   font-size: var(--h5Size);
-  color: #f1f5f6;
+  color: var(--title-color);
   text-align: center;
 }
 
@@ -139,21 +141,21 @@ a {
 .periodic-element .periodic-element-inner-powerOff,
 .periodic-element .periodic-element-inner-achieveQty,
 .periodic-element .periodic-element-inner-error{
-  background: #202e38;	/*格子內的顏色*/
+  background: var(--inner-background);	/*格子內的顏色*/
   padding: 10px 15px;
   width: calc(100% - 30px);
   height: calc(100% - 20px);
   transition: inherit;
 }
 .periodic-element .no {
-  font: 1000 24px NotoSansCJKtc-Medium;
-  margin-top: -0.5em;
-  margin-left: -0.4em;
+  font: 1000 18px NotoSansCJKtc-Medium;
+  margin-top: -0.7em;
+  margin-left: -0.6em;
 }
 .periodic-element .status {
   font: 700 25px/1.3 NotoSansCJKtc-Medium;
   text-align: center;
-  margin-top: -0.2em;
+  margin-top: -0.9em;
   transition: 0.8s ease 600ms;
 }
 .periodic-element .description {
@@ -169,6 +171,7 @@ a {
   width: 180px;
   position: absolute;
   top: 80%;
+  left: 20%;
   opacity: 0;
   transition: opacity 0.3s ease 0.3s, top 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
   height: auto;
@@ -181,7 +184,7 @@ a {
   white-space: pre-line;	/*讓 '\n' 可以換行*/
 }
 .periodic-element:hover {
-  transform: scale(1.12);
+  transform: scale(1.12);	/*放大倍數*/
   z-index: 10;	/*使hover訊息框在上層*/
 }
 .periodic-element:hover .periodic-element-inner {	/*框內顏色*/
@@ -189,28 +192,28 @@ a {
 }
 .periodic-element:hover .periodic-element-inner-producing {	/*框內顏色*/
   background: linear-gradient(to bottom right, 
-			  var(--producing-color-1) 50%, 
-			  var(--producing-color-2) 80%);
+			  var(--producing-color-1) 80%, 
+			  var(--producing-color-2) 100%);
 }
 .periodic-element:hover .periodic-element-inner-stop {	/*框內顏色*/
   background: linear-gradient(to bottom right, 
-			  var(--stop-color-1) 50%, 
-			  var(--stop-color-2) 80%);
+			  var(--stop-color-1) 80%, 
+			  var(--stop-color-2) 100%);
 }
 .periodic-element:hover .periodic-element-inner-powerOff {	/*框內顏色*/
   background: linear-gradient(to bottom right, 
-			  var(--powerOff-color-1) 50%, 
-			  var(--powerOff-color-2) 80%);
+			  var(--powerOff-color-1) 80%, 
+			  var(--powerOff-color-2) 100%);
 }
 .periodic-element:hover .periodic-element-inner-achieveQty {	/*框內顏色*/
   background: linear-gradient(to bottom right, 
-			  var(--achieveQty-color-1) 50%, 
-			  var(--achieveQty-color-2) 80%);
+			  var(--achieveQty-color-1) 80%, 
+			  var(--achieveQty-color-2) 100%);
 }
 .periodic-element:hover .periodic-element-inner-error {	/*框內顏色*/
   background: linear-gradient(to bottom right, 
-			  var(--error-color-1) 50%, 
-			  var(--error-color-2) 80%);
+			  var(--error-color-1) 80%, 
+			  var(--error-color-2) 100%);
 }
 
 .periodic-element:hover .no,
@@ -295,8 +298,8 @@ a.periodic-element {
 */
 .original {
   background: linear-gradient(to bottom right, 
-			  var(--original-color-1) 50%, 
-			  var(--original-color-2) 80%);
+			  var(--original-color-1) 80%, 
+			  var(--original-color-2) 100%);
 }
 .original .no,
 .original .status,
@@ -308,35 +311,45 @@ a.periodic-element {
 
 .original .no-producing,
 .original .status-producing{
-  background: -webkit-linear-gradient(var(--producing-color-1), var(--producing-color-2));	
+  background: linear-gradient(to bottom right, 
+			  var(--producing-color-1) 80%, 
+			  var(--producing-color-2) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .original .no-stop,
 .original .status-stop{
-  background: -webkit-linear-gradient(var(--stop-color-1), var(--stop-color-2));	
+  background: linear-gradient(to bottom right, 
+			  var(--stop-color-1) 80%, 
+			  var(--stop-color-2) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .original .no-powerOff,
 .original .status-powerOff{
-  background: -webkit-linear-gradient(var(--powerOff-color-1), var(--powerOff-color-2));	
+  background: linear-gradient(to bottom right, 
+			  var(--powerOff-color-1) 80%, 
+			  var(--powerOff-color-2) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .original .no-achieveQty,
 .original .status-achieveQty{
-  background: -webkit-linear-gradient(var(--achieveQty-color-1), var(--achieveQty-color-2));	
+  background: linear-gradient(to bottom right, 
+			  var(--achieveQty-color-1) 80%, 
+			  var(--achieveQty-color-2) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .original .no-error,
 .original .status-error{
-  background: -webkit-linear-gradient(var(--error-color-1), var(--error-color-2));	
+  background: linear-gradient(to bottom right, 
+			  var(--error-color-1) 80%, 
+			  var(--error-color-2) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -408,11 +421,14 @@ a.periodic-element {
             /* 進度條的槽 */
             width:100%;
             /* 設置進度條的高度 */
-            height: 21px;
+            height: 54px;
             /* 進度條外層div的背景色，進度未達到的地方的顏色 */
             background-color: var(--progress-bar-color);
             border-radius: 3px;
 			margin-top: 0em;
+			font-size: 20px;
+			font-style: italic; 
+			white-space: pre-line;	/*讓 '\n' 可以換行*/
         }
         .progress-1{
             /* 進度部分 */

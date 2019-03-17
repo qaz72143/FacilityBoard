@@ -7,9 +7,7 @@ var time = document.getElementById("updateTime");
 var checkData;
 var checkUpdate = setInterval(check_Update ,30000);	//每30秒檢查資料是否更新，刷新頁面
 window.addEventListener("load", readData, false);
-
-
-				
+			
 function readData()
 {
 	//讀取txt檔內容，放到data陣列
@@ -149,7 +147,7 @@ function showData()
 			QtyRate = Math.round((CurQty/SetQty)*100) + " %\n";
 			MissRate = Math.round((CurMiss/SetMiss)*100) + " %\n";	
 			MData.setAttribute('data-description',"生產率: " + QtyRate + "失誤率: " + MissRate + "產速率: " + SpeedRate + " %");
-			MBar.innerHTML = Math.round((CurQty/SetQty)*100) + "%";
+			MBar.innerHTML = "\n" + Math.round((CurQty/SetQty)*100) + "%";
 			MBar.style.width = Math.round((CurQty/SetQty)*100) + "%"; 
 		}
 	}	

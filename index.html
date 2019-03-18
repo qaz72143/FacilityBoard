@@ -13,6 +13,58 @@
 
 <h1>整廠設備資料收集系統</h1>
 <h5 id="updateTime"><em>資料讀取中 ...</em></h5>
+<div class="legend-table">
+	<span class="legend-table__marker producing"></span>
+	<span class="legend-table__text">生產中　</span>
+	<span class="legend-table__marker stop"></span>
+	<span class="legend-table__text">停機中　</span>
+	<span class="legend-table__marker powerOff"></span>
+	<span class="legend-table__text">關機中</span>
+	</br>
+	<span class="legend-table__marker error"></span>
+	<span class="legend-table__text">異常停機</span>
+	<span class="legend-table__marker achieveQty"></span>
+	<span class="legend-table__text">達到生產</span>
+	<span class="legend-table__marker original"></span>
+	<span class="legend-table__text">未連接</span>
+</div>
+
+<div class="donut-chart-block block"> 
+	<div class="donut-chart">
+		<div id="producing-begin" class="recorte quesito-producing-begin"><div id="quesito-producing" class="quesito quesito-producing"></div></div>
+		<div id="stop-begin" class="recorte quesito-stop-begin"><div id="quesito-stop" class="quesito quesito-stop"></div></div>
+		<div id="powerOff-begin" class="recorte quesito-powerOff-begin"><div id="quesito-powerOff" class="quesito quesito-powerOff"></div></div>
+		<div id="achieveQty-begin" class="recorte quesito-achieveQty-begin"><div id="quesito-achieveQty" class="quesito quesito-achieveQty"></div></div>
+		<div id="error-begin" class="recorte quesito-error-begin"><div id="quesito-error" class="quesito quesito-error"></div></div>
+		<p class="center-date">已連接<br><span id="ConnectCnt" class="scnd-font-color">???</span></p>        
+	</div>
+	<ul class="status-percentages horizontal-list">
+		<li>
+			<p class="li-producing li-status scnd-font-color">生產</p>
+			<p id="producingCnt" class="status-percentage">　</p>
+		</li>
+		<li>
+			<p class="li-stop li-status scnd-font-color">停機</p>
+			<p id="stopCnt" class="status-percentage">　</p>
+		</li>
+		<li>
+			<p class="li-powerOff li-status scnd-font-color">關機</p>
+			<p id="powerOffCnt" class="status-percentage">　</p>
+		</li>
+		<li>
+			<p class="li-achieveQty li-status scnd-font-color">達生產</p>
+			<p id="achieveQtyCnt" class="status-percentage">　</p>
+		</li>
+		<li>
+			<p class="li-error li-status scnd-font-color">異常</p>
+			<p id="errorCnt" class="status-percentage">　</p>
+		</li>
+	</ul>
+</div>
+
+
+
+
 <div class="periodic-table">	<!-- 所有格子 -->
   <div class="empty-spacer-1"></div>	<!-- 空格 -->
   <!--  <a class="periodic-element producing" data-description="第八格" href="https://twitter.com/meowlivia_" target="_blank"> -->
@@ -1385,23 +1437,7 @@
   </div>	-->
 </div>
 
-<div class="legend-table">
-  <div class="legend-table__wrapper">
-	<span class="legend-table__marker producing"></span>
-	<span class="legend-table__text">生產中　</span>
-	<span class="legend-table__marker stop"></span>
-	<span class="legend-table__text">停機中　</span>
-	<span class="legend-table__marker powerOff"></span>
-	<span class="legend-table__text">關機中</span>
-	</br>
-	<span class="legend-table__marker error"></span>
-	<span class="legend-table__text">異常停機</span>
-	<span class="legend-table__marker achieveQty"></span>
-	<span class="legend-table__text">達到生產</span>
-	<span class="legend-table__marker original"></span>
-	<span class="legend-table__text">未連接</span>
-  </div>
-</div>
+
 
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script src="js/FactilityBoard.js"></script>

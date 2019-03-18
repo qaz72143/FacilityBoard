@@ -159,7 +159,7 @@ function showData()
 			QtyRate = Math.round((CurQty/SetQty)*100) + " %\n";
 			MissRate = Math.round((CurMiss/SetMiss)*100) + " %\n";	
 			MData.setAttribute('data-description',"生產率: " + QtyRate + "失誤率: " + MissRate + "產速率: " + SpeedRate + " %");
-			MBar.innerHTML = "\n" + Math.round((CurQty/SetQty)*100) + "%";
+			MBar.innerHTML = Math.round((CurQty/SetQty)*100) + "%";
 			MBar.style.width = Math.round((CurQty/SetQty)*100) + "%"; 
 		}
 	}

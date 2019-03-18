@@ -46,7 +46,7 @@
 		--legend-markerSize: 35px;
 		
 		--chart-scale: 1.2;
-		--legend-padding-bottom: 40px;
+		--legend-padding-bottom: 50px;
 		--chart-margin-top: -25.8em;
 		--chart-margin-left: 1.3em;
 	}
@@ -59,7 +59,7 @@
 		--legend-markerSize: 30px;
 		
 		--chart-scale: 1.1;
-		--legend-padding-bottom: 40px;
+		--legend-padding-bottom: 50px;
 		--chart-margin-top: -23.9em;
 		--chart-margin-left: 0.4em;
 	}
@@ -72,7 +72,7 @@
 		--legend-markerSize: 30px;
 		
 		--chart-scale: 1;
-		--legend-padding-bottom: 30px;
+		--legend-padding-bottom: 40px;
 		--chart-margin-top: -24.25em;
 		--chart-margin-left: -0.6em;
 	}
@@ -85,7 +85,7 @@
 		--legend-markerSize: 25px;
 		
 		--chart-scale: 0.85;
-		--legend-padding-bottom: 25px;
+		--legend-padding-bottom: 40px;
 		--chart-margin-top: -22.35em;
 		--chart-margin-left: -2em;
 	}
@@ -99,7 +99,7 @@
 		--chart-scale: 0.7;
 		
 		--chart-scale: 0.65;
-		--legend-padding-bottom: 30px;
+		--legend-padding-bottom: 40px;
 		--chart-margin-top: -19.7em;
 		--chart-margin-left: -3.85em;
 	}
@@ -112,7 +112,7 @@
 		--legend-markerSize: 20px;
 		
 		--chart-scale: 0.65;
-		--legend-padding-bottom: 30px;
+		--legend-padding-bottom: 40px;
 		--chart-margin-top: -20.3em;
 		--chart-margin-left: -3.85em;
 	}
@@ -125,7 +125,7 @@
 		--legend-markerSize: 20px;
 		
 		--chart-scale: 0.65;
-		--legend-padding-bottom: 30px;
+		--legend-padding-bottom: 40px;
 		--chart-margin-top: -20.3em;
 		--chart-margin-left: -3.85em;
 	}
@@ -138,7 +138,7 @@
 		--legend-markerSize: 18px;
 		
 		--chart-scale: 0.65;
-		--legend-padding-bottom: 30px;
+		--legend-padding-bottom: 40px;
 		--chart-margin-top: -17.4em;
 		--chart-margin-left: -3.85em;
 	}
@@ -151,7 +151,7 @@
 		--legend-markerSize: 18px;
 		
 		--chart-scale: 0.65;
-		--legend-padding-bottom: 30px;
+		--legend-padding-bottom: 40px;
 		--chart-margin-top: -20.3em;
 		--chart-margin-left: -3.85em;
 	}
@@ -304,39 +304,39 @@ p.center-date {
 }
 .quesito-producing {
 	background-color: var(--producing-color-1);
-	transform: rotate(76deg);   /*範圍角度*/
+	transform: rotate(72deg);   /*範圍角度*/
 }
 
 .quesito-stop-begin{
-	transform: rotate(76deg);
+	transform: rotate(72deg);
 }
 .quesito-stop {
 	background-color: var(--stop-color-1);
-	transform: rotate(140deg);  
+	transform: rotate(72deg);  
 }
 
 .quesito-powerOff-begin{
-	transform: rotate(216deg);
+	transform: rotate(144deg);
 }
 .quesito-powerOff {
 	background-color: var(--powerOff-color-1);
-	transform: rotate(32deg);  
+	transform: rotate(72deg);  
 }
 
 .quesito-achieveQty-begin{
-	transform: rotate(248deg);
+	transform: rotate(216deg);
 }
 .quesito-achieveQty {
 	background-color: var(--achieveQty-color-1);
-	transform: rotate(75deg);  
+	transform: rotate(72deg);  
 }
 
 .quesito-error-begin{
-	transform: rotate(323deg);
+	transform: rotate(288deg);
 }
 .quesito-error {
 	background-color: var(--error-color-1);
-	transform: rotate(37deg);  
+	transform: rotate(72deg);  
 }
 /*********************************************/
 

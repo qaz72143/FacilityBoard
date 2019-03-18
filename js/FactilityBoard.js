@@ -72,6 +72,9 @@ function showData()
 	var MData, EInner, MStatus, MBar, ProgrssBar;
 	var CurQty, SetQty, CurMiss, SetMiss, SpeedRate;
 	var QtyRate, MissRate;
+	var connectCnt;
+	var producingCnt=0, stopCnt=0, powerOffCnt=0, achieveQtyCnt=0, errorCnt=0; 
+	
 	for(var i=1, index=2; i<=MachineQty; i++)
 	{
 		MData = document.getElementById('MachineData-' + i);
@@ -87,46 +90,55 @@ function showData()
 				continue;
 				break;
 			case 'Stop':
+				stopCnt++;
 				EInner.className = "periodic-element-inner-stop";
 				MStatus.className = "status status-stop";
 				MStatus.innerHTML = "停機";			
 				break;
 			case 'Stop(Lock)':
+				stopCnt++;
 				EInner.className = "periodic-element-inner-stop";
 				MStatus.className = "status status-stop";
 				MStatus.innerHTML = "停機(鎖)";	
 				break;
 			case 'Producing':
+				producingCnt++;
 				EInner.className = "periodic-element-inner-producing";
 				MStatus.className = "status status-producing";
 				MStatus.innerHTML = "生產";	
 				break;
 			case 'Producing(Lock)':
+				producingCnt++;
 				EInner.className = "periodic-element-inner-producing";
 				MStatus.className = "status status-producing";
 				MStatus.innerHTML = "生產(鎖)";	
 				break;
 			case 'AchieveQty':
+				achieveQtyCnt++;
 				EInner.className = "periodic-element-inner-achieveQty";
 				MStatus.className = "status status-achieveQty";
 				MStatus.innerHTML = "達生產";	
 				break;
 			case 'AchieveQty(Lock)':
+				achieveQtyCnt++;
 				EInner.className = "periodic-element-inner-achieveQty";
 				MStatus.className = "status status-achieveQty";
 				MStatus.innerHTML = "達生產(鎖)";	
 				break;
 			case 'PowerOff':
+				powerOffCnt++;
 				EInner.className = "periodic-element-inner-powerOff";
 				MStatus.className = "status status-powerOff";
 				MStatus.innerHTML = "關機";	
 				break;
 			case 'ServerError':
+				errorCnt++;
 				EInner.className = "periodic-element-inner-error";
 				MStatus.className = "status status-error";
 				MStatus.innerHTML = "異常";	
 				break;
 			case 'ServerError(Lock)':
+				errorCnt++;
 				EInner.className = "periodic-element-inner-error";
 				MStatus.className = "status status-error";
 				MStatus.innerHTML = "異常(鎖)";	
@@ -150,7 +162,59 @@ function showData()
 			MBar.innerHTML = "\n" + Math.round((CurQty/SetQty)*100) + "%";
 			MBar.style.width = Math.round((CurQty/SetQty)*100) + "%"; 
 		}
-	}	
+	}
+	
+	//處理Chart		li 
+	var ConnectCount = document.getElementById('ConnectCnt');
+	var ProducingCount = document.getElementById('producingCnt');
+	var StopCount = document.getElementById('stopCnt');
+	var PowerOffCount = document.getElementById('powerOffCnt');
+	var AchieveQtyCount = document.getElementById('achieveQtyCnt');
+	var ErrorCount = document.getElementById('errorCnt');
+	connectCnt = producingCnt+stopCnt+powerOffCnt+achieveQtyCnt+errorCnt;
+	ConnectCount.innerHTML = connectCnt;
+	ProducingCount.innerHTML = producingCnt;
+	StopCount.innerHTML = stopCnt;
+	PowerOffCount.innerHTML = powerOffCnt;
+	AchieveQtyCount.innerHTML = achieveQtyCnt;
+	ErrorCount.innerHTML = errorCnt;
+	
+	//處理Chart donut
+	var producing_begin = document.getElementById('producing-begin'); 
+	var quesito_producing = document.getElementById('quesito-producing'); 
+	var stop_begin = document.getElementById('stop-begin'); 
+	var quesito_stop = document.getElementById('quesito-stop'); 
+	var powerOff_begin = document.getElementById('powerOff-begin'); 
+	var quesito_powerOff = document.getElementById('quesito-powerOff'); 
+	var achieveQty_begin = document.getElementById('achieveQty-begin'); 
+	var quesito_achieveQty = document.getElementById('quesito-achieveQty'); 
+	var error_begin = document.getElementById('error-begin'); 
+	var quesito_error = document.getElementById('quesito-error'); 
+	var CurDeg = 0, rota = 0;
+	producing_begin.style.transform = "rotate(" + CurDeg + "deg)";
+	rota = Math.floor((producingCnt/connectCnt)*360);
+	quesito_producing.style.transform = "rotate(" + rota + "deg)";
+	CurDeg = CurDeg + rota;
+	
+	stop_begin.style.transform = "rotate(" + CurDeg + "deg)";
+	rota = Math.floor((stopCnt/connectCnt)*360);
+	quesito_stop.style.transform = "rotate(" + rota + "deg)";
+	CurDeg = CurDeg + rota;
+	
+	powerOff_begin.style.transform = "rotate(" + CurDeg + "deg)";
+	rota = Math.floor((powerOffCnt/connectCnt)*360);
+	quesito_powerOff.style.transform = "rotate(" + rota + "deg)";
+	CurDeg = CurDeg + rota;
+	
+	achieveQty_begin.style.transform = "rotate(" + CurDeg + "deg)";
+	rota = Math.floor((achieveQtyCnt/connectCnt)*360);
+	quesito_achieveQty.style.transform = "rotate(" + rota + "deg)";
+	CurDeg = CurDeg + rota;
+	
+	error_begin.style.transform = "rotate(" + CurDeg + "deg)";
+	rota = Math.floor((errorCnt/connectCnt)*360);
+	quesito_error.style.transform = "rotate(" + rota + "deg)";
+	CurDeg = CurDeg + rota;
 }
 
 function dispTime()

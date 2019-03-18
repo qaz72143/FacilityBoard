@@ -212,9 +212,9 @@ function showData()
 	CurDeg = CurDeg + rota;
 	
 	error_begin.style.transform = "rotate(" + CurDeg + "deg)";
-	rota = Math.floor((errorCnt/connectCnt)*360);
+	rota = 360-CurDeg;
 	quesito_error.style.transform = "rotate(" + rota + "deg)";
-	CurDeg = CurDeg + rota;
+	CurDeg = CurDeg + rota;	
 }
 
 function dispTime()

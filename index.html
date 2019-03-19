@@ -7,6 +7,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>整廠設備</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style-chart.css">
 </head>
 
 <body>
@@ -30,6 +31,7 @@
 </div>
 
 <div class="donut-chart-block block"> 
+<!--	舊式 Chart
 	<div class="donut-chart">
 		<div id="producing-begin" class="recorte quesito-producing-begin"><div id="quesito-producing" class="quesito quesito-producing"></div></div>
 		<div id="stop-begin" class="recorte quesito-stop-begin"><div id="quesito-stop" class="quesito quesito-stop"></div></div>
@@ -38,6 +40,13 @@
 		<div id="error-begin" class="recorte quesito-error-begin"><div id="quesito-error" class="quesito quesito-error"></div></div>
 		<p class="center-date">已連接<br><span id="ConnectCnt" class="scnd-font-color">???</span></p>        
 	</div>
+-->
+
+	<div class="widget">
+		<p class="center-text">已連接<br><span id="ConnectCnt" class="scnd-font-color">???</span></p>
+		<div id="chart" class="chart-container"></div>
+	</div>
+
 	<ul class="status-percentages horizontal-list">
 		<li>
 			<p class="li-producing li-status scnd-font-color">生產</p>
@@ -73,7 +82,7 @@
 	  <div class="no">01</div>
       <div class="status" id="MachineStatus-1">　</div>
 	  <!-- <div class="description">87%</div> -->
-	  <div class="progress-bar" id="Progress-bar-1"><div class="progress-1" id="MachineBar-1"></div></div>
+	  <div class="progress-bar" id="Progress-bar-1"><div class="progress-1" id="MachineBar-1"><p class="bar-text" id="BarText-1"></p></div></div>
     </div>
   </div>	
 
@@ -81,686 +90,686 @@
     <div class="periodic-element-inner" id="element-inner-2">
 	  <div class="no">02</div>
       <div class="status" id="MachineStatus-2">　</div>
-	  <div class="progress-bar" id="Progress-bar-2"><div class="progress-2" id="MachineBar-2"></div></div>
+	  <div class="progress-bar" id="Progress-bar-2"><div class="progress-2" id="MachineBar-2"><p class="bar-text" id="BarText-2"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-3" data-description="">
     <div class="periodic-element-inner" id="element-inner-3">
 	  <div class="no">03</div>
       <div class="status" id="MachineStatus-3">　</div>
-	  <div class="progress-bar" id="Progress-bar-3"><div class="progress-3" id="MachineBar-3"></div></div>
+	  <div class="progress-bar" id="Progress-bar-3"><div class="progress-3" id="MachineBar-3"><p class="bar-text" id="BarText-3"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-4" data-description="">
     <div class="periodic-element-inner" id="element-inner-4">
 	  <div class="no">04</div>
       <div class="status" id="MachineStatus-4">　</div>
-	  <div class="progress-bar" id="Progress-bar-4"><div class="progress-4" id="MachineBar-4"></div></div>
+	  <div class="progress-bar" id="Progress-bar-4"><div class="progress-4" id="MachineBar-4"><p class="bar-text" id="BarText-4"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-5" data-description="">
     <div class="periodic-element-inner" id="element-inner-5">
 	  <div class="no">05</div>
       <div class="status" id="MachineStatus-5">　</div>
-	  <div class="progress-bar" id="Progress-bar-5"><div class="progress-5" id="MachineBar-5"></div></div>
+	  <div class="progress-bar" id="Progress-bar-5"><div class="progress-5" id="MachineBar-5"><p class="bar-text" id="BarText-5"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-6" data-description="">
     <div class="periodic-element-inner" id="element-inner-6">
 	  <div class="no">06</div>
       <div class="status" id="MachineStatus-6">　</div>
-	  <div class="progress-bar" id="Progress-bar-6"><div class="progress-6" id="MachineBar-6"></div></div>
+	  <div class="progress-bar" id="Progress-bar-6"><div class="progress-6" id="MachineBar-6"><p class="bar-text" id="BarText-6"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-7" data-description="">
     <div class="periodic-element-inner" id="element-inner-7">
 	  <div class="no">07</div>
       <div class="status" id="MachineStatus-7">　</div>
-	  <div class="progress-bar" id="Progress-bar-7"><div class="progress-7" id="MachineBar-7"></div></div>
+	  <div class="progress-bar" id="Progress-bar-7"><div class="progress-7" id="MachineBar-7"><p class="bar-text" id="BarText-7"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-8" data-description="">
     <div class="periodic-element-inner" id="element-inner-8">
 	  <div class="no">08</div>
       <div class="status" id="MachineStatus-8">　</div>
-	  <div class="progress-bar" id="Progress-bar-8"><div class="progress-8" id="MachineBar-8"></div></div>
+	  <div class="progress-bar" id="Progress-bar-8"><div class="progress-8" id="MachineBar-8"><p class="bar-text" id="BarText-8"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-9" data-description="">
     <div class="periodic-element-inner" id="element-inner-9">
 	  <div class="no">09</div>
       <div class="status" id="MachineStatus-9">　</div>
-	  <div class="progress-bar" id="Progress-bar-9"><div class="progress-9" id="MachineBar-9"></div></div>
+	  <div class="progress-bar" id="Progress-bar-9"><div class="progress-9" id="MachineBar-9"><p class="bar-text" id="BarText-9"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-10" data-description="">
     <div class="periodic-element-inner" id="element-inner-10">
 	  <div class="no">10</div>
       <div class="status" id="MachineStatus-10">　</div>
-	  <div class="progress-bar" id="Progress-bar-10"><div class="progress-10" id="MachineBar-10"></div></div>
+	  <div class="progress-bar" id="Progress-bar-10"><div class="progress-10" id="MachineBar-10"><p class="bar-text" id="BarText-10"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-11" data-description="">
     <div class="periodic-element-inner" id="element-inner-11">
 	  <div class="no">11</div>
       <div class="status" id="MachineStatus-11">　</div>
-	  <div class="progress-bar" id="Progress-bar-11"><div class="progress-11" id="MachineBar-11"></div></div>
+	  <div class="progress-bar" id="Progress-bar-11"><div class="progress-11" id="MachineBar-11"><p class="bar-text" id="BarText-11"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-12" data-description="">
     <div class="periodic-element-inner" id="element-inner-12">
 	  <div class="no">12</div>
       <div class="status" id="MachineStatus-12">　</div>
-	  <div class="progress-bar" id="Progress-bar-12"><div class="progress-12" id="MachineBar-12"></div></div>
+	  <div class="progress-bar" id="Progress-bar-12"><div class="progress-12" id="MachineBar-12"><p class="bar-text" id="BarText-12"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-13" data-description="">
     <div class="periodic-element-inner" id="element-inner-13">
 	  <div class="no">13</div>
       <div class="status" id="MachineStatus-13">　</div>
-	  <div class="progress-bar" id="Progress-bar-13"><div class="progress-13" id="MachineBar-13"></div></div>
+	  <div class="progress-bar" id="Progress-bar-13"><div class="progress-13" id="MachineBar-13"><p class="bar-text" id="BarText-13"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-14" data-description="">
     <div class="periodic-element-inner" id="element-inner-14">
 	  <div class="no">14</div>
       <div class="status" id="MachineStatus-14">　</div>
-	  <div class="progress-bar" id="Progress-bar-14"><div class="progress-14" id="MachineBar-14"></div></div>
+	  <div class="progress-bar" id="Progress-bar-14"><div class="progress-14" id="MachineBar-14"><p class="bar-text" id="BarText-14"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-15" data-description="">
     <div class="periodic-element-inner" id="element-inner-15">
 	  <div class="no">15</div>
       <div class="status" id="MachineStatus-15">　</div>
-	  <div class="progress-bar" id="Progress-bar-15"><div class="progress-15" id="MachineBar-15"></div></div>
+	  <div class="progress-bar" id="Progress-bar-15"><div class="progress-15" id="MachineBar-15"><p class="bar-text" id="BarText-15"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-16" data-description="">
     <div class="periodic-element-inner" id="element-inner-16">
 	  <div class="no">16</div>
       <div class="status" id="MachineStatus-16">　</div>
-	  <div class="progress-bar" id="Progress-bar-16"><div class="progress-16" id="MachineBar-16"></div></div>
+	  <div class="progress-bar" id="Progress-bar-16"><div class="progress-16" id="MachineBar-16"><p class="bar-text" id="BarText-16"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-17" data-description="">
     <div class="periodic-element-inner" id="element-inner-17">
 	  <div class="no">17</div>
       <div class="status" id="MachineStatus-17">　</div>
-	  <div class="progress-bar" id="Progress-bar-17"><div class="progress-17" id="MachineBar-17"></div></div>
+	  <div class="progress-bar" id="Progress-bar-17"><div class="progress-17" id="MachineBar-17"><p class="bar-text" id="BarText-17"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-18" data-description="">
     <div class="periodic-element-inner" id="element-inner-18">
 	  <div class="no">18</div>
       <div class="status" id="MachineStatus-18">　</div>
-	  <div class="progress-bar" id="Progress-bar-18"><div class="progress-18" id="MachineBar-18"></div></div>
+	  <div class="progress-bar" id="Progress-bar-18"><div class="progress-18" id="MachineBar-18"><p class="bar-text" id="BarText-18"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-19" data-description="">
     <div class="periodic-element-inner" id="element-inner-19">
 	  <div class="no">19</div>
       <div class="status" id="MachineStatus-19">　</div>
-	  <div class="progress-bar" id="Progress-bar-19"><div class="progress-19" id="MachineBar-19"></div></div>
+	  <div class="progress-bar" id="Progress-bar-19"><div class="progress-19" id="MachineBar-19"><p class="bar-text" id="BarText-19"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-20" data-description="">
     <div class="periodic-element-inner" id="element-inner-20">
 	  <div class="no">20</div>
       <div class="status" id="MachineStatus-20">　</div>
-	  <div class="progress-bar" id="Progress-bar-20"><div class="progress-20" id="MachineBar-20"></div></div>
+	  <div class="progress-bar" id="Progress-bar-20"><div class="progress-20" id="MachineBar-20"><p class="bar-text" id="BarText-20"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-21" data-description="">
     <div class="periodic-element-inner" id="element-inner-21">
 	  <div class="no">21</div>
       <div class="status" id="MachineStatus-21">　</div>
-	  <div class="progress-bar" id="Progress-bar-21"><div class="progress-21" id="MachineBar-21"></div></div>
+	  <div class="progress-bar" id="Progress-bar-21"><div class="progress-21" id="MachineBar-21"><p class="bar-text" id="BarText-21"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-22" data-description="">
     <div class="periodic-element-inner" id="element-inner-22">
 	  <div class="no">22</div>
       <div class="status" id="MachineStatus-22">　</div>
-	  <div class="progress-bar" id="Progress-bar-22"><div class="progress-22" id="MachineBar-22"></div></div>
+	  <div class="progress-bar" id="Progress-bar-22"><div class="progress-22" id="MachineBar-22"><p class="bar-text" id="BarText-22"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-23" data-description="">
     <div class="periodic-element-inner" id="element-inner-23">
 	  <div class="no">23</div>
       <div class="status" id="MachineStatus-23">　</div>
-	  <div class="progress-bar" id="Progress-bar-23"><div class="progress-23" id="MachineBar-23"></div></div>
+	  <div class="progress-bar" id="Progress-bar-23"><div class="progress-23" id="MachineBar-23"><p class="bar-text" id="BarText-23"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-24" data-description="">
     <div class="periodic-element-inner" id="element-inner-24">
 	  <div class="no">24</div>
       <div class="status" id="MachineStatus-24">　</div>
-	  <div class="progress-bar" id="Progress-bar-24"><div class="progress-24" id="MachineBar-24"></div></div>
+	  <div class="progress-bar" id="Progress-bar-24"><div class="progress-24" id="MachineBar-24"><p class="bar-text" id="BarText-24"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-25" data-description="">
     <div class="periodic-element-inner" id="element-inner-25">
 	  <div class="no">25</div>
       <div class="status" id="MachineStatus-25">　</div>
-	  <div class="progress-bar" id="Progress-bar-25"><div class="progress-25" id="MachineBar-25"></div></div>
+	  <div class="progress-bar" id="Progress-bar-25"><div class="progress-25" id="MachineBar-25"><p class="bar-text" id="BarText-25"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-26" data-description="">
     <div class="periodic-element-inner" id="element-inner-26">
 	  <div class="no">26</div>
       <div class="status" id="MachineStatus-26">　</div>
-	  <div class="progress-bar" id="Progress-bar-26"><div class="progress-26" id="MachineBar-26"></div></div>
+	  <div class="progress-bar" id="Progress-bar-26"><div class="progress-26" id="MachineBar-26"><p class="bar-text" id="BarText-26"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-27" data-description="">
     <div class="periodic-element-inner" id="element-inner-27">
 	  <div class="no">27</div>
       <div class="status" id="MachineStatus-27">　</div>
-	  <div class="progress-bar" id="Progress-bar-27"><div class="progress-27" id="MachineBar-27"></div></div>
+	  <div class="progress-bar" id="Progress-bar-27"><div class="progress-27" id="MachineBar-27"><p class="bar-text" id="BarText-27"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-28" data-description="">
     <div class="periodic-element-inner" id="element-inner-28">
 	  <div class="no">28</div>
       <div class="status" id="MachineStatus-28">　</div>
-	  <div class="progress-bar" id="Progress-bar-28"><div class="progress-28" id="MachineBar-28"></div></div>
+	  <div class="progress-bar" id="Progress-bar-28"><div class="progress-28" id="MachineBar-28"><p class="bar-text" id="BarText-28"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-29" data-description="">
     <div class="periodic-element-inner" id="element-inner-29">
 	  <div class="no">29</div>
       <div class="status" id="MachineStatus-29">　</div>
-	  <div class="progress-bar" id="Progress-bar-29"><div class="progress-29" id="MachineBar-29"></div></div>
+	  <div class="progress-bar" id="Progress-bar-29"><div class="progress-29" id="MachineBar-29"><p class="bar-text" id="BarText-29"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-30" data-description="">
     <div class="periodic-element-inner" id="element-inner-30">
 	  <div class="no">30</div>
       <div class="status" id="MachineStatus-30">　</div>
-	  <div class="progress-bar" id="Progress-bar-30"><div class="progress-30" id="MachineBar-30"></div></div>
+	  <div class="progress-bar" id="Progress-bar-30"><div class="progress-30" id="MachineBar-30"><p class="bar-text" id="BarText-30"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-31" data-description="">
     <div class="periodic-element-inner" id="element-inner-31">
 	  <div class="no">31</div>
       <div class="status" id="MachineStatus-31">　</div>
-	  <div class="progress-bar" id="Progress-bar-31"><div class="progress-31" id="MachineBar-31"></div></div>
+	  <div class="progress-bar" id="Progress-bar-31"><div class="progress-31" id="MachineBar-31"><p class="bar-text" id="BarText-31"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-32" data-description="">
     <div class="periodic-element-inner" id="element-inner-32">
 	  <div class="no">32</div>
       <div class="status" id="MachineStatus-32">　</div>
-	  <div class="progress-bar" id="Progress-bar-32"><div class="progress-32" id="MachineBar-32"></div></div>
+	  <div class="progress-bar" id="Progress-bar-32"><div class="progress-32" id="MachineBar-32"><p class="bar-text" id="BarText-32"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-33" data-description="">
     <div class="periodic-element-inner" id="element-inner-33">
 	  <div class="no">33</div>
       <div class="status" id="MachineStatus-33">　</div>
-	  <div class="progress-bar" id="Progress-bar-33"><div class="progress-33" id="MachineBar-33"></div></div>
+	  <div class="progress-bar" id="Progress-bar-33"><div class="progress-33" id="MachineBar-33"><p class="bar-text" id="BarText-33"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-34" data-description="">
     <div class="periodic-element-inner" id="element-inner-34">
 	  <div class="no">34</div>
       <div class="status" id="MachineStatus-34">　</div>
-	  <div class="progress-bar" id="Progress-bar-34"><div class="progress-34" id="MachineBar-34"></div></div>
+	  <div class="progress-bar" id="Progress-bar-34"><div class="progress-34" id="MachineBar-34"><p class="bar-text" id="BarText-34"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-35" data-description="">
     <div class="periodic-element-inner" id="element-inner-35">
 	  <div class="no">35</div>
       <div class="status" id="MachineStatus-35">　</div>
-	  <div class="progress-bar" id="Progress-bar-35"><div class="progress-35" id="MachineBar-35"></div></div>
+	  <div class="progress-bar" id="Progress-bar-35"><div class="progress-35" id="MachineBar-35"><p class="bar-text" id="BarText-35"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-36" data-description="">
     <div class="periodic-element-inner" id="element-inner-36">
 	  <div class="no">36</div>
       <div class="status" id="MachineStatus-36">　</div>
-	  <div class="progress-bar" id="Progress-bar-36"><div class="progress-36" id="MachineBar-36"></div></div>
+	  <div class="progress-bar" id="Progress-bar-36"><div class="progress-36" id="MachineBar-36"><p class="bar-text" id="BarText-36"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-37" data-description="">
     <div class="periodic-element-inner" id="element-inner-37">
 	  <div class="no">37</div>
       <div class="status" id="MachineStatus-37">　</div>
-	  <div class="progress-bar" id="Progress-bar-37"><div class="progress-37" id="MachineBar-37"></div></div>
+	  <div class="progress-bar" id="Progress-bar-37"><div class="progress-37" id="MachineBar-37"><p class="bar-text" id="BarText-37"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-38" data-description="">
     <div class="periodic-element-inner" id="element-inner-38">
 	  <div class="no">38</div>
       <div class="status" id="MachineStatus-38">　</div>
-	  <div class="progress-bar" id="Progress-bar-38"><div class="progress-38" id="MachineBar-38"></div></div>
+	  <div class="progress-bar" id="Progress-bar-38"><div class="progress-38" id="MachineBar-38"><p class="bar-text" id="BarText-38"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-39" data-description="">
     <div class="periodic-element-inner" id="element-inner-39">
 	  <div class="no">39</div>
       <div class="status" id="MachineStatus-39">　</div>
-	  <div class="progress-bar" id="Progress-bar-39"><div class="progress-39" id="MachineBar-39"></div></div>
+	  <div class="progress-bar" id="Progress-bar-39"><div class="progress-39" id="MachineBar-39"><p class="bar-text" id="BarText-39"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-40" data-description="">
     <div class="periodic-element-inner" id="element-inner-40">
 	  <div class="no">40</div>
       <div class="status" id="MachineStatus-40">　</div>
-	  <div class="progress-bar" id="Progress-bar-40"><div class="progress-40" id="MachineBar-40"></div></div>
+	  <div class="progress-bar" id="Progress-bar-40"><div class="progress-40" id="MachineBar-40"><p class="bar-text" id="BarText-40"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-41" data-description="">
     <div class="periodic-element-inner" id="element-inner-41">
 	  <div class="no">41</div>
       <div class="status" id="MachineStatus-41">　</div>
-	  <div class="progress-bar" id="Progress-bar-41"><div class="progress-41" id="MachineBar-41"></div></div>
+	  <div class="progress-bar" id="Progress-bar-41"><div class="progress-41" id="MachineBar-41"><p class="bar-text" id="BarText-41"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-42" data-description="">
     <div class="periodic-element-inner" id="element-inner-42">
 	  <div class="no">42</div>
       <div class="status" id="MachineStatus-42">　</div>
-	  <div class="progress-bar" id="Progress-bar-42"><div class="progress-42" id="MachineBar-42"></div></div>
+	  <div class="progress-bar" id="Progress-bar-42"><div class="progress-42" id="MachineBar-42"><p class="bar-text" id="BarText-42"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-43" data-description="">
     <div class="periodic-element-inner" id="element-inner-43">
 	  <div class="no">43</div>
       <div class="status" id="MachineStatus-43">　</div>
-	  <div class="progress-bar" id="Progress-bar-43"><div class="progress-43" id="MachineBar-43"></div></div>
+	  <div class="progress-bar" id="Progress-bar-43"><div class="progress-43" id="MachineBar-43"><p class="bar-text" id="BarText-43"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-44" data-description="">
     <div class="periodic-element-inner" id="element-inner-44">
 	  <div class="no">44</div>
       <div class="status" id="MachineStatus-44">　</div>
-	  <div class="progress-bar" id="Progress-bar-44"><div class="progress-44" id="MachineBar-44"></div></div>
+	  <div class="progress-bar" id="Progress-bar-44"><div class="progress-44" id="MachineBar-44"><p class="bar-text" id="BarText-44"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-45" data-description="">
     <div class="periodic-element-inner" id="element-inner-45">
 	  <div class="no">45</div>
       <div class="status" id="MachineStatus-45">　</div>
-	  <div class="progress-bar" id="Progress-bar-45"><div class="progress-45" id="MachineBar-45"></div></div>
+	  <div class="progress-bar" id="Progress-bar-45"><div class="progress-45" id="MachineBar-45"><p class="bar-text" id="BarText-45"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-46" data-description="">
     <div class="periodic-element-inner" id="element-inner-46">
 	  <div class="no">46</div>
       <div class="status" id="MachineStatus-46">　</div>
-	  <div class="progress-bar" id="Progress-bar-46"><div class="progress-46" id="MachineBar-46"></div></div>
+	  <div class="progress-bar" id="Progress-bar-46"><div class="progress-46" id="MachineBar-46"><p class="bar-text" id="BarText-46"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-47" data-description="">
     <div class="periodic-element-inner" id="element-inner-47">
 	  <div class="no">47</div>
       <div class="status" id="MachineStatus-47">　</div>
-	  <div class="progress-bar" id="Progress-bar-47"><div class="progress-47" id="MachineBar-47"></div></div>
+	  <div class="progress-bar" id="Progress-bar-47"><div class="progress-47" id="MachineBar-47"><p class="bar-text" id="BarText-47"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-48" data-description="">
     <div class="periodic-element-inner" id="element-inner-48">
 	  <div class="no">48</div>
       <div class="status" id="MachineStatus-48">　</div>
-	  <div class="progress-bar" id="Progress-bar-48"><div class="progress-48" id="MachineBar-48"></div></div>
+	  <div class="progress-bar" id="Progress-bar-48"><div class="progress-48" id="MachineBar-48"><p class="bar-text" id="BarText-48"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-49" data-description="">
     <div class="periodic-element-inner" id="element-inner-49">
 	  <div class="no">49</div>
       <div class="status" id="MachineStatus-49">　</div>
-	  <div class="progress-bar" id="Progress-bar-49"><div class="progress-49" id="MachineBar-49"></div></div>
+	  <div class="progress-bar" id="Progress-bar-49"><div class="progress-49" id="MachineBar-49"><p class="bar-text" id="BarText-49"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-50" data-description="">
     <div class="periodic-element-inner" id="element-inner-50">
 	  <div class="no">50</div>
       <div class="status" id="MachineStatus-50">　</div>
-	  <div class="progress-bar" id="Progress-bar-50"><div class="progress-50" id="MachineBar-50"></div></div>
+	  <div class="progress-bar" id="Progress-bar-50"><div class="progress-50" id="MachineBar-50"><p class="bar-text" id="BarText-50"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-51" data-description="">
     <div class="periodic-element-inner" id="element-inner-51">
 	  <div class="no">51</div>
       <div class="status" id="MachineStatus-51">　</div>
-	  <div class="progress-bar" id="Progress-bar-51"><div class="progress-51" id="MachineBar-51"></div></div>
+	  <div class="progress-bar" id="Progress-bar-51"><div class="progress-51" id="MachineBar-51"><p class="bar-text" id="BarText-51"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-52" data-description="">
     <div class="periodic-element-inner" id="element-inner-52">
 	  <div class="no">52</div>
       <div class="status" id="MachineStatus-52">　</div>
-	  <div class="progress-bar" id="Progress-bar-52"><div class="progress-52" id="MachineBar-52"></div></div>
+	  <div class="progress-bar" id="Progress-bar-52"><div class="progress-52" id="MachineBar-52"><p class="bar-text" id="BarText-52"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-53" data-description="">
     <div class="periodic-element-inner" id="element-inner-53">
 	  <div class="no">53</div>
       <div class="status" id="MachineStatus-53">　</div>
-	  <div class="progress-bar" id="Progress-bar-53"><div class="progress-53" id="MachineBar-53"></div></div>
+	  <div class="progress-bar" id="Progress-bar-53"><div class="progress-53" id="MachineBar-53"><p class="bar-text" id="BarText-53"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-54" data-description="">
     <div class="periodic-element-inner" id="element-inner-54">
 	  <div class="no">54</div>
       <div class="status" id="MachineStatus-54">　</div>
-	  <div class="progress-bar" id="Progress-bar-54"><div class="progress-54" id="MachineBar-54"></div></div>
+	  <div class="progress-bar" id="Progress-bar-54"><div class="progress-54" id="MachineBar-54"><p class="bar-text" id="BarText-54"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-55" data-description="">
     <div class="periodic-element-inner" id="element-inner-55">
 	  <div class="no">55</div>
       <div class="status" id="MachineStatus-55">　</div>
-	  <div class="progress-bar" id="Progress-bar-55"><div class="progress-55" id="MachineBar-55"></div></div>
+	  <div class="progress-bar" id="Progress-bar-55"><div class="progress-55" id="MachineBar-55"><p class="bar-text" id="BarText-55"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-56" data-description="">
     <div class="periodic-element-inner" id="element-inner-56">
 	  <div class="no">56</div>
       <div class="status" id="MachineStatus-56">　</div>
-	  <div class="progress-bar" id="Progress-bar-56"><div class="progress-56" id="MachineBar-56"></div></div>
+	  <div class="progress-bar" id="Progress-bar-56"><div class="progress-56" id="MachineBar-56"><p class="bar-text" id="BarText-56"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-57" data-description="">
     <div class="periodic-element-inner" id="element-inner-57">
 	  <div class="no">57</div>
       <div class="status" id="MachineStatus-57">　</div>
-	  <div class="progress-bar" id="Progress-bar-57"><div class="progress-57" id="MachineBar-57"></div></div>
+	  <div class="progress-bar" id="Progress-bar-57"><div class="progress-57" id="MachineBar-57"><p class="bar-text" id="BarText-57"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-58" data-description="">
     <div class="periodic-element-inner" id="element-inner-58">
 	  <div class="no">58</div>
       <div class="status" id="MachineStatus-58">　</div>
-	  <div class="progress-bar" id="Progress-bar-58"><div class="progress-58" id="MachineBar-58"></div></div>
+	  <div class="progress-bar" id="Progress-bar-58"><div class="progress-58" id="MachineBar-58"><p class="bar-text" id="BarText-58"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-59" data-description="">
     <div class="periodic-element-inner" id="element-inner-59">
 	  <div class="no">59</div>
       <div class="status" id="MachineStatus-59">　</div>
-	  <div class="progress-bar" id="Progress-bar-59"><div class="progress-59" id="MachineBar-59"></div></div>
+	  <div class="progress-bar" id="Progress-bar-59"><div class="progress-59" id="MachineBar-59"><p class="bar-text" id="BarText-59"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-60" data-description="">
     <div class="periodic-element-inner" id="element-inner-60">
 	  <div class="no">60</div>
       <div class="status" id="MachineStatus-60">　</div>
-	  <div class="progress-bar" id="Progress-bar-60"><div class="progress-60" id="MachineBar-60"></div></div>
+	  <div class="progress-bar" id="Progress-bar-60"><div class="progress-60" id="MachineBar-60"><p class="bar-text" id="BarText-60"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-61" data-description="">
     <div class="periodic-element-inner" id="element-inner-61">
 	  <div class="no">61</div>
       <div class="status" id="MachineStatus-61">　</div>
-	  <div class="progress-bar" id="Progress-bar-61"><div class="progress-61" id="MachineBar-61"></div></div>
+	  <div class="progress-bar" id="Progress-bar-61"><div class="progress-61" id="MachineBar-61"><p class="bar-text" id="BarText-61"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-62" data-description="">
     <div class="periodic-element-inner" id="element-inner-62">
 	  <div class="no">62</div>
       <div class="status" id="MachineStatus-62">　</div>
-	  <div class="progress-bar" id="Progress-bar-62"><div class="progress-62" id="MachineBar-62"></div></div>
+	  <div class="progress-bar" id="Progress-bar-62"><div class="progress-62" id="MachineBar-62"><p class="bar-text" id="BarText-62"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-63" data-description="">
     <div class="periodic-element-inner" id="element-inner-63">
 	  <div class="no">63</div>
       <div class="status" id="MachineStatus-63">　</div>
-	  <div class="progress-bar" id="Progress-bar-63"><div class="progress-63" id="MachineBar-63"></div></div>
+	  <div class="progress-bar" id="Progress-bar-63"><div class="progress-63" id="MachineBar-63"><p class="bar-text" id="BarText-63"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-64" data-description="">
     <div class="periodic-element-inner" id="element-inner-64">
 	  <div class="no">64</div>
       <div class="status" id="MachineStatus-64">　</div>
-	  <div class="progress-bar" id="Progress-bar-64"><div class="progress-64" id="MachineBar-64"></div></div>
+	  <div class="progress-bar" id="Progress-bar-64"><div class="progress-64" id="MachineBar-64"><p class="bar-text" id="BarText-64"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-65" data-description="">
     <div class="periodic-element-inner" id="element-inner-65">
 	  <div class="no">65</div>
       <div class="status" id="MachineStatus-65">　</div>
-	  <div class="progress-bar" id="Progress-bar-65"><div class="progress-65" id="MachineBar-65"></div></div>
+	  <div class="progress-bar" id="Progress-bar-65"><div class="progress-65" id="MachineBar-65"><p class="bar-text" id="BarText-65"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-66" data-description="">
     <div class="periodic-element-inner" id="element-inner-66">
 	  <div class="no">66</div>
       <div class="status" id="MachineStatus-66">　</div>
-	  <div class="progress-bar" id="Progress-bar-66"><div class="progress-66" id="MachineBar-66"></div></div>
+	  <div class="progress-bar" id="Progress-bar-66"><div class="progress-66" id="MachineBar-66"><p class="bar-text" id="BarText-66"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-67" data-description="">
     <div class="periodic-element-inner" id="element-inner-67">
 	  <div class="no">67</div>
       <div class="status" id="MachineStatus-67">　</div>
-	  <div class="progress-bar" id="Progress-bar-67"><div class="progress-67" id="MachineBar-67"></div></div>
+	  <div class="progress-bar" id="Progress-bar-67"><div class="progress-67" id="MachineBar-67"><p class="bar-text" id="BarText-67"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-68" data-description="">
     <div class="periodic-element-inner" id="element-inner-68">
 	  <div class="no">68</div>
       <div class="status" id="MachineStatus-68">　</div>
-	  <div class="progress-bar" id="Progress-bar-68"><div class="progress-68" id="MachineBar-68"></div></div>
+	  <div class="progress-bar" id="Progress-bar-68"><div class="progress-68" id="MachineBar-68"><p class="bar-text" id="BarText-68"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-69" data-description="">
     <div class="periodic-element-inner" id="element-inner-69">
 	  <div class="no">69</div>
       <div class="status" id="MachineStatus-69">　</div>
-	  <div class="progress-bar" id="Progress-bar-69"><div class="progress-69" id="MachineBar-69"></div></div>
+	  <div class="progress-bar" id="Progress-bar-69"><div class="progress-69" id="MachineBar-69"><p class="bar-text" id="BarText-69"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-70" data-description="">
     <div class="periodic-element-inner" id="element-inner-70">
 	  <div class="no">70</div>
       <div class="status" id="MachineStatus-70">　</div>
-	  <div class="progress-bar" id="Progress-bar-70"><div class="progress-70" id="MachineBar-70"></div></div>
+	  <div class="progress-bar" id="Progress-bar-70"><div class="progress-70" id="MachineBar-70"><p class="bar-text" id="BarText-70"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-71" data-description="">
     <div class="periodic-element-inner" id="element-inner-71">
 	  <div class="no">71</div>
       <div class="status" id="MachineStatus-71">　</div>
-	  <div class="progress-bar" id="Progress-bar-71"><div class="progress-71" id="MachineBar-71"></div></div>
+	  <div class="progress-bar" id="Progress-bar-71"><div class="progress-71" id="MachineBar-71"><p class="bar-text" id="BarText-71"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-72" data-description="">
     <div class="periodic-element-inner" id="element-inner-72">
 	  <div class="no">72</div>
       <div class="status" id="MachineStatus-72">　</div>
-	  <div class="progress-bar" id="Progress-bar-72"><div class="progress-72" id="MachineBar-72"></div></div>
+	  <div class="progress-bar" id="Progress-bar-72"><div class="progress-72" id="MachineBar-72"><p class="bar-text" id="BarText-72"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-73" data-description="">
     <div class="periodic-element-inner" id="element-inner-73">
 	  <div class="no">73</div>
       <div class="status" id="MachineStatus-73">　</div>
-	  <div class="progress-bar" id="Progress-bar-73"><div class="progress-73" id="MachineBar-73"></div></div>
+	  <div class="progress-bar" id="Progress-bar-73"><div class="progress-73" id="MachineBar-73"><p class="bar-text" id="BarText-73"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-74" data-description="">
     <div class="periodic-element-inner" id="element-inner-74">
 	  <div class="no">74</div>
       <div class="status" id="MachineStatus-74">　</div>
-	  <div class="progress-bar" id="Progress-bar-74"><div class="progress-74" id="MachineBar-74"></div></div>
+	  <div class="progress-bar" id="Progress-bar-74"><div class="progress-74" id="MachineBar-74"><p class="bar-text" id="BarText-74"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-75" data-description="">
     <div class="periodic-element-inner" id="element-inner-75">
 	  <div class="no">75</div>
       <div class="status" id="MachineStatus-75">　</div>
-	  <div class="progress-bar" id="Progress-bar-75"><div class="progress-75" id="MachineBar-75"></div></div>
+	  <div class="progress-bar" id="Progress-bar-75"><div class="progress-75" id="MachineBar-75"><p class="bar-text" id="BarText-75"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-76" data-description="">
     <div class="periodic-element-inner" id="element-inner-76">
 	  <div class="no">76</div>
       <div class="status" id="MachineStatus-76">　</div>
-	  <div class="progress-bar" id="Progress-bar-76"><div class="progress-76" id="MachineBar-76"></div></div>
+	  <div class="progress-bar" id="Progress-bar-76"><div class="progress-76" id="MachineBar-76"><p class="bar-text" id="BarText-76"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-77" data-description="">
     <div class="periodic-element-inner" id="element-inner-77">
 	  <div class="no">77</div>
       <div class="status" id="MachineStatus-77">　</div>
-	  <div class="progress-bar" id="Progress-bar-77"><div class="progress-77" id="MachineBar-77"></div></div>
+	  <div class="progress-bar" id="Progress-bar-77"><div class="progress-77" id="MachineBar-77"><p class="bar-text" id="BarText-77"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-78" data-description="">
     <div class="periodic-element-inner" id="element-inner-78">
 	  <div class="no">78</div>
       <div class="status" id="MachineStatus-78">　</div>
-	  <div class="progress-bar" id="Progress-bar-78"><div class="progress-78" id="MachineBar-78"></div></div>
+	  <div class="progress-bar" id="Progress-bar-78"><div class="progress-78" id="MachineBar-78"><p class="bar-text" id="BarText-78"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-79" data-description="">
     <div class="periodic-element-inner" id="element-inner-79">
 	  <div class="no">79</div>
       <div class="status" id="MachineStatus-79">　</div>
-	  <div class="progress-bar" id="Progress-bar-79"><div class="progress-79" id="MachineBar-79"></div></div>
+	  <div class="progress-bar" id="Progress-bar-79"><div class="progress-79" id="MachineBar-79"><p class="bar-text" id="BarText-79"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-80" data-description="">
     <div class="periodic-element-inner" id="element-inner-80">
 	  <div class="no">80</div>
       <div class="status" id="MachineStatus-80">　</div>
-	  <div class="progress-bar" id="Progress-bar-80"><div class="progress-80" id="MachineBar-80"></div></div>
+	  <div class="progress-bar" id="Progress-bar-80"><div class="progress-80" id="MachineBar-80"><p class="bar-text" id="BarText-80"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-81" data-description="">
     <div class="periodic-element-inner" id="element-inner-81">
 	  <div class="no">81</div>
       <div class="status" id="MachineStatus-81">　</div>
-	  <div class="progress-bar" id="Progress-bar-81"><div class="progress-81" id="MachineBar-81"></div></div>
+	  <div class="progress-bar" id="Progress-bar-81"><div class="progress-81" id="MachineBar-81"><p class="bar-text" id="BarText-81"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-82" data-description="">
     <div class="periodic-element-inner" id="element-inner-82">
 	  <div class="no">82</div>
       <div class="status" id="MachineStatus-82">　</div>
-	  <div class="progress-bar" id="Progress-bar-82"><div class="progress-82" id="MachineBar-82"></div></div>
+	  <div class="progress-bar" id="Progress-bar-82"><div class="progress-82" id="MachineBar-82"><p class="bar-text" id="BarText-82"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-83" data-description="">
     <div class="periodic-element-inner" id="element-inner-83">
 	  <div class="no">83</div>
       <div class="status" id="MachineStatus-83">　</div>
-	  <div class="progress-bar" id="Progress-bar-83"><div class="progress-83" id="MachineBar-83"></div></div>
+	  <div class="progress-bar" id="Progress-bar-83"><div class="progress-83" id="MachineBar-83"><p class="bar-text" id="BarText-83"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-84" data-description="">
     <div class="periodic-element-inner" id="element-inner-84">
 	  <div class="no">84</div>
       <div class="status" id="MachineStatus-84">　</div>
-	  <div class="progress-bar" id="Progress-bar-84"><div class="progress-84" id="MachineBar-84"></div></div>
+	  <div class="progress-bar" id="Progress-bar-84"><div class="progress-84" id="MachineBar-84"><p class="bar-text" id="BarText-84"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-85" data-description="">
     <div class="periodic-element-inner" id="element-inner-85">
 	  <div class="no">85</div>
       <div class="status" id="MachineStatus-85">　</div>
-	  <div class="progress-bar" id="Progress-bar-85"><div class="progress-85" id="MachineBar-85"></div></div>
+	  <div class="progress-bar" id="Progress-bar-85"><div class="progress-85" id="MachineBar-85"><p class="bar-text" id="BarText-85"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-86" data-description="">
     <div class="periodic-element-inner" id="element-inner-86">
 	  <div class="no">86</div>
       <div class="status" id="MachineStatus-86">　</div>
-	  <div class="progress-bar" id="Progress-bar-86"><div class="progress-86" id="MachineBar-86"></div></div>
+	  <div class="progress-bar" id="Progress-bar-86"><div class="progress-86" id="MachineBar-86"><p class="bar-text" id="BarText-86"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-87" data-description="">
     <div class="periodic-element-inner" id="element-inner-87">
 	  <div class="no">87</div>
       <div class="status" id="MachineStatus-87">　</div>
-	  <div class="progress-bar" id="Progress-bar-87"><div class="progress-87" id="MachineBar-87"></div></div>
+	  <div class="progress-bar" id="Progress-bar-87"><div class="progress-87" id="MachineBar-87"><p class="bar-text" id="BarText-87"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-88" data-description="">
     <div class="periodic-element-inner" id="element-inner-88">
 	  <div class="no">88</div>
       <div class="status" id="MachineStatus-88">　</div>
-	  <div class="progress-bar" id="Progress-bar-88"><div class="progress-88" id="MachineBar-88"></div></div>
+	  <div class="progress-bar" id="Progress-bar-88"><div class="progress-88" id="MachineBar-88"><p class="bar-text" id="BarText-88"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-89" data-description="">
     <div class="periodic-element-inner" id="element-inner-89">
 	  <div class="no">89</div>
       <div class="status" id="MachineStatus-89">　</div>
-	  <div class="progress-bar" id="Progress-bar-89"><div class="progress-89" id="MachineBar-89"></div></div>
+	  <div class="progress-bar" id="Progress-bar-89"><div class="progress-89" id="MachineBar-89"><p class="bar-text" id="BarText-89"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-90" data-description="">
     <div class="periodic-element-inner" id="element-inner-90">
 	  <div class="no">90</div>
       <div class="status" id="MachineStatus-90">　</div>
-	  <div class="progress-bar" id="Progress-bar-90"><div class="progress-90" id="MachineBar-90"></div></div>
+	  <div class="progress-bar" id="Progress-bar-90"><div class="progress-90" id="MachineBar-90"><p class="bar-text" id="BarText-90"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-91" data-description="">
     <div class="periodic-element-inner" id="element-inner-91">
 	  <div class="no">91</div>
       <div class="status" id="MachineStatus-91">　</div>
-	  <div class="progress-bar" id="Progress-bar-91"><div class="progress-91" id="MachineBar-91"></div></div>
+	  <div class="progress-bar" id="Progress-bar-91"><div class="progress-91" id="MachineBar-91"><p class="bar-text" id="BarText-91"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-92" data-description="">
     <div class="periodic-element-inner" id="element-inner-92">
 	  <div class="no">92</div>
       <div class="status" id="MachineStatus-92">　</div>
-	  <div class="progress-bar" id="Progress-bar-92"><div class="progress-92" id="MachineBar-92"></div></div>
+	  <div class="progress-bar" id="Progress-bar-92"><div class="progress-92" id="MachineBar-92"><p class="bar-text" id="BarText-92"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-93" data-description="">
     <div class="periodic-element-inner" id="element-inner-93">
 	  <div class="no">93</div>
       <div class="status" id="MachineStatus-93">　</div>
-	  <div class="progress-bar" id="Progress-bar-93"><div class="progress-93" id="MachineBar-93"></div></div>
+	  <div class="progress-bar" id="Progress-bar-93"><div class="progress-93" id="MachineBar-93"><p class="bar-text" id="BarText-93"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-94" data-description="">
     <div class="periodic-element-inner" id="element-inner-94">
 	  <div class="no">94</div>
       <div class="status" id="MachineStatus-94">　</div>
-	  <div class="progress-bar" id="Progress-bar-94"><div class="progress-94" id="MachineBar-94"></div></div>
+	  <div class="progress-bar" id="Progress-bar-94"><div class="progress-94" id="MachineBar-94"><p class="bar-text" id="BarText-94"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-95" data-description="">
     <div class="periodic-element-inner" id="element-inner-95">
 	  <div class="no">95</div>
       <div class="status" id="MachineStatus-95">　</div>
-	  <div class="progress-bar" id="Progress-bar-95"><div class="progress-95" id="MachineBar-95"></div></div>
+	  <div class="progress-bar" id="Progress-bar-95"><div class="progress-95" id="MachineBar-95"><p class="bar-text" id="BarText-95"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-96" data-description="">
     <div class="periodic-element-inner" id="element-inner-96">
 	  <div class="no">96</div>
       <div class="status" id="MachineStatus-96">　</div>
-	  <div class="progress-bar" id="Progress-bar-96"><div class="progress-96" id="MachineBar-96"></div></div>
+	  <div class="progress-bar" id="Progress-bar-96"><div class="progress-96" id="MachineBar-96"><p class="bar-text" id="BarText-96"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-97" data-description="">
     <div class="periodic-element-inner" id="element-inner-97">
 	  <div class="no">97</div>
       <div class="status" id="MachineStatus-97">　</div>
-	  <div class="progress-bar" id="Progress-bar-97"><div class="progress-97" id="MachineBar-97"></div></div>
+	  <div class="progress-bar" id="Progress-bar-97"><div class="progress-97" id="MachineBar-97"><p class="bar-text" id="BarText-97"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-98" data-description="">
     <div class="periodic-element-inner" id="element-inner-98">
 	  <div class="no">98</div>
       <div class="status" id="MachineStatus-98">　</div>
-	  <div class="progress-bar" id="Progress-bar-98"><div class="progress-98" id="MachineBar-98"></div></div>
+	  <div class="progress-bar" id="Progress-bar-98"><div class="progress-98" id="MachineBar-98"><p class="bar-text" id="BarText-98"></p></div></div>
     </div>
   </div>
   <div class="periodic-element original" id="MachineData-99" data-description="">
     <div class="periodic-element-inner" id="element-inner-99">
 	  <div class="no">99</div>
       <div class="status" id="MachineStatus-99">　</div>
-	  <div class="progress-bar" id="Progress-bar-99"><div class="progress-99" id="MachineBar-99"></div></div>
+	  <div class="progress-bar" id="Progress-bar-99"><div class="progress-99" id="MachineBar-99"><p class="bar-text" id="BarText-99"></p></div></div>
     </div>
   </div>
 
@@ -1440,7 +1449,10 @@
 
 
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script src='js/d3.min.js'></script>
 <script src="js/FactilityBoard.js"></script>
+
+
 
 
 

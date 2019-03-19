@@ -69,7 +69,7 @@ function chkData()
 function showData()
 {
 	dispTime();
-	var MData, EInner, MStatus, MBar, ProgrssBar;
+	var MData, EInner, MStatus, MBar, ProgrssBar, BarText;
 	var CurQty, SetQty, CurMiss, SetMiss, SpeedRate;
 	var QtyRate, MissRate;
 	var connectCnt;
@@ -82,6 +82,7 @@ function showData()
 		MStatus = document.getElementById('MachineStatus-' + i);
 		MBar = document.getElementById('MachineBar-' + i);
 		ProgrssBar = document.getElementById('Progress-bar-' + i);
+		BarText = document.getElementById('BarText-' + i);
 		switch(data[index++])
 		{
 			case 'Disconnect':
@@ -148,7 +149,7 @@ function showData()
 		if(data[index] == 'IO')
 		{
 			MData.setAttribute('data-description',"通用型機台\n生產率: 無\n失誤率: 無\n產速率: 無");
-			MBar.innerHTML = "無";
+			BarText.innerHTML = "無";
 			index += 6;
 		}
 		else
@@ -159,7 +160,7 @@ function showData()
 			QtyRate = Math.round((CurQty/SetQty)*100) + " %\n";
 			MissRate = Math.round((CurMiss/SetMiss)*100) + " %\n";	
 			MData.setAttribute('data-description',"生產率: " + QtyRate + "失誤率: " + MissRate + "產速率: " + SpeedRate + " %");
-			MBar.innerHTML = Math.round((CurQty/SetQty)*100) + "%";
+			BarText.innerHTML = Math.round((CurQty/SetQty)*100) + "%";
 			MBar.style.width = Math.round((CurQty/SetQty)*100) + "%"; 
 		}
 	}
@@ -180,6 +181,39 @@ function showData()
 	ErrorCount.innerHTML = errorCnt;
 	
 	//處理Chart donut
+	var ProducingPercent = Math.floor((producingCnt/connectCnt)*100);
+	var StopPercent = Math.floor((stopCnt/connectCnt)*100);
+	var PowerOffPercent = Math.floor((powerOffCnt/connectCnt)*100);
+	var AchieveQtyPercent = Math.floor((achieveQtyCnt/connectCnt)*100);
+	var ErrorPercent = Math.floor((errorCnt/connectCnt)*100);
+	var TotalPercent = ProducingPercent+StopPercent+PowerOffPercent+AchieveQtyPercent+ErrorPercent;
+	if(TotalPercent < 100)	//若總%數不是100，因為Math.floor可能會導致誤差
+	{
+		var tempValue = 100 - TotalPercent;
+		if(ProducingPercent > 0)
+			ProducingPercent = ProducingPercent + tempValue;
+		else if(StopPercent > 0)
+			StopPercent = StopPercent + tempValue;
+		else if(PowerOffPercent > 0)
+			PowerOffPercent = PowerOffPercent + tempValue;
+		else if(AchieveQtyPercent > 0)
+			AchieveQtyPercent = AchieveQtyPercent + tempValue;
+		else if(ErrorPercent > 0)
+			ErrorPercent = ErrorPercent + tempValue;
+	}
+	
+	if(connectCnt > 0)	//連接數量大於0才須顯示Chart
+	{
+		var percent_array = new Array(5);
+		percent_array[0] = ProducingPercent;
+		percent_array[1] = StopPercent;
+		percent_array[2] = PowerOffPercent;
+		percent_array[3] = AchieveQtyPercent;
+		percent_array[4] = ErrorPercent;
+		dispChart(percent_array);
+	}
+	
+	/*	舊Chart
 	var producing_begin = document.getElementById('producing-begin'); 
 	var quesito_producing = document.getElementById('quesito-producing'); 
 	var stop_begin = document.getElementById('stop-begin'); 
@@ -215,6 +249,7 @@ function showData()
 	rota = 360-CurDeg;
 	quesito_error.style.transform = "rotate(" + rota + "deg)";
 	CurDeg = CurDeg + rota;	
+	*/
 }
 
 function dispTime()
@@ -278,8 +313,93 @@ function transfer_Status(temp)	//狀態的字串 英文轉中文
 	else if(temp == "ServerError(Lock)")return "伺服錯誤(鎖)";
 }
 
+function dispChart(value){
+	var dataset = [
+			{ percent: value[0] },
+			{ percent: value[1] },
+			{ percent: value[2] },
+			{ percent: value[3] },
+			{ percent: value[4] }
+		];
+
+	var pie=d3.layout.pie()
+			.value(function(d){return d.percent})
+			.sort(null)
+			.padAngle(.03);
+
+	var w=250,h=270;
+	var outerRadius=w/2;
+	var innerRadius=70;
+
+	var arc=d3.svg.arc()
+			.outerRadius(outerRadius)
+			.innerRadius(innerRadius);
+
+	var svg=d3.select("#chart")
+			.append("svg")
+			.attr({
+				width:w,
+				height:h,
+				class:'shadow'
+			}).append('g')
+			.attr({
+				transform:'translate('+w/2+','+h/2+')'
+			});
+	var color=0;
+	var path=svg.selectAll('path')
+			.data(pie(dataset))
+			.enter()
+			.append('path')
+			.attr({
+				d:arc,
+				fill:function(d,i){
+					color++;
+					if(color == 1)
+						return '#8BF98F';	
+					else if(color == 2)
+						return '#FFFF00';
+					else if(color == 3)
+						return '#8B8B70';
+					else if(color == 4)
+						return '#00EEEE';
+					else if(color == 5)
+						return '#EE0000';
+				}
+			});
+
+	path.transition()
+			.duration(1000)
+			.attrTween('d', function(d) {
+				var interpolate = d3.interpolate({startAngle: 0, endAngle: 0}, d);
+				return function(t) {
+					return arc(interpolate(t));
+				};
+			});
+
+	var restOfTheData=function(){
+		var text=svg.selectAll('text')
+				.data(pie(dataset))
+				.enter()
+				.append("text")
+				.transition()
+				.duration(200)
+				.attr("transform", function (d) {
+					return "translate(" + arc.centroid(d) + ")";
+				})
+				.attr("dy", ".4em")
+				.attr("text-anchor", "middle")
+				.text(function(d){
+					return d.data.percent+"%";
+				})
+				.style({
+					fill:'#000',
+					'font-size':'15px'
+				});
+	};
+	setTimeout(restOfTheData,200);
+}
+
 function debug(temp)
 {
 	time.innerHTML = temp;
 }
-

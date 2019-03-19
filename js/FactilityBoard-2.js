@@ -6,7 +6,7 @@ var time = document.getElementById("updateTime");
 var data;
 var MachineQty = 99;
 var file = './MachineData.txt';
-var fileSplit = "\r\n";		//Github page上不用加"\r"，不然顯示不出來
+var fileSplit = "\n";		//Github page上不用加"\r"，不然顯示不出來
 var data_All = new Array(MachineQty), data_Connect;
 var disp_Time = "";
 var curr_num, curr_type;	//目前頁面的數量	//目前頁面的類型

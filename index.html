@@ -7,6 +7,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>整廠設備</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style-chart.css">
 </head>
 
 <body>
@@ -30,6 +31,7 @@
 </div>
 
 <div class="donut-chart-block block"> 
+<!--	舊式 Chart
 	<div class="donut-chart">
 		<div id="producing-begin" class="recorte quesito-producing-begin"><div id="quesito-producing" class="quesito quesito-producing"></div></div>
 		<div id="stop-begin" class="recorte quesito-stop-begin"><div id="quesito-stop" class="quesito quesito-stop"></div></div>
@@ -38,6 +40,13 @@
 		<div id="error-begin" class="recorte quesito-error-begin"><div id="quesito-error" class="quesito quesito-error"></div></div>
 		<p class="center-date">已連接<br><span id="ConnectCnt" class="scnd-font-color">???</span></p>        
 	</div>
+-->
+
+	<div class="widget">
+		<p class="center-text">已連接<br><span id="ConnectCnt" class="scnd-font-color">???</span></p>
+		<div id="chart" class="chart-container"></div>
+	</div>
+
 	<ul class="status-percentages horizontal-list">
 		<li>
 			<p class="li-producing li-status scnd-font-color">生產</p>
@@ -1440,7 +1449,10 @@
 
 
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script src='js/d3.min.js'></script>
 <script src="js/FactilityBoard.js"></script>
+
+
 
 
 

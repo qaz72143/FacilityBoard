@@ -32,10 +32,10 @@
 		--h5Size: 40px;
 		--legend-markerSize: 35px;
 		
-		--chart-scale: 1.35;
+		--chart-scale: 1.25;
 		--legend-padding-bottom: 70px;
-		--chart-margin-top: -26.2em;
-		--chart-margin-left: 2.8em;
+		--chart-margin-top: -26.8em;
+		--chart-margin-left: 1.9em;
 	}
 }
 @media screen and (min-width: 1700px) and (max-width: 1800px) {
@@ -46,9 +46,9 @@
 		--legend-markerSize: 35px;
 		
 		--chart-scale: 1.2;
-		--legend-padding-bottom: 50px;
-		--chart-margin-top: -25.8em;
-		--chart-margin-left: 1.3em;
+		--legend-padding-bottom: 70px;
+		--chart-margin-top: -27.35em;
+		--chart-margin-left: 1.35em;
 	}
 }
 @media screen and (min-width: 1500px) and (max-width: 1700px) {
@@ -59,8 +59,8 @@
 		--legend-markerSize: 30px;
 		
 		--chart-scale: 1.1;
-		--legend-padding-bottom: 50px;
-		--chart-margin-top: -23.9em;
+		--legend-padding-bottom: 70px;
+		--chart-margin-top: -25.6em;
 		--chart-margin-left: 0.4em;
 	}
 }
@@ -72,9 +72,9 @@
 		--legend-markerSize: 30px;
 		
 		--chart-scale: 1;
-		--legend-padding-bottom: 40px;
-		--chart-margin-top: -24.25em;
-		--chart-margin-left: -0.6em;
+		--legend-padding-bottom: 70px;
+		--chart-margin-top: -26.75em;
+		--chart-margin-left: -0.55em;
 	}
 }
 @media screen and (min-width: 1100px) and (max-width: 1300px) {
@@ -84,10 +84,10 @@
 		--h5Size: 30px;
 		--legend-markerSize: 25px;
 		
-		--chart-scale: 0.85;
-		--legend-padding-bottom: 40px;
-		--chart-margin-top: -22.35em;
-		--chart-margin-left: -2em;
+		--chart-scale: 0.9;
+		--legend-padding-bottom: 70px;
+		--chart-margin-top: -24.85em;
+		--chart-margin-left: -1.5em;
 	}
 }
 @media screen and (min-width: 950px) and (max-width: 1100px) {
@@ -98,10 +98,10 @@
 		--legend-markerSize: 25px;
 		--chart-scale: 0.7;
 		
-		--chart-scale: 0.65;
-		--legend-padding-bottom: 40px;
-		--chart-margin-top: -21em;
-		--chart-margin-left: -3.85em;
+		--chart-scale: 0.7;
+		--legend-padding-bottom: 70px;
+		--chart-margin-top: -25.25em;
+		--chart-margin-left: -3.5em;
 	}
 }
 @media screen and (min-width: 800px) and (max-width: 950px) {
@@ -112,8 +112,8 @@
 		--legend-markerSize: 20px;
 		
 		--chart-scale: 0.65;
-		--legend-padding-bottom: 40px;
-		--chart-margin-top: -20.3em;
+		--legend-padding-bottom: 70px;
+		--chart-margin-top: -23.4em;
 		--chart-margin-left: -3.85em;
 	}
 }
@@ -124,10 +124,10 @@
 		--h5Size: 25px;
 		--legend-markerSize: 20px;
 		
-		--chart-scale: 0.65;
-		--legend-padding-bottom: 40px;
-		--chart-margin-top: -20.3em;
-		--chart-margin-left: -3.85em;
+		--chart-scale: 0.9;
+		--legend-padding-bottom: 370px;
+		--chart-margin-top: -24em;
+		--chart-margin-left: 10em;
 	}
 }
 @media screen and (min-width: 400px) and (max-width: 600px) {
@@ -137,10 +137,10 @@
 		--h5Size: 20px;
 		--legend-markerSize: 18px;
 		
-		--chart-scale: 0.65;
-		--legend-padding-bottom: 40px;
-		--chart-margin-top: -17.4em;
-		--chart-margin-left: -3.85em;
+		--chart-scale: 0.8;
+		--legend-padding-bottom: 350px;
+		--chart-margin-top: -23em;
+		--chart-margin-left: 2.5em;
 	}
 }
 @media screen and (max-width: 400px) {
@@ -150,10 +150,10 @@
 		--h5Size: 20px;
 		--legend-markerSize: 18px;
 		
-		--chart-scale: 0.65;
-		--legend-padding-bottom: 40px;
-		--chart-margin-top: -20.3em;
-		--chart-margin-left: -3.85em;
+		--chart-scale: 0.8;
+		--legend-padding-bottom: 350px;
+		--chart-margin-top: -23em;
+		--chart-margin-left: 8em;
 	}
 }
 
@@ -257,6 +257,7 @@ h1, h2, p, a, span{
 /******************************************
 GRAFICO CIRCULAR PIE CHART
 ******************************************/
+/*	舊式 Chart
 .donut-chart {
 	position: relative;
 	width: 200px;
@@ -264,7 +265,6 @@ GRAFICO CIRCULAR PIE CHART
 	margin: 0 auto 1em;
 	margin-top: 1em;
 	border-radius: 100%;
-	
  }
 p.center-date {
   background: #394264;
@@ -300,11 +300,11 @@ p.center-date {
 }   
 
 .quesito-producing-begin{
-	transform: rotate(0deg);	/*起始角度*/
+	transform: rotate(0deg);	/*起始角度
 }
 .quesito-producing {
 	background-color: var(--producing-color-1);
-	transform: rotate(72deg);   /*範圍角度*/
+	transform: rotate(72deg);   /*範圍角度
 }
 
 .quesito-stop-begin{

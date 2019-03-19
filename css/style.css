@@ -338,6 +338,7 @@ p.center-date {
 	background-color: var(--error-color-1);
 	transform: rotate(72deg);  
 }
+
 /*********************************************/
 
 .legend-table {	
@@ -591,7 +592,13 @@ a.periodic-element {
   grid-row: 1;
 }
 
-
+p.bar-text {
+  position: absolute;
+  top:30px;
+  left:20px;
+  font-size: 20px;
+  color: black;
+}
 
 .progress-bar{
             /* 進度條的槽 */

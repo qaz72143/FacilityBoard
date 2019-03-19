@@ -69,7 +69,7 @@ function chkData()
 function showData()
 {
 	dispTime();
-	var MData, EInner, MStatus, MBar, ProgrssBar;
+	var MData, EInner, MStatus, MBar, ProgrssBar, BarText;
 	var CurQty, SetQty, CurMiss, SetMiss, SpeedRate;
 	var QtyRate, MissRate;
 	var connectCnt;
@@ -82,6 +82,7 @@ function showData()
 		MStatus = document.getElementById('MachineStatus-' + i);
 		MBar = document.getElementById('MachineBar-' + i);
 		ProgrssBar = document.getElementById('Progress-bar-' + i);
+		BarText = document.getElementById('BarText-' + i);
 		switch(data[index++])
 		{
 			case 'Disconnect':
@@ -148,7 +149,7 @@ function showData()
 		if(data[index] == 'IO')
 		{
 			MData.setAttribute('data-description',"通用型機台\n生產率: 無\n失誤率: 無\n產速率: 無");
-			MBar.innerHTML = "無";
+			BarText.innerHTML = "無";
 			index += 6;
 		}
 		else
@@ -159,7 +160,7 @@ function showData()
 			QtyRate = Math.round((CurQty/SetQty)*100) + " %\n";
 			MissRate = Math.round((CurMiss/SetMiss)*100) + " %\n";	
 			MData.setAttribute('data-description',"生產率: " + QtyRate + "失誤率: " + MissRate + "產速率: " + SpeedRate + " %");
-			MBar.innerHTML = Math.round((CurQty/SetQty)*100) + "%";
+			BarText.innerHTML = Math.round((CurQty/SetQty)*100) + "%";
 			MBar.style.width = Math.round((CurQty/SetQty)*100) + "%"; 
 		}
 	}

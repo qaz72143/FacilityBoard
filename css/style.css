@@ -471,7 +471,7 @@ a {
   font-size: 15px;
   line-height: 1.4;
   padding: 10px;
-  margin: 0 0 0 -70px;	/*調整位置*/
+  margin: 0 0 0 -73px;	/*調整位置*/
   border-radius: 6px;
   text-align: center;
   white-space: pre-line;	/*讓 '\n' 可以換行*/

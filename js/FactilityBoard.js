@@ -1,9 +1,11 @@
 var data;
-var MachineQty = 99;
+var MachineQty;
 var file = './MachineData.txt';
 var fileSplit = "\n";		//Github page上不用加"\r"，不然顯示不出來
 
 var time = document.getElementById("updateTime");
+var titleHead = document.getElementById('title_head');
+var title = document.getElementById('title');
 var checkData;
 var checkUpdate = setInterval(check_Update ,30000);	//每30秒檢查資料是否更新，刷新頁面
 window.addEventListener("load", readData, false);
@@ -70,13 +72,26 @@ function showData()
 {
 	dispTime();
 	var MData, EInner, MStatus, MBar, ProgrssBar, BarText;
+	var Card_ID, Custom_ID, model, admin, note;
 	var CurQty, SetQty, CurMiss, SetMiss, SpeedRate;
 	var QtyRate, MissRate;
 	var connectCnt;
 	var producingCnt=0, stopCnt=0, powerOffCnt=0, achieveQtyCnt=0, errorCnt=0; 
 	
-	for(var i=1, index=2; i<=MachineQty; i++)
+	titleHead.innerHTML = data[1];	//最上方標題
+	title.innerHTML = data[1];		//頁面標題
+	MachineQty = data[2];
+	// 3 是排列方式
+	// 4 是第幾台
+	
+	for(var i=1, index=5; i<=MachineQty; i++)
 	{
+		Card_ID = data[index++];
+		Custom_ID = data[index++];
+		model = data[index++];
+		admin = data[index++];
+		note = data[index++];
+		
 		MData = document.getElementById('MachineData-' + i);
 		EInner = document.getElementById('element-inner-' + i);
 		MStatus = document.getElementById('MachineStatus-' + i);
@@ -118,13 +133,13 @@ function showData()
 				achieveQtyCnt++;
 				EInner.className = "periodic-element-inner-achieveQty";
 				MStatus.className = "status status-achieveQty";
-				MStatus.innerHTML = "達生產";	
+				MStatus.innerHTML = "完成";	
 				break;
 			case 'AchieveQty(Lock)':
 				achieveQtyCnt++;
 				EInner.className = "periodic-element-inner-achieveQty";
 				MStatus.className = "status status-achieveQty";
-				MStatus.innerHTML = "達生產(鎖)";	
+				MStatus.innerHTML = "完成(鎖)";	
 				break;
 			case 'PowerOff':
 				powerOffCnt++;
@@ -147,8 +162,13 @@ function showData()
 			default: break;
 		}
 		if(data[index] == 'IO')
-		{
-			MData.setAttribute('data-description',"通用型機台\n生產率: 無\n失誤率: 無\n產速率: 無");
+		{					//Card_ID, Custom_ID, model, admin, note;
+			var tempD = "通用型機台\n";
+			tempD += "失誤率: 無, 產速率: 無\n";
+			tempD += "板子ID: " + Card_ID + ", 編號: " + Custom_ID + "\n";
+			tempD += "機型: " + model + ", 管理人: " + admin + "\n";
+			tempD += "備註: " + note;
+			MData.setAttribute('data-description',tempD);
 			BarText.innerHTML = "無";
 			index += 6;
 		}
@@ -157,12 +177,25 @@ function showData()
 			CurQty = data[index++];		SetQty = data[index++];
 			CurMiss = data[index++];	SetMiss = data[index++];
 			SpeedRate = data[index++];	index++;
-			QtyRate = Math.round((CurQty/SetQty)*100) + " %\n";
-			MissRate = Math.round((CurMiss/SetMiss)*100) + " %\n";	
-			MData.setAttribute('data-description',"生產率: " + QtyRate + "失誤率: " + MissRate + "產速率: " + SpeedRate + " %");
+			QtyRate = Math.round((CurQty/SetQty)*100) + " %";
+			MissRate = Math.round((CurMiss/SetMiss)*100) + " %";	
+			
+			var tempD = "失誤率: " + MissRate + ", 產速率: " + SpeedRate + " %\n";
+			tempD += "板子ID: " + Card_ID + ", 編號: " + Custom_ID + "\n";
+			tempD += "機型: " + model + ", 管理人: " + admin + "\n";
+			tempD += "備註: " + note;
+			MData.setAttribute('data-description',tempD);
 			BarText.innerHTML = Math.round((CurQty/SetQty)*100) + "%";
 			MBar.style.width = Math.round((CurQty/SetQty)*100) + "%"; 
 		}
+	}
+	
+	//刪掉多餘的機台格子
+	var deleteMachine;
+	for(int i=MachineQty+1; i<100; i++)
+	{
+		deleteMachine = document.getElementById('MachineData-' + i);
+		deleteMachine.parentNode.removeChild(deleteMachine);		
 	}
 	
 	//處理Chart		li 

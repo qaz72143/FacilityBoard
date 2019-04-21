@@ -180,9 +180,9 @@ function showData()
 			QtyRate = Math.round((CurQty/SetQty)*100) + " %";
 			MissRate = Math.round((CurMiss/SetMiss)*100) + " %";	
 			
-			var tempD = "失誤率: " + MissRate + ", 產速率: " + SpeedRate + " %\n";
-			tempD += "板子ID: " + Card_ID + ", 編號: " + Custom_ID + "\n";
-			tempD += "機型: " + model + ", 管理人: " + admin + "\n";
+			var tempD = "失誤率: " + MissRate + ",  產速率: " + SpeedRate + " %\n";
+			tempD += "板子ID: " + Card_ID + ",  編號: " + Custom_ID + "\n";
+			tempD += "機型: " + model + ",  管理人: " + admin + "\n";
 			tempD += "備註: " + note;
 			MData.setAttribute('data-description',tempD);
 			BarText.innerHTML = Math.round((CurQty/SetQty)*100) + "%";

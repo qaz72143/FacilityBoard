@@ -192,7 +192,7 @@ function showData()
 	
 	//刪掉多餘的機台格子
 	var deleteMachine;
-	for(int i=MachineQty+1; i<100; i++)
+	for(var i=MachineQty+1; i<100; i++)
 	{
 		deleteMachine = document.getElementById('MachineData-' + i);
 		deleteMachine.parentNode.removeChild(deleteMachine);		

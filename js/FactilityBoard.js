@@ -169,9 +169,9 @@ function showData()
 		if(data[index] == 'IO')
 		{					//Card_ID, Custom_ID, model, admin, note;
 			tempD = "通用型機台\n";
-			tempD += "失誤率: 無, 產速率: 無\n";
-			tempD += "板子ID: " + Card_ID + ", 編號: " + Custom_ID + "\n";
-			tempD += "機型: " + model + ", 管理人: " + admin + "\n";
+			tempD += "失誤率: 無,　產速率:　無\n";
+			tempD += "板子ID: " + Card_ID + ",　編號: " + Custom_ID + "\n";
+			tempD += "機型: " + model + ",　管理人: " + admin + "\n";
 			tempD += "備註: " + note;
 			MData.setAttribute('data-description',tempD);
 			BarText.innerHTML = "無";
@@ -185,7 +185,18 @@ function showData()
 			QtyRate = Math.round((CurQty/SetQty)*100) + " %";
 			MissRate = Math.round((CurMiss/SetMiss)*100) + " %";	
 			
-			var tempD = "失誤率: " + MissRate + ",　產速率: " + SpeedRate + " %\n";
+			if(MissRate < 10)
+				tempD = "失誤率: 　" + MissRate + ",　產速率: " + SpeedRate + " %\n";
+			else if(MissRate < 100)
+				tempD = "失誤率:　" + MissRate + ",　產速率: " + SpeedRate + " %\n";
+			else
+				tempD = "失誤率: " + MissRate + ",　產速率: " + SpeedRate + " %\n";
+			
+			if(Card_ID < 10)
+				tempD += "板子ID: 　" + Card_ID + "　,　編號: " + Custom_ID + "\n";
+			else
+				tempD += "板子ID:　" + Card_ID + "　,　編號: " + Custom_ID + "\n";
+			
 			tempD += "板子ID: " + Card_ID + ",　編號: " + Custom_ID + "\n";
 			tempD += "機型: " + model + ",　管理人: " + admin + "\n";
 			tempD += "備註: " + note;
@@ -194,7 +205,11 @@ function showData()
 			MBar.style.width = Math.round((CurQty/SetQty)*100) + "%"; 
 		}
 	}
-	
+//	失誤率:　50 %, 
+//	失誤率: 100 %,
+//	失誤率:   6 %,
+//	板子ID:   5  ,　編號:	
+//	板子ID:  99  ,　編號:
 	//刪掉多餘的機台格子
 	/*var deleteMachine;
 	for(var i=MachineQty+1; i<100; i++)

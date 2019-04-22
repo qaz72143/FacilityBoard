@@ -1,13 +1,13 @@
-Mon Apr 22 11:37:25 2019
-��t�]�Ƹ�Ʀ����t��
+﻿Mon Apr 22 11:37:25 2019
+整廠設備資料收集系統
 6
 NormalSort
 01
 1
 A3
-�u®��
+彈簧機
 Bob
-�Ͳ��L�C
+生產過慢
 AchieveQty
 16360
 16360
@@ -17,9 +17,9 @@ AchieveQty
 02
 2
 G7
-�u®��
+彈簧機
 Steven
-�S�����`
+沒有異常
 Stop(Lock)
 20755
 26469
@@ -29,9 +29,9 @@ Stop(Lock)
 03
 3
 L10
-��´��
+紡織機
 Kevin
-�S�����`
+沒有異常
 Disconnect
 #
 #
@@ -41,9 +41,9 @@ Disconnect
 04
 4
 S8
-�u®��
+彈簧機
 Larry
-�S�����`
+沒有異常
 AchieveQty
 IO
 IO
@@ -53,9 +53,9 @@ IO
 05
 5
 K1
-��´��
+紡織機
 Kevin
-�Ͳ��L��
+生產過快
 Producing(Lock)
 15527
 21429
@@ -65,9 +65,9 @@ Producing(Lock)
 06
 6
 L10
-��®��
+壓簧機
 Larry
-�Ͳ��L�C
+生產過慢
 Stop
 11409
 26461

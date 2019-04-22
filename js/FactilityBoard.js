@@ -20,6 +20,7 @@ function readData()
 	        success: function(data_t) {
 	            //alert(data_t);
 	        	//console.log(data_t);
+				contentType: "text/html; charset=big5";
 	        	data = data_t.split(fileSplit);	//Github page上不用加"\r"，不然顯示不出來
 				
 				setTimeout(function(){ checkData = setInterval(chkData ,1000); }, 500);	//0.5秒後每秒檢查是否正確讀取到txt檔的資料

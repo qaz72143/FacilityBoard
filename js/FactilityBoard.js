@@ -198,12 +198,12 @@ function showData()
 	}
 	
 	//刪掉多餘的機台格子
-	/*var deleteMachine;
+	var deleteMachine;
 	for(var i=MachineQty+1; i<100; i++)
 	{
 		deleteMachine = document.getElementById('MachineData-' + i);
-		deleteMachine.parentNode.removeChild(deleteMachine);		
-	}*/
+		deleteMachine.className = "empty-spacer-1";	
+	}
 	
 	//處理Chart		li 
 	var ConnectCount = document.getElementById('ConnectCnt');

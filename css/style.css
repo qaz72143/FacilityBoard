@@ -473,7 +473,7 @@ a {
   padding: 10px;
   margin: 0 0 0 -73px;	/*調整位置*/
   border-radius: 6px;
-  text-align: center;
+  /*text-align: center;*/
   white-space: pre-line;	/*讓 '\n' 可以換行*/
 }
 .periodic-element:hover {

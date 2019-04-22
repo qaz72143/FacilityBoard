@@ -196,20 +196,16 @@ function showData()
 				tempD += "板子ID: 　" + Card_ID + "　,　編號: " + Custom_ID + "\n";
 			else
 				tempD += "板子ID:　" + Card_ID + "　,　編號: " + Custom_ID + "\n";
-			
-			tempD += "板子ID: " + Card_ID + ",　編號: " + Custom_ID + "\n";
-			tempD += "機型: " + model + ",　管理人: " + admin + "\n";
-			tempD += "備註: " + note;
+
+			tempD += "機型: 　" + model + "\n";
+			tempD += "管理人: " + admin + "\n";
+			tempD += "備註: 　" + note;
 			MData.setAttribute('data-description',tempD);
 			BarText.innerHTML = Math.round((CurQty/SetQty)*100) + "%";
 			MBar.style.width = Math.round((CurQty/SetQty)*100) + "%"; 
 		}
 	}
-//	失誤率:　50 %, 
-//	失誤率: 100 %,
-//	失誤率:   6 %,
-//	板子ID:   5  ,　編號:	
-//	板子ID:  99  ,　編號:
+
 	//刪掉多餘的機台格子
 	/*var deleteMachine;
 	for(var i=MachineQty+1; i<100; i++)

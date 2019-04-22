@@ -77,6 +77,7 @@ function showData()
 	var QtyRate, MissRate;
 	var connectCnt;
 	var producingCnt=0, stopCnt=0, powerOffCnt=0, achieveQtyCnt=0, errorCnt=0; 
+	var tempD;
 	
 	titleHead.innerHTML = data[1];	//最上方標題
 	title.innerHTML = data[1];		//頁面標題
@@ -103,8 +104,12 @@ function showData()
 			case 'Disconnect':
 				index += 6;	
 				ProgrssBar.parentNode.removeChild(ProgrssBar);
-				continue;
-				break;
+				MStatus.innerHTML = "未連接";					
+				tempD = "板子ID: " + Card_ID + ",　編號: " + Custom_ID + "\n";
+				tempD += "機型: " + model + ",　管理人: " + admin + "\n";
+				tempD += "備註: " + note;
+				MData.setAttribute('data-description',tempD);			
+				continue;	
 			case 'Stop':
 				stopCnt++;
 				EInner.className = "periodic-element-inner-stop";
@@ -163,7 +168,7 @@ function showData()
 		}
 		if(data[index] == 'IO')
 		{					//Card_ID, Custom_ID, model, admin, note;
-			var tempD = "通用型機台\n";
+			tempD = "通用型機台\n";
 			tempD += "失誤率: 無, 產速率: 無\n";
 			tempD += "板子ID: " + Card_ID + ", 編號: " + Custom_ID + "\n";
 			tempD += "機型: " + model + ", 管理人: " + admin + "\n";
@@ -180,9 +185,9 @@ function showData()
 			QtyRate = Math.round((CurQty/SetQty)*100) + " %";
 			MissRate = Math.round((CurMiss/SetMiss)*100) + " %";	
 			
-			var tempD = "失誤率: " + MissRate + ",  產速率: " + SpeedRate + " %\n";
-			tempD += "板子ID: " + Card_ID + ",  編號: " + Custom_ID + "\n";
-			tempD += "機型: " + model + ",  管理人: " + admin + "\n";
+			var tempD = "失誤率: " + MissRate + ",　產速率: " + SpeedRate + " %\n";
+			tempD += "板子ID: " + Card_ID + ",　編號: " + Custom_ID + "\n";
+			tempD += "機型: " + model + ",　管理人: " + admin + "\n";
 			tempD += "備註: " + note;
 			MData.setAttribute('data-description',tempD);
 			BarText.innerHTML = Math.round((CurQty/SetQty)*100) + "%";

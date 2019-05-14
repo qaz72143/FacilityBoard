@@ -189,28 +189,21 @@ function showData()
 		}
 		else if(CurQty >= SetQty)
 		{
-			QtyRate = "100 %";
+			QtyRate = "100%";
 			BarText.innerHTML = QtyRate;
 			MBar.style.width = QtyRate; 
 		}
 		else
 		{
-			QtyRate = Math.round((CurQty/SetQty)*100) + " %";
+			QtyRate = Math.round((CurQty/SetQty)*100) + "%";
 			BarText.innerHTML = QtyRate;
 			MBar.style.width = QtyRate; 
 		}
-		
-		
-		while(CurQty.length < 8)	CurQty = " " + CurQty;
-		while(SetQty.length < 8)	SetQty = " " + SetQty;
-		while(AccQty.length < 8)	AccQty = " " + AccQty;
 		
 		if((CurMiss=='(空)') || (SetMiss=='(空)'))
 			MissRate = '空';	
 		else
 			MissRate = Math.round((CurMiss/SetMiss)*100) + " %";
-		while(CurMiss.length < 8)	CurMiss = " " + CurMiss;
-		while(SetMiss.length < 8)	SetMiss = " " + SetMiss;
 				
 		tempD = "板子類型: " + MType + ",　板子ID: " + Card_ID + "\n";
 		tempD += "目前生產量: " + CurQty + "\n"; 

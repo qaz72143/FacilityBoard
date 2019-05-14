@@ -222,7 +222,7 @@ function showData()
 			tempD += "設定失誤量: " + SetMiss + "\n"; 
 			tempD += "產速: " + SpeedRate + " %\n"; 
 		}
-		tempD += "更新: " + UpdateTime + "\n";
+		tempD += "最後更新: " + UpdateTime + "\n";
 		tempD += "機型編號:　" + Custom_ID + "\n";
 		tempD += "機型:　" + model + "\n";
 		tempD += "管理人:　" + admin + "\n";

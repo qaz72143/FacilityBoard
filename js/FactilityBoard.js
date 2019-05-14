@@ -187,7 +187,7 @@ function showData()
 			QtyRate = '(空)';	  
 			BarText.innerHTML = QtyRate;
 		}
-		else if(CurQty >= SetQty)
+		else if((CurQty*1) >= (SetQty*1))
 		{
 			QtyRate = "100%";
 			BarText.innerHTML = QtyRate;

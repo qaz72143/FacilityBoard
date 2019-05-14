@@ -208,7 +208,8 @@ function showData()
 		else
 			MissRate = Math.round((CurMiss/SetMiss)*100) + " %";
 				
-		tempD = "板子類型: " + MType + ",　板子ID: " + Card_ID + "\n";
+		tempD = "板子類型: " + MType + "\n";
+		tempD += "板子ID: " + Card_ID + "\n";		
 		tempD += "目前生產量: " + CurQty + "\n"; 
 		tempD += "設定生產量: " + SetQty + "\n"; 
 		
@@ -221,7 +222,7 @@ function showData()
 			tempD += "設定失誤量: " + SetMiss + "\n"; 
 			tempD += "產速: " + SpeedRate + " %\n"; 
 		}
-		tempD += "最後更新時間: " + UpdateTime + "\n";
+		tempD += "更新: " + UpdateTime + "\n";
 		tempD += "機型編號:　" + Custom_ID + "\n";
 		tempD += "機型:　" + model + "\n";
 		tempD += "管理人:　" + admin + "\n";

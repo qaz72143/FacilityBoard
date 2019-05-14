@@ -72,8 +72,8 @@ function showData()
 {
 	dispTime();
 	var MData, EInner, MStatus, MBar, ProgrssBar, BarText;
-	var Card_ID, Custom_ID, model, admin, note;
-	var CurQty, SetQty, CurMiss, SetMiss, SpeedRate;
+	var Card_ID, Custom_ID, model, admin, note, MType;
+	var CurQty, SetQty, AccQty, CurMiss, SetMiss, SpeedRate, UpdateTime;
 	var QtyRate, MissRate;
 	var connectCnt;
 	var producingCnt=0, stopCnt=0, powerOffCnt=0, achieveQtyCnt=0, errorCnt=0; 
@@ -92,6 +92,10 @@ function showData()
 		model = data[index++];
 		admin = data[index++];
 		note = data[index++];
+		if(data[index++] == 'CMD')
+			MType = '指令型';
+		else	
+			MType = '通用型';
 		
 		MData = document.getElementById('MachineData-' + i);
 		EInner = document.getElementById('element-inner-' + i);
@@ -102,10 +106,11 @@ function showData()
 		switch(data[index++])
 		{
 			case 'Disconnect':
-				index += 6;	
+				index += 8;	
 				ProgrssBar.parentNode.removeChild(ProgrssBar);
-				MStatus.innerHTML = "未連接";					
-				tempD = "板子ID: " + Card_ID + "\n";
+				MStatus.innerHTML = "未連接";	
+				tempD = "板子類型: " + MType + "\n";
+				tempD += "板子ID: " + Card_ID + "\n";
 				tempD += "機型編號:　" + Custom_ID + "\n";
 				tempD += "機型:　" + model + "\n";
 				tempD += "管理人:　" + admin + "\n";
@@ -116,13 +121,13 @@ function showData()
 				stopCnt++;
 				EInner.className = "periodic-element-inner-stop";
 				MStatus.className = "status status-stop";
-				MStatus.innerHTML = "停機";			
+				MStatus.innerHTML = "待機";			
 				break;
 			case 'Stop(Lock)':
 				stopCnt++;
 				EInner.className = "periodic-element-inner-stop";
 				MStatus.className = "status status-stop";
-				MStatus.innerHTML = "停機(鎖)";	
+				MStatus.innerHTML = "待機(鎖)";	
 				break;
 			case 'Producing':
 				producingCnt++;
@@ -167,29 +172,60 @@ function showData()
 				MStatus.innerHTML = "異常(鎖)";	
 				break;			
 			default: break;
+		}	
+		CurQty = data[index++];		if(CurQty == 'empty')		CurQty = '(空)';			
+		SetQty = data[index++];		if(SetQty == 'empty')		SetQty = '(空)';	
+		AccQty = data[index++];		if(AccQty == 'empty')		AccQty = '(空)';	
+		CurMiss = data[index++];	if(CurMiss == 'empty')		CurMiss = '(空)';	
+		SetMiss = data[index++];	if(SetMiss == 'empty')		SetMiss = '(空)';	
+		SpeedRate = data[index++];	if(SpeedRate == 'empty')	SpeedRate = '(空)';	
+		UpdateTime = data[index++]; if(UpdateTime == 'empty')	UpdateTime = '(空)';	
+		index++;
+		
+		if((CurQty=='(空)') || (SetQty=='(空)'))
+		{
+			QtyRate = '(空)';	  
+			BarText.innerHTML = QtyRate;
 		}
-		if(data[index] == 'IO')
-		{					//Card_ID, Custom_ID, model, admin, note;
-			tempD = "通用型機台\n";
-			tempD += "失誤率: 無,　產速率: 無\n";
-			MData.setAttribute('data-description',tempD);
-			BarText.innerHTML = "無";
-			index += 6;
+		else if(CurQty >= SetQty)
+		{
+			QtyRate = "100 %";
+			BarText.innerHTML = QtyRate;
+			MBar.style.width = QtyRate; 
 		}
 		else
 		{
-			CurQty = data[index++];		SetQty = data[index++];
-			CurMiss = data[index++];	SetMiss = data[index++];
-			SpeedRate = data[index++];	index++;
 			QtyRate = Math.round((CurQty/SetQty)*100) + " %";
-			MissRate = Math.round((CurMiss/SetMiss)*100) + " %";	
-			
-			tempD = "失誤率: " + MissRate + ",　產速率: " + SpeedRate + " %\n";
-			MData.setAttribute('data-description',tempD);
-			BarText.innerHTML = Math.round((CurQty/SetQty)*100) + "%";
-			MBar.style.width = Math.round((CurQty/SetQty)*100) + "%"; 
+			BarText.innerHTML = QtyRate;
+			MBar.style.width = QtyRate; 
 		}
-		tempD += "板子ID:　" + Card_ID + "\n";
+		
+		
+		while(CurQty.length < 8)	CurQty = " " + CurQty;
+		while(SetQty.length < 8)	SetQty = " " + SetQty;
+		while(AccQty.length < 8)	AccQty = " " + AccQty;
+		
+		if((CurMiss=='(空)') || (SetMiss=='(空)'))
+			MissRate = '空';	
+		else
+			MissRate = Math.round((CurMiss/SetMiss)*100) + " %";
+		while(CurMiss.length < 8)	CurMiss = " " + CurMiss;
+		while(SetMiss.length < 8)	SetMiss = " " + SetMiss;
+				
+		tempD = "板子類型: " + MType + ",　板子ID: " + Card_ID + "\n";
+		tempD += "目前生產量: " + CurQty + "\n"; 
+		tempD += "設定生產量: " + SetQty + "\n"; 
+		
+		
+		if(MType == '通用型')
+			tempD += "累計生產量: " + AccQty + "\n"; 
+		else
+		{
+			tempD += "目前失誤量: " + CurMiss + "\n"; 
+			tempD += "設定失誤量: " + SetMiss + "\n"; 
+			tempD += "產速: " + SpeedRate + " %\n"; 
+		}
+		tempD += "最後更新時間: " + UpdateTime + "\n";
 		tempD += "機型編號:　" + Custom_ID + "\n";
 		tempD += "機型:　" + model + "\n";
 		tempD += "管理人:　" + admin + "\n";
@@ -342,8 +378,8 @@ function dispTime()
 function transfer_Status(temp)	//狀態的字串 英文轉中文
 {
 	if(temp == "Disconnect")			return "未連接";
-	else if(temp == "Stop")				return "停機中";
-	else if(temp == "Stop(Lock)")		return "停機中(鎖)";
+	else if(temp == "Stop")				return "待機中";
+	else if(temp == "Stop(Lock)")		return "待機中(鎖)";
 	else if(temp == "Producing")		return "生產中";
 	else if(temp == "Producing(Lock)")	return "生產中(鎖)";
 	else if(temp == "AchieveQty")		return "達到生產量";

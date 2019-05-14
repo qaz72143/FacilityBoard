@@ -188,10 +188,13 @@ function showData()
 			BarText.innerHTML = QtyRate;
 		}
 		else if((CurQty*1) >= (SetQty*1))
-		{
-			QtyRate = "100%";
+		{			
+			if(MType == '通用型')
+				QtyRate = Math.round((CurQty/SetQty)*100) + "%";
+			else
+				QtyRate = "100%";
 			BarText.innerHTML = QtyRate;
-			MBar.style.width = QtyRate; 
+			MBar.style.width = "100%"; 
 		}
 		else
 		{

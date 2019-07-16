@@ -7,7 +7,7 @@ var time = document.getElementById("updateTime");
 var titleHead = document.getElementById('title_head');
 var title = document.getElementById('title');
 var checkData;
-var checkUpdate = setInterval(check_Update ,30000);	//每30秒檢查資料是否更新，刷新頁面
+var checkUpdate = setInterval(check_Update ,3000);	//每3秒檢查資料是否更新，刷新頁面
 window.addEventListener("load", readData, false);
 			
 function readData()

@@ -1,4 +1,4 @@
-Wed Jul 10 21:14:56 2019
+Tue Jul 16 11:07:13 2019
 工廠設備監控系統
 50
 SpecialSort
@@ -37,7 +37,7 @@ Disconnect
 ASG-3
 彈簧機
 石明弘3
-333333333333333333。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -52,7 +52,7 @@ Disconnect
 KDP-4456
 壓簧機
 劉佳欣4
-4444444444444444。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -67,7 +67,7 @@ Disconnect
 ASG-5
 彈簧機
 石明弘5
-555555。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -82,7 +82,7 @@ Disconnect
 KDP-6
 壓簧機
 劉佳欣6
-666666666666。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -97,7 +97,7 @@ Disconnect
 ASG-7
 彈簧機
 石明弘7
-7。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -112,7 +112,7 @@ Disconnect
 KDP-8
 壓簧機
 劉佳欣8
-888888888。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -127,7 +127,7 @@ Disconnect
 ASG-9
 彈簧機
 石明弘9
-9。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -142,7 +142,7 @@ Disconnect
 KDP-10
 壓簧機
 劉佳欣10
-10101010。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -157,7 +157,7 @@ Disconnect
 ASG-11
 彈簧機
 石明弘11
-11111111。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -172,7 +172,7 @@ Disconnect
 KDP-12
 壓簧機
 劉佳欣12
-12121212。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -187,7 +187,7 @@ Disconnect
 ASG-13
 彈簧機
 石明弘13
-1313131313。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -202,7 +202,7 @@ Disconnect
 KDP-14
 壓簧機
 劉佳欣14
-14141414。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -217,7 +217,7 @@ Disconnect
 ASG-15
 彈簧機
 石明弘15
-15151515。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -232,7 +232,7 @@ Disconnect
 KDP-16
 壓簧機
 劉佳欣16
-16161616。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -247,7 +247,7 @@ Disconnect
 ASG-17
 彈簧機
 石明弘17
-171717。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -262,7 +262,7 @@ Disconnect
 KDP-18
 壓簧機
 劉佳欣18
-18181818。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -277,7 +277,7 @@ Disconnect
 ASG-19
 彈簧機
 石明弘19
-1919191919。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -292,7 +292,7 @@ Disconnect
 KDP-20
 壓簧機
 劉佳欣20
-202020202。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -307,7 +307,7 @@ Disconnect
 ASG-21
 彈簧機
 石明弘21
-2121212121。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -322,7 +322,7 @@ Disconnect
 KDP-22
 壓簧機
 劉佳欣22
-2222222。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -337,7 +337,7 @@ Disconnect
 ASG-23
 彈簧機
 石明弘23
-233233323。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -352,7 +352,7 @@ Disconnect
 KDP-24
 壓簧機
 劉佳欣24
-2424242424。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -367,7 +367,7 @@ Disconnect
 ASG-25
 彈簧機
 石明弘25
-252525。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -382,7 +382,7 @@ Disconnect
 KDP-26
 壓簧機
 劉佳欣26
-2626262626。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -397,7 +397,7 @@ Disconnect
 ASG-27
 彈簧機
 石明弘27
-272727。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -412,7 +412,7 @@ Disconnect
 KDP-28
 壓簧機
 劉佳欣28
-28。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -427,7 +427,7 @@ Disconnect
 ASG-29
 彈簧機
 石明弘29
-2929292929。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -442,7 +442,7 @@ Disconnect
 KDP-30
 壓簧機
 劉佳欣30
-30303030。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -457,7 +457,7 @@ Disconnect
 ASG-31
 彈簧機
 石明弘31
-3131313131。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -472,7 +472,7 @@ Disconnect
 KDP-32
 壓簧機
 劉佳欣32
-3232323232。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -487,7 +487,7 @@ Disconnect
 ASG-33
 彈簧機
 石明弘33
-333333333。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -502,7 +502,7 @@ Disconnect
 KDP-34
 壓簧機
 劉佳欣34
-3434343。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -517,7 +517,7 @@ Disconnect
 ASG-35
 彈簧機
 石明弘35
-35353535。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -532,7 +532,7 @@ Disconnect
 KDP-36
 壓簧機
 劉佳欣36
-363636。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -547,7 +547,7 @@ Disconnect
 ASG-37
 彈簧機
 石明弘37
-3737373737。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -562,7 +562,7 @@ Disconnect
 KDP-38
 壓簧機
 劉佳欣38
-3838383838。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -577,7 +577,7 @@ Disconnect
 ASG-39
 彈簧機
 石明弘39
-39393939。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -592,7 +592,7 @@ Disconnect
 KDP-40
 壓簧機
 劉佳欣40
-40404040。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -607,7 +607,7 @@ Disconnect
 ASG-41
 彈簧機
 石明弘41
-41414141。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -622,7 +622,7 @@ Disconnect
 KDP-42
 壓簧機
 劉佳欣42
-42424242。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -637,7 +637,7 @@ Disconnect
 ASG-43
 彈簧機
 石明弘43
-43。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -652,7 +652,7 @@ Disconnect
 KDP-44
 壓簧機
 劉佳欣44
-44444444。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -667,7 +667,7 @@ Disconnect
 ASG-45
 彈簧機
 石明弘45
-45454545。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -682,7 +682,7 @@ Disconnect
 KDP-46
 壓簧機
 劉佳欣46
-4646464646。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -697,7 +697,7 @@ Disconnect
 ASG-47
 彈簧機
 石明弘47
-4747474747。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -712,7 +712,7 @@ Disconnect
 KDP-48
 壓簧機
 劉佳欣48
-4848484848。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -727,7 +727,7 @@ Disconnect
 ASG-49
 彈簧機
 石明弘49
-49494949。
+沒有其他異常。
 CMD
 Disconnect
 #
@@ -742,7 +742,7 @@ Disconnect
 KDP-50
 壓簧機
 劉佳欣50
-50505050。
+沒有其他異常。
 CMD
 Disconnect
 #

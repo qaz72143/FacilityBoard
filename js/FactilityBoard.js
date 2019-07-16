@@ -1,6 +1,6 @@
 var data;
 var MachineQty;
-var file = './MachineData.txt';
+var file = './MachineData.txt?nocache=';
 var fileSplit = "\n";		//Github page上不用加"\r"，不然顯示不出來
 
 var time = document.getElementById("updateTime");
@@ -15,7 +15,7 @@ function readData()
 	//讀取txt檔內容，放到data陣列
 	$(function(){
 	    $.ajax({
-	        url: file,
+			url: file + (new Date()).getTime(),
 	        dataType: 'text',
 	        success: function(data_t) {
 	            //alert(data_t);
@@ -35,7 +35,7 @@ function check_Update()
 	//讀取txt檔內容
 	$(function(){
 	    $.ajax({
-	        url: file,
+	        url: file + (new Date()).getTime(),
 	        dataType: 'text',
 	        success: function(data_t2) {
 	            //alert(data_t);

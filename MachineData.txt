@@ -1,4 +1,4 @@
-Tue Jul 16 20:25:27 2019
+Wed Jul 17 09:26:45 2019
 工廠設備監控系統
 40
 SpecialSort
@@ -141,7 +141,7 @@ Disconnect
 55
 KDP-10
 壓簧機
-劉佳欣10
+劉佳欣123
 10101010。
 IO
 Disconnect

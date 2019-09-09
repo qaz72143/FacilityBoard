@@ -1,4 +1,4 @@
-Mon Sep  9 22:39:30 2019
+﻿Mon Sep  9 22:39:30 20190
 工廠設備監控系統
 40
 SpecialSort
